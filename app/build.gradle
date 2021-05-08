@@ -59,6 +59,8 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 
+    implementation 'hanks.xyz:htextview-library:0.1.5'
+
     //ui
     implementation 'com.github.ybq:Android-SpinKit:1.4.0'
 
