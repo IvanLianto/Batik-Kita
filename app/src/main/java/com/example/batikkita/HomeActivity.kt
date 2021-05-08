@@ -1,14 +1,21 @@
 package com.example.batikkita
 
+import android.bluetooth.le.ScanFilter
 import android.os.Bundle
-import com.google.android.material.bottomnavigation.BottomNavigationView
+import android.view.View
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.batikkita.databinding.ActivityHomeBinding
-import com.example.batikkita.databinding.ActivityMainBinding
+import com.example.batikkita.ui.cart.CartFragment
+import com.example.batikkita.ui.gift.GiftFragment
+import com.example.batikkita.ui.home.HomeFragment
+import com.example.batikkita.ui.map.MapFragment
+import com.example.batikkita.ui.notification.NotificationFragment
+import com.example.batikkita.ui.scan.ScanFragment
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class HomeActivity : AppCompatActivity() {
 
@@ -22,9 +29,20 @@ class HomeActivity : AppCompatActivity() {
         val navView: BottomNavigationView = binding.navView
 
         val navController = findNavController(R.id.nav_host_fragment)
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
 
         navView.setupWithNavController(navController)
+
+        binding.ivNotification.setOnClickListener { toNotifFragment() }
+    }
+
+    private fun toNotifFragment() {
+        val mFragmentManager = supportFragmentManager
+        val mNotificationFragment = NotificationFragment()
+
+        mFragmentManager
+                .beginTransaction()
+                .replace(R.id.nav_host_fragment, mNotificationFragment)
+                .addToBackStack(null)
+                .commit()
     }
 }

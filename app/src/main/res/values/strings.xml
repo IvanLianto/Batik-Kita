@@ -18,4 +18,6 @@
     <string name="your_point">Your Point</string>
     <string name="voucher">Voucher</string>
     <string name="surprise_me">Surprise me!</string>
+    <string name="title_notification">How many Batik motifs do you know?</string>
+    <string name="description_notification">Until now, there are more than 5,000 batik motifs throughout Indonesia.</string>
 </resources>
