@@ -13,4 +13,9 @@
     <string name="title_fragment_home">WELCOME TO BATIK KITA!</string>
     <string name="example_batik">BATIK 1</string>
     <string name="example_location">JOGJAKARTA</string>
+
+    <string name="today_quiz">Today Quiz</string>
+    <string name="your_point">Your Point</string>
+    <string name="voucher">Voucher</string>
+    <string name="surprise_me">Surprise me!</string>
 </resources>
