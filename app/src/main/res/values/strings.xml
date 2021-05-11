@@ -20,4 +20,7 @@
     <string name="surprise_me">Surprise me!</string>
     <string name="title_notification">How many Batik motifs do you know?</string>
     <string name="description_notification">Until now, there are more than 5,000 batik motifs throughout Indonesia.</string>
+    <string name="predict_result">Predict result</string>
+    <string name="scan_again">SCAN AGAIN</string>
+    <string name="permission_deny_text">Required permission denied. Existing.</string>
 </resources>
