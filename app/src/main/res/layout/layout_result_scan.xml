@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/layout_constraint_result_scan"
     xmlns:tools="http://schemas.android.com/tools">
 
     <ImageView
@@ -12,6 +13,7 @@
         android:layout_marginTop="32dp"
         android:background="@color/white_gray"
         app:layout_constraintEnd_toEndOf="parent"
+        android:scaleType="centerCrop"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -20,34 +22,35 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="8dp"
         android:fontFamily="@font/laila_bold"
         android:text="@string/predict_result"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/iv_result_picture" />
+        app:layout_constraintTop_toBottomOf="@id/btn_scan_again" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_scan"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="420dp"
+        android:layout_marginTop="460dp"
         android:layout_marginEnd="32dp"
         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_text_predict_result"
         tools:listitem="@layout/item_list_result_scan"
-        android:visibility="gone"/>
+        android:visibility="visible"/>
 
     <Button
         android:id="@+id/btn_scan_again"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/rv_scan"
+        app:layout_constraintTop_toBottomOf="@id/iv_result_picture"
         android:text="@string/scan_again"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

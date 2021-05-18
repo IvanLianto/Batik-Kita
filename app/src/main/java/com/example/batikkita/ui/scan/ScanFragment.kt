@@ -2,7 +2,10 @@ package com.example.batikkita.ui.scan
 
 import android.Manifest
 import android.annotation.SuppressLint
+import android.content.Context
 import android.content.pm.PackageManager
+import android.graphics.Bitmap
+import android.graphics.Matrix
 import android.os.Bundle
 import android.util.Log
 import android.util.Size
@@ -14,21 +17,30 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.camera.core.CameraSelector
 import androidx.camera.core.ImageAnalysis
+import androidx.camera.core.ImageProxy
 import androidx.camera.core.Preview
 import androidx.camera.lifecycle.ProcessCameraProvider
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.core.view.isVisible
+import androidx.fragment.app.viewModels
 import com.example.batikkita.R
 import com.example.batikkita.databinding.FragmentScanBinding
+import com.example.batikkita.ml.FlowerModel
+import com.example.batikkita.utils.YuvToRgbConverter
+import org.tensorflow.lite.support.image.TensorImage
+import java.util.concurrent.Executors
 
 class ScanFragment : Fragment() {
 
     private lateinit var binding: FragmentScanBinding
-
     private lateinit var imageAnalyzer: ImageAnalysis
-
+    private lateinit var bitmapBuffer: Bitmap
+    private lateinit var rotationMatrix: Matrix
     private lateinit var cameraProvider: ProcessCameraProvider
+    private val cameraExecutor = Executors.newSingleThreadExecutor()
+
+    private val viewModel: RecognitionListViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -49,8 +61,32 @@ class ScanFragment : Fragment() {
             startCamera()
         }
 
+        binding.layoutForScan.btnTakePicture.setOnClickListener {
+            closeCamera()
+
+            val matrix = Matrix().apply {
+                postRotate(90.toFloat())
+            }
+            val uprightImage = Bitmap.createBitmap(
+                bitmapBuffer, 0, 0, bitmapBuffer.width, bitmapBuffer.height, matrix, false)
+
+            binding.layoutResultScan.ivResultPicture.setImageBitmap(uprightImage)
+            binding.layoutForScan.layoutConstraintScan.visibility = View.GONE
+            binding.layoutResultScan.layoutConstraintResultScan.visibility = View.VISIBLE
+            binding.layoutResultScan.rvScan.visibility = View.VISIBLE
+        }
+
         if (!allPermissionGranted())
             ActivityCompat.requestPermissions(requireActivity(), REQUIRED_PERMISSIONS, REQUEST_CODE)
+
+        val adapter = RecognitionAdapter()
+        binding.layoutResultScan.rvScan.adapter = adapter
+        binding.layoutResultScan.rvScan.itemAnimator = null
+
+        viewModel.recognitionList.observe(viewLifecycleOwner, {
+            adapter.submitList(it)
+        })
+
     }
 
     private fun closeCamera() {
@@ -75,6 +111,30 @@ class ScanFragment : Fragment() {
                 .setBackpressureStrategy(ImageAnalysis.STRATEGY_KEEP_ONLY_LATEST)
                 .build()
 
+            imageAnalyzer.setAnalyzer(cameraExecutor,  { image ->
+
+                val items = mutableListOf<Recognition>()
+
+                val model = FlowerModel.newInstance(requireContext())
+
+                val tfImage = TensorImage.fromBitmap(toBitmap(image))
+
+                val outputs = model.process(tfImage)
+                    .probabilityAsCategoryList.apply {
+                        sortByDescending { it.score }
+                    }.take(3)
+
+                for (output in outputs) {
+                    items.add(Recognition(output.label, output.score))
+                }
+
+                Log.d(TAG, items.size.toString())
+
+                viewModel.updateData(items)
+
+                image.close()
+            })
+
             val cameraSelector =
                 if (cameraProvider.hasCamera(CameraSelector.DEFAULT_BACK_CAMERA))
                     CameraSelector.DEFAULT_BACK_CAMERA else CameraSelector.DEFAULT_FRONT_CAMERA
@@ -89,6 +149,21 @@ class ScanFragment : Fragment() {
                 Log.d(TAG, e.message.toString())
             }
         }, ContextCompat.getMainExecutor(requireContext()))
+    }
+
+    @SuppressLint("UnsafeOptInUsageError")
+    private fun toBitmap(image: ImageProxy) : Bitmap? {
+        if (!::bitmapBuffer.isInitialized) {
+            rotationMatrix = Matrix()
+            rotationMatrix.postRotate(image.imageInfo.rotationDegrees.toFloat())
+            bitmapBuffer = Bitmap.createBitmap(
+                image.width, image.height, Bitmap.Config.ARGB_8888
+            )
+        }
+        val yuvToRgbConverter = YuvToRgbConverter(requireContext())
+        yuvToRgbConverter.yuvToRgb(image.image!!, bitmapBuffer)
+        Log.d(TAG, "Sampai sini")
+        return Bitmap.createBitmap(bitmapBuffer, 0, 0, bitmapBuffer.width, bitmapBuffer.height, rotationMatrix, false)
     }
 
     override fun onRequestPermissionsResult(

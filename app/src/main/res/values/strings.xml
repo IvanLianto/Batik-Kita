@@ -23,4 +23,7 @@
     <string name="predict_result">Predict result</string>
     <string name="scan_again">SCAN AGAIN</string>
     <string name="permission_deny_text">Required permission denied. Existing.</string>
+    <string name="scan_your_batik_here">SCAN YOUR BATIK HERE!</string>
+    <string name="predict">PREDICT</string>
+    <string name="batik">Batik</string>
 </resources>
