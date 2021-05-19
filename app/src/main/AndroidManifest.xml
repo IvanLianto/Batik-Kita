@@ -3,6 +3,7 @@
     package="com.example.batikkita">
 
     <uses-feature android:name="android.hardware.camera.any" />
+
     <uses-permission android:name="android.permission.CAMERA" />
 
     <application
@@ -12,10 +13,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.BatikKita">
+        <activity android:name=".ui.scan.ScanActivity"></activity>
+        <activity android:name=".HomeActivity" />
         <activity
-            android:name=".HomeActivity"/>
-
-        <activity android:name=".MainActivity"
+            android:name=".MainActivity"
             android:theme="@style/Theme.Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

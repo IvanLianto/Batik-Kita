@@ -3,10 +3,12 @@ package com.example.batikkita.ui.scan
 import android.Manifest
 import android.annotation.SuppressLint
 import android.content.Context
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.Bitmap
 import android.graphics.Matrix
 import android.os.Bundle
+import android.os.Parcelable
 import android.util.Log
 import android.util.Size
 import androidx.fragment.app.Fragment
@@ -70,22 +72,16 @@ class ScanFragment : Fragment() {
             val uprightImage = Bitmap.createBitmap(
                 bitmapBuffer, 0, 0, bitmapBuffer.width, bitmapBuffer.height, matrix, false)
 
-            binding.layoutResultScan.ivResultPicture.setImageBitmap(uprightImage)
-            binding.layoutForScan.layoutConstraintScan.visibility = View.GONE
-            binding.layoutResultScan.layoutConstraintResultScan.visibility = View.VISIBLE
-            binding.layoutResultScan.rvScan.visibility = View.VISIBLE
+            val intent = Intent(
+                requireContext(), ScanActivity::class.java
+            )
+            intent.putExtra(ScanActivity.IMAGE_RECOGNITION, uprightImage)
+            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
+            startActivity(intent)
         }
 
         if (!allPermissionGranted())
             ActivityCompat.requestPermissions(requireActivity(), REQUIRED_PERMISSIONS, REQUEST_CODE)
-
-        val adapter = RecognitionAdapter()
-        binding.layoutResultScan.rvScan.adapter = adapter
-        binding.layoutResultScan.rvScan.itemAnimator = null
-
-        viewModel.recognitionList.observe(viewLifecycleOwner, {
-            adapter.submitList(it)
-        })
 
     }
 

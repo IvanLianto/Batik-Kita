@@ -11,9 +11,4 @@
         layout="@layout/layout_scan"
         android:visibility="visible"/>
 
-    <include
-        android:id="@+id/layout_result_scan"
-        layout="@layout/layout_result_scan"
-        android:visibility="gone"/>
-
 </androidx.constraintlayout.widget.ConstraintLayout>
