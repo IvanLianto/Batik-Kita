@@ -1,13 +1,11 @@
 package com.example.batikkita.ui.scan
 
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.batikkita.databinding.ItemListResultScanBinding
-import com.example.batikkita.databinding.LayoutResultScanBinding
 
 class RecognitionAdapter : ListAdapter<Recognition, RecognitionAdapter.RecognitionViewHolder>(DiffCallback()) {
 

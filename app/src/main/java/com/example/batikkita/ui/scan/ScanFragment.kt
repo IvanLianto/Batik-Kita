@@ -64,8 +64,6 @@ class ScanFragment : Fragment() {
         }
 
         binding.layoutForScan.btnTakePicture.setOnClickListener {
-            closeCamera()
-
             val matrix = Matrix().apply {
                 postRotate(90.toFloat())
             }
@@ -75,6 +73,9 @@ class ScanFragment : Fragment() {
             val intent = Intent(
                 requireContext(), ScanActivity::class.java
             )
+            viewModel.recognitionList.observe(viewLifecycleOwner, {
+                intent.putParcelableArrayListExtra(ScanActivity.RECOGNITION, it as java.util.ArrayList<out Parcelable>)
+            })
             intent.putExtra(ScanActivity.IMAGE_RECOGNITION, uprightImage)
             intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
             startActivity(intent)
@@ -158,7 +159,6 @@ class ScanFragment : Fragment() {
         }
         val yuvToRgbConverter = YuvToRgbConverter(requireContext())
         yuvToRgbConverter.yuvToRgb(image.image!!, bitmapBuffer)
-        Log.d(TAG, "Sampai sini")
         return Bitmap.createBitmap(bitmapBuffer, 0, 0, bitmapBuffer.width, bitmapBuffer.height, rotationMatrix, false)
     }
 
