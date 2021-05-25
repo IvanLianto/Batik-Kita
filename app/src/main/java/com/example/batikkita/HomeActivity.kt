@@ -7,8 +7,10 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
+import androidx.navigation.plusAssign
 import androidx.navigation.ui.setupWithNavController
 import com.example.batikkita.databinding.ActivityHomeBinding
+import com.example.batikkita.navigation.KeepStateNavigator
 import com.example.batikkita.ui.cart.CartFragment
 import com.example.batikkita.ui.gift.GiftFragment
 import com.example.batikkita.ui.home.HomeFragment

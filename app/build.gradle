@@ -16,6 +16,8 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        buildConfigField "String", 'API_KEY_MAPBOX', "\"pk.eyJ1IjoiaXZhbmxpYW50byIsImEiOiJja29rdGI2b3AwMHhiMnVwa3hkZzYzYzRhIn0.LGNhZae9BHk2Jlq9_IaoGQ\""
     }
 
     buildFeatures {
@@ -75,5 +77,9 @@ dependencies {
 
     //ui
     implementation 'com.github.ybq:Android-SpinKit:1.4.0'
+
+    // Mapbox
+    implementation "com.mapbox.mapboxsdk:mapbox-android-sdk:9.2.0"
+    implementation "com.mapbox.mapboxsdk:mapbox-android-plugin-annotation-v9:0.8.0"
 
 }
