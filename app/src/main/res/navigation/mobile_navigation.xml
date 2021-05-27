@@ -30,9 +30,4 @@
         android:name="com.example.batikkita.ui.scan.ScanFragment"
         android:label="fragment_map"
         tools:layout="@layout/fragment_scan" />
-    <fragment
-        android:id="@+id/notificationFragment"
-        android:name="com.example.batikkita.ui.notification.NotificationFragment"
-        android:label="fragment_notification"
-        tools:layout="@layout/fragment_notification" />
 </navigation>
