@@ -6,17 +6,26 @@
     android:layout_height="match_parent"
     tools:context=".ui.map.MapFragment">
 
+    <TextView
+        style="@style/TextAppearance.MaterialComponents.Headline4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/mapView"
+        android:text="@string/title_map_fragment"/>
+
     <com.mapbox.mapboxsdk.maps.MapView
         android:id="@+id/mapView"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="match_parent"
+        android:layout_height="350dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:mapbox_cameraTargetLat="0"
-        android:orientation="horizontal"
         app:mapbox_cameraTargetLng="118"
-        app:mapbox_cameraZoom="2" />
+        app:mapbox_cameraZoom="2.6" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

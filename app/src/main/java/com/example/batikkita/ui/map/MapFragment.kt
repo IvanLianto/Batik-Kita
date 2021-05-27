@@ -9,12 +9,12 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
+import com.example.batikkita.BuildConfig.API_KEY_MAPBOX
 import com.example.batikkita.R
 import com.example.batikkita.databinding.FragmentMapBinding
 import com.mapbox.android.core.permissions.PermissionsListener
 import com.mapbox.android.core.permissions.PermissionsManager
 import com.mapbox.mapboxsdk.Mapbox
-import com.mapbox.mapboxsdk.camera.CameraUpdateFactory
 import com.mapbox.mapboxsdk.geometry.LatLng
 import com.mapbox.mapboxsdk.location.LocationComponent
 import com.mapbox.mapboxsdk.location.LocationComponentActivationOptions
@@ -37,8 +37,6 @@ class MapFragment : Fragment() {
     private lateinit var binding: FragmentMapBinding
     private lateinit var mapboxMap: MapboxMap
 
-    private lateinit var locationComponent: LocationComponent
-    private lateinit var mylocation: LatLng
     private lateinit var permissionsManager: PermissionsManager
 
     override fun onCreateView(
@@ -46,7 +44,7 @@ class MapFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        Mapbox.getInstance(requireContext(), getString(R.string.mapbox_access_token))
+        Mapbox.getInstance(requireContext(), API_KEY_MAPBOX)
         binding = FragmentMapBinding.inflate(inflater)
         return binding.root
     }
@@ -77,7 +75,6 @@ class MapFragment : Fragment() {
                 .withIconSize(1.5f)
                 .withIconOffset(arrayOf(0f, -1.5f))
         )
-//        mapboxMap.moveCamera(CameraUpdateFactory.newLatLngZoom(dicodingSpace, 8.0))
     }
 
     private fun showMyHome() {
@@ -89,52 +86,6 @@ class MapFragment : Fragment() {
                 .withIconSize(1.5f)
                 .withIconOffset(arrayOf(0f, -1.5f))
         )
-    }
-
-    @SuppressLint("MissingPermission")
-    private fun showMyLocation(style: Style) {
-        if (PermissionsManager.areLocationPermissionsGranted(requireContext())) {
-            val customLocationComponentOptions = LocationComponentOptions.builder(requireContext())
-                .trackingGesturesManagement(true)
-                .accuracyColor(ContextCompat.getColor(requireContext(), R.color.dark_yellow))
-                .build()
-
-            val locationComponentActivationOptions =
-                LocationComponentActivationOptions.builder(requireContext(), style)
-                    .locationComponentOptions(customLocationComponentOptions)
-                    .build()
-            mapboxMap.locationComponent.apply {
-
-                activateLocationComponent(locationComponentActivationOptions)
-
-                isLocationComponentEnabled = true
-
-                cameraMode = CameraMode.TRACKING
-
-                renderMode = RenderMode.COMPASS
-            }
-        } else {
-            permissionsManager = PermissionsManager(object : PermissionsListener {
-                override fun onExplanationNeeded(permissionsToExplain: MutableList<String>?) {
-                    Toast.makeText(
-                        requireContext(),
-                        "Anda harus mengizinkan location permission untuk menggunakan aplikasi ini",
-                        Toast.LENGTH_SHORT
-                    ).show()
-                }
-
-                override fun onPermissionResult(granted: Boolean) {
-                    if (granted) {
-                        mapboxMap.getStyle { style ->
-                            showMyLocation(style)
-                        }
-                    } else {
-                        return
-                    }
-                }
-            })
-            permissionsManager.requestLocationPermissions(requireActivity())
-        }
     }
 
     override fun onStart() {

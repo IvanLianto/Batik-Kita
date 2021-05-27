@@ -32,6 +32,10 @@ class ScanActivity : AppCompatActivity() {
             onBackPressed()
         }
 
+        binding.ivActionBack.setOnClickListener {
+            onBackPressed()
+        }
+
         adapter = RecognitionAdapter()
         binding.rvScan.adapter = adapter
         adapter.submitList(recognition)

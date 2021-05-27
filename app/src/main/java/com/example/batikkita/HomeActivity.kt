@@ -33,18 +33,5 @@ class HomeActivity : AppCompatActivity() {
         val navController = findNavController(R.id.nav_host_fragment)
 
         navView.setupWithNavController(navController)
-
-        binding.ivNotification.setOnClickListener { toNotifFragment() }
-    }
-
-    private fun toNotifFragment() {
-        val mFragmentManager = supportFragmentManager
-        val mNotificationFragment = NotificationFragment()
-
-        mFragmentManager
-                .beginTransaction()
-                .replace(R.id.nav_host_fragment, mNotificationFragment)
-                .addToBackStack(null)
-                .commit()
     }
 }
