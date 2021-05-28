@@ -2,6 +2,7 @@ plugins {
     id 'com.android.application'
     id 'kotlin-android'
     id 'kotlin-parcelize'
+    id 'kotlin-kapt'
 }
 
 android {
@@ -81,5 +82,10 @@ dependencies {
     // Mapbox
     implementation "com.mapbox.mapboxsdk:mapbox-android-sdk:9.2.0"
     implementation "com.mapbox.mapboxsdk:mapbox-android-plugin-annotation-v9:0.8.0"
+
+    //database and paging
+    implementation "androidx.room:room-runtime:2.3.0"
+    kapt "androidx.room:room-compiler:2.3.0"
+    implementation "androidx.paging:paging-runtime:3.0.0"
 
 }
