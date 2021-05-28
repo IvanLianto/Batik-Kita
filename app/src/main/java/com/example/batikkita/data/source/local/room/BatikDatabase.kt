@@ -1,12 +1,12 @@
-package com.example.batikkita.data.local.room
+package com.example.batikkita.data.source.local.room
 
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import com.example.batikkita.data.model.BatikModel
+import com.example.batikkita.data.source.local.entity.BatikEntity
 
-@Database(entities = [BatikModel::class], version = 1, exportSchema = false)
+@Database(entities = [BatikEntity::class], version = 1, exportSchema = false)
 abstract class BatikDatabase : RoomDatabase() {
     abstract fun getDao(): BatikDao
 

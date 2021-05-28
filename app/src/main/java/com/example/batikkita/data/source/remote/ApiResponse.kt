@@ -1,4 +1,4 @@
-package com.example.batikkita.data.remote
+package com.example.batikkita.data.source.remote
 
 
 class ApiResponse<T> (val status: StatusResponse, val body: T, val message: String?) {

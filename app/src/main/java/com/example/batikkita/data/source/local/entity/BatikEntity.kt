@@ -1,4 +1,4 @@
-package com.example.batikkita.data.model
+package com.example.batikkita.data.source.local.entity
 
 import android.os.Parcelable
 import androidx.annotation.NonNull
@@ -9,7 +9,7 @@ import kotlinx.parcelize.Parcelize
 
 @Parcelize
 @Entity(tableName = "batikEntities")
-data class BatikModel(
+data class BatikEntity(
     @PrimaryKey
     @NonNull
     @ColumnInfo(name = "id")
@@ -17,6 +17,9 @@ data class BatikModel(
 
     @ColumnInfo(name = "name")
     var name: String,
+
+    @ColumnInfo(name = "image")
+    var image: String,
 
     @ColumnInfo(name = "origin")
     var origin: String,

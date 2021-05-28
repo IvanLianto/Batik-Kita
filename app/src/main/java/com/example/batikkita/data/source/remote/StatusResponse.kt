@@ -1,4 +1,4 @@
-package com.example.batikkita.data.remote
+package com.example.batikkita.data.source.remote
 
 enum class StatusResponse {
     SUCCESS,

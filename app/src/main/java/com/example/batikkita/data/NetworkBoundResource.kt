@@ -1,7 +1,9 @@
-package com.example.batikkita.data.remote
+package com.example.batikkita.data
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MediatorLiveData
+import com.example.batikkita.data.source.remote.ApiResponse
+import com.example.batikkita.data.source.remote.StatusResponse
 import com.example.batikkita.utils.AppExecutors
 import com.example.vo.Resource
 

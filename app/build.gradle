@@ -78,6 +78,7 @@ dependencies {
 
     //ui
     implementation 'com.github.ybq:Android-SpinKit:1.4.0'
+    implementation "com.github.bumptech.glide:glide:4.12.0"
 
     // Mapbox
     implementation "com.mapbox.mapboxsdk:mapbox-android-sdk:9.2.0"
@@ -86,7 +87,7 @@ dependencies {
     //database and paging
     implementation "androidx.room:room-runtime:2.3.0"
     kapt "androidx.room:room-compiler:2.3.0"
-    implementation "androidx.paging:paging-runtime:3.0.0"
+    implementation "androidx.paging:paging-runtime-ktx:3.0.0"
 
     // Koin
     implementation "org.koin:koin-core:2.1.6"
