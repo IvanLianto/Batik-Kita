@@ -88,4 +88,9 @@ dependencies {
     kapt "androidx.room:room-compiler:2.3.0"
     implementation "androidx.paging:paging-runtime:3.0.0"
 
+    // Koin
+    implementation "org.koin:koin-core:2.1.6"
+    implementation "org.koin:koin-android:2.1.6"
+    implementation "org.koin:koin-android-viewmodel:2.1.6"
+
 }

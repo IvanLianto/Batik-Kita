@@ -25,6 +25,9 @@ data class BatikModel(
     var island: String,
 
     @ColumnInfo(name = "desc")
-    var desc: String
+    var desc: String,
+
+    @ColumnInfo(name = "favorite")
+    var favorite: Boolean = false
 
 ) : Parcelable
