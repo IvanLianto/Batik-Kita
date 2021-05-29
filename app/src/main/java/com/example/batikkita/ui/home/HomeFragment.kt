@@ -13,6 +13,7 @@ import com.example.batikkita.databinding.FragmentHomeBinding
 import com.example.batikkita.interfaces.BatikOnClickInterface
 import com.example.batikkita.ui.detail.DetailActivity
 import com.example.batikkita.utils.ViewModelFactory
+import com.example.vo.Status
 
 class HomeFragment : Fragment(), BatikOnClickInterface {
 
@@ -44,8 +45,18 @@ class HomeFragment : Fragment(), BatikOnClickInterface {
     private fun observerRecyclerView() {
         viewModel.getListBatik().observe(viewLifecycleOwner, { list ->
             if (list != null) {
-                adapter.submitList(list)
-                adapter.notifyDataSetChanged()
+                when (list.status) {
+                    Status.LOADING -> {
+
+                    }
+                    Status.SUCCESS -> {
+                        adapter.submitList(list.data)
+                        adapter.notifyDataSetChanged()
+                    }
+                    Status.ERROR -> {
+
+                    }
+                }
             }
         })
     }
