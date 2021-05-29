@@ -5,6 +5,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.example.batikkita.data.source.BatikRepository
 import com.example.batikkita.di.Injection
+import com.example.batikkita.ui.detail.DetailViewModel
 import com.example.batikkita.ui.home.HomeViewModel
 
 class ViewModelFactory private constructor(private val mBatikRepository: BatikRepository): ViewModelProvider.NewInstanceFactory(){
@@ -13,6 +14,9 @@ class ViewModelFactory private constructor(private val mBatikRepository: BatikRe
         when {
             modelClass.isAssignableFrom(HomeViewModel::class.java) -> {
                 HomeViewModel(mBatikRepository) as T
+            }
+            modelClass.isAssignableFrom(DetailViewModel::class.java) -> {
+                DetailViewModel(mBatikRepository) as T
             }
             else -> throw Throwable("Unknown ViewModel class: " + modelClass.name)
         }

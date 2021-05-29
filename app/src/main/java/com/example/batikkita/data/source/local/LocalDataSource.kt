@@ -2,17 +2,18 @@ package com.example.batikkita.data.source.local
 
 import androidx.lifecycle.LiveData
 import androidx.paging.DataSource
-import com.example.batikkita.data.source.local.room.BatikDao
 import com.example.batikkita.data.source.local.entity.BatikEntity
+import com.example.batikkita.data.source.local.room.BatikDao
 
-class LocalDataSource private constructor(private val batikDao: BatikDao){
+class LocalDataSource private constructor(private val batikDao: BatikDao) {
     fun getListBatik(): DataSource.Factory<Int, BatikEntity> = batikDao.getListBatik()
 
-    fun getListFavoriteBatik(): DataSource.Factory<Int, BatikEntity> = batikDao.getListFavoriteBatik()
+    fun getListFavoriteBatik(): DataSource.Factory<Int, BatikEntity> =
+        batikDao.getListFavoriteBatik()
 
     fun getBatikDetail(dataId: Int): LiveData<BatikEntity> = batikDao.getBatikDetail(dataId)
 
-    fun searchBatik(name: String): DataSource.Factory<Int, BatikEntity> = batikDao.searchBatik(name)
+    fun searchBatik(name: String): DataSource.Factory<Int, BatikEntity> = batikDao.searchBatik("%$name%")
 
     fun setFavorite(data: BatikEntity) {
         data.favorite = !data.favorite

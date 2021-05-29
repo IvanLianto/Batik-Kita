@@ -6,10 +6,15 @@ import androidx.paging.PagedListAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.example.batikkita.R
 import com.example.batikkita.data.source.local.entity.BatikEntity
 import com.example.batikkita.databinding.ItemListBinding
+import com.example.batikkita.interfaces.BatikOnClickInterface
 
 class HomeAdapter : PagedListAdapter<BatikEntity, HomeAdapter.HomeViewHolder>(DIFF_CALLBACK) {
+
+    var dataInterface: BatikOnClickInterface? = null
+
 
     override fun onBindViewHolder(holder: HomeViewHolder, position: Int) {
         val data = getItem(position)
@@ -29,9 +34,14 @@ class HomeAdapter : PagedListAdapter<BatikEntity, HomeAdapter.HomeViewHolder>(DI
             binding.apply {
                 Glide.with(root)
                     .load(data.image)
+                    .placeholder(R.drawable.ic_loading)
+                    .error(R.drawable.ic_error)
                     .into(ivPoster)
                 tvBatik.text = data.name
                 tvLocation.text = data.origin
+                layoutRoot.setOnClickListener {
+                    dataInterface?.onClicked(root, data)
+                }
             }
         }
     }

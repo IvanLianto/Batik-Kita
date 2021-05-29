@@ -2,7 +2,6 @@ package com.example.batikkita.data.source
 
 import androidx.lifecycle.LiveData
 import androidx.paging.PagedList
-import androidx.paging.PagingData
 import com.example.batikkita.data.source.local.entity.BatikEntity
 
 interface BatikDataSource {

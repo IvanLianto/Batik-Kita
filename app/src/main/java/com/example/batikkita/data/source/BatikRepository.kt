@@ -1,15 +1,13 @@
 package com.example.batikkita.data.source
 
 import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
+import androidx.paging.DataSource
 import androidx.paging.LivePagedListBuilder
 import androidx.paging.PagedList
-import androidx.paging.PagingData
 import com.example.batikkita.data.source.local.LocalDataSource
 import com.example.batikkita.data.source.local.entity.BatikEntity
 import com.example.batikkita.utils.AppExecutors
 import com.example.batikkita.utils.DummyObject
-import kotlinx.coroutines.CoroutineScope
 
 class BatikRepository private constructor(
     private val localDataSource: LocalDataSource,
@@ -30,19 +28,29 @@ class BatikRepository private constructor(
     }
 
     override fun getDetailBatik(dataId: Int): LiveData<BatikEntity> {
-        TODO("Not yet implemented")
+        return localDataSource.getBatikDetail(dataId)
     }
 
     override fun getListFavoriteBatik(): LiveData<PagedList<BatikEntity>> {
-        TODO("Not yet implemented")
+        val config = PagedList.Config.Builder()
+            .setEnablePlaceholders(false)
+            .setInitialLoadSizeHint(4)
+            .setPageSize(4)
+            .build()
+        return LivePagedListBuilder(localDataSource.getListFavoriteBatik(), config).build()
     }
 
     override fun searchBatik(name: String): LiveData<PagedList<BatikEntity>> {
-        TODO("Not yet implemented")
+        val config = PagedList.Config.Builder()
+            .setEnablePlaceholders(false)
+            .setInitialLoadSizeHint(4)
+            .setPageSize(4)
+            .build()
+        return LivePagedListBuilder(localDataSource.searchBatik(name), config).build()
     }
 
     override fun setFavorite(data: BatikEntity) {
-        TODO("Not yet implemented")
+        appExecutors.diskIO().execute{localDataSource.setFavorite(data)}
     }
 
     companion object {

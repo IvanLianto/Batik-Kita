@@ -11,4 +11,5 @@
     <color name="main_yellow">#FFC157</color>
     <color name="dark_yellow">#B26615</color>
     <color name="white_gray">#EBEBEB</color>
+    <color name="placeholder">#6FB6B6B6</color>
 </resources>
