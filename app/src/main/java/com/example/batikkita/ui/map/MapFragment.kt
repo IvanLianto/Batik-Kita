@@ -1,5 +1,6 @@
 package com.example.batikkita.ui.map
 
+import android.content.Intent
 import android.graphics.BitmapFactory
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -11,6 +12,7 @@ import com.example.batikkita.BuildConfig.API_KEY_MAPBOX
 import com.example.batikkita.R
 import com.example.batikkita.data.source.local.entity.IslandEntity
 import com.example.batikkita.databinding.FragmentMapBinding
+import com.example.batikkita.ui.mapDetail.MapDetailActivity
 import com.example.batikkita.utils.ViewModelFactory
 import com.example.vo.Status
 import com.google.gson.Gson
@@ -99,6 +101,12 @@ class MapFragment : Fragment() {
                 )
             }
             symbolManager.create(options)
+            symbolManager.addClickListener { symbol ->
+                val data = Gson().fromJson(symbol.data, IslandEntity::class.java)
+                val intent = Intent(requireContext(), MapDetailActivity::class.java)
+                intent.putExtra(MapDetailActivity.EXTRA_ORIGIN, data.origin)
+                startActivity(intent)
+            }
         }
     }
 

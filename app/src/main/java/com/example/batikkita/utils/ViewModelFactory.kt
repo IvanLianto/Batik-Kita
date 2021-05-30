@@ -9,6 +9,7 @@ import com.example.batikkita.ui.detail.DetailViewModel
 import com.example.batikkita.ui.favorite.FavoriteViewModel
 import com.example.batikkita.ui.home.HomeViewModel
 import com.example.batikkita.ui.map.MapViewModel
+import com.example.batikkita.ui.mapDetail.MapDetailViewModel
 
 class ViewModelFactory private constructor(private val mBatikRepository: BatikRepository): ViewModelProvider.NewInstanceFactory(){
     @Suppress("UNCHECKED_CAST")
@@ -25,6 +26,9 @@ class ViewModelFactory private constructor(private val mBatikRepository: BatikRe
             }
             modelClass.isAssignableFrom(MapViewModel::class.java) -> {
                 MapViewModel(mBatikRepository) as T
+            }
+            modelClass.isAssignableFrom(MapDetailViewModel::class.java) -> {
+                MapDetailViewModel(mBatikRepository) as T
             }
             else -> throw Throwable("Unknown ViewModel class: " + modelClass.name)
         }

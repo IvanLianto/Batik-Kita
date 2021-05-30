@@ -32,7 +32,7 @@ class LocalDataSource private constructor(private val batikDao: BatikDao) {
         batikDao.insertDataIsland(data)
     }
 
-    fun getDetailIsland(dataId: Int): LiveData<IslandEntity> = batikDao.getDetailIsland(dataId)
+    fun getDetailIsland(origin: String): LiveData<IslandEntity> = batikDao.getDetailIsland(origin)
 
     fun getListIslandBatik(origin: String): LiveData<List<BatikEntity>> = batikDao.getListIslandBatik(origin)
 

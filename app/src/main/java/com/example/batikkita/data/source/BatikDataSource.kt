@@ -19,7 +19,7 @@ interface BatikDataSource {
 
     fun setFavorite(data: BatikEntity)
 
-    fun getDetailIsland(dataId: Int): LiveData<IslandEntity>
+    fun getDetailIsland(origin: String): LiveData<IslandEntity>
 
     fun getListIslandBatik(origin: String): LiveData<List<BatikEntity>>
 
