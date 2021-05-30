@@ -98,7 +98,7 @@
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
-                        tools:src="@drawable/cobajadi" />
+                        tools:src="@drawable/for_tools_src" />
 
                     <LinearLayout
                         android:id="@+id/linearLayout"

@@ -28,11 +28,13 @@
     <string name="batik">Batik</string>
     <string name="action_back">Image Action Back</string>
 
-    <string name="mapbox_access_token">pk.eyJ1IjoiYXJpZmFpemluIiwiYSI6ImNrYTI2c3R1cjAwNXAzbm1zaDYyZW1ra2cifQ.okSWF0zf58rWkhoVuYjShQ</string>
     <string name="title_map_fragment">Indonesia\'s Batik Map</string>
     <string name="notification">Notification</string>
 
     <string name="success_favorite">Successfully add %s to your favorite</string>
     <string name="success_unfavorite">Successfully unfavorite %s</string>
     <string name="favorite">Favorite</string>
+    <string name="island_name">Island Name</string>
+    <string name="batik_from_this_island">Batik dari pulau ini</string>
+    <string name="batik_dari_pulau_lain">Batik dari pulau lain</string>
 </resources>
