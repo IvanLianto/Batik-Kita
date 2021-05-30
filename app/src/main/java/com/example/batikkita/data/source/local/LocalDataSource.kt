@@ -32,6 +32,12 @@ class LocalDataSource private constructor(private val batikDao: BatikDao) {
         batikDao.insertDataIsland(data)
     }
 
+    fun getDetailIsland(dataId: Int): LiveData<IslandEntity> = batikDao.getDetailIsland(dataId)
+
+    fun getListIslandBatik(origin: String): LiveData<List<BatikEntity>> = batikDao.getListIslandBatik(origin)
+
+    fun getListIslandExceptIslandBatik(origin: String): LiveData<List<BatikEntity>> = batikDao.getListExceptIslandBatik(origin)
+
     companion object {
         private var INSTANCE: LocalDataSource? = null
 

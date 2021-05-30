@@ -85,6 +85,18 @@ class BatikRepository private constructor(
         appExecutors.diskIO().execute{localDataSource.setFavorite(data)}
     }
 
+    override fun getDetailIsland(dataId: Int): LiveData<IslandEntity> {
+        return localDataSource.getDetailIsland(dataId)
+    }
+
+    override fun getListIslandBatik(origin: String): LiveData<List<BatikEntity>> {
+        return localDataSource.getListIslandBatik(origin)
+    }
+
+    override fun getListIslandExceptIslandBatik(origin: String): LiveData<List<BatikEntity>> {
+        return localDataSource.getListIslandExceptIslandBatik(origin)
+    }
+
     companion object {
         @Volatile
         private var instance: BatikRepository? = null

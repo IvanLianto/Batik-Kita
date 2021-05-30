@@ -32,4 +32,13 @@ interface BatikDao {
     @Query("SELECT * FROM islandEntity")
     fun getListIsland(): LiveData<List<IslandEntity>>
 
+    @Query("SELECT * FROM islandEntity WHERE id LIKE :dataId")
+    fun getDetailIsland(dataId: Int): LiveData<IslandEntity>
+
+    @Query("SELECT * FROM batikEntities WHERE origin LIKE :origin")
+    fun getListIslandBatik(origin: String): LiveData<List<BatikEntity>>
+
+    @Query("SELECT * FROM batikEntities WHERE origin NOT LIKE :origin")
+    fun getListExceptIslandBatik(origin: String) : LiveData<List<BatikEntity>>
+
 }

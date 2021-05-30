@@ -18,4 +18,10 @@ interface BatikDataSource {
     fun searchBatik(name: String): LiveData<PagedList<BatikEntity>>
 
     fun setFavorite(data: BatikEntity)
+
+    fun getDetailIsland(dataId: Int): LiveData<IslandEntity>
+
+    fun getListIslandBatik(origin: String): LiveData<List<BatikEntity>>
+
+    fun getListIslandExceptIslandBatik(origin: String): LiveData<List<BatikEntity>>
 }

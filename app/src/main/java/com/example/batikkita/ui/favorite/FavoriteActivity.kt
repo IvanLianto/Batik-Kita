@@ -34,7 +34,7 @@ class FavoriteActivity : AppCompatActivity(), BatikOnClickInterface {
         }
     }
 
-    private fun observerRecyclerView() { 
+    private fun observerRecyclerView() {
         viewModel.getFavoriteList().observe(this, { list ->
             if (list != null) {
                     adapter.submitList(list)
