@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.batikkita.databinding.ActivityHomeBinding
+import com.example.batikkita.ui.favorite.FavoriteActivity
 import com.example.batikkita.ui.notification.NotificationActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
@@ -26,6 +27,10 @@ class HomeActivity : AppCompatActivity() {
 
         binding.ivNotification.setOnClickListener {
             startActivity(Intent(this, NotificationActivity::class.java))
+        }
+
+        binding.ivFavoriteList.setOnClickListener {
+            startActivity(Intent(this, FavoriteActivity::class.java))
         }
     }
 }
