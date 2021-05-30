@@ -1,26 +1,23 @@
 package com.example.batikkita.ui.map
 
-import android.annotation.SuppressLint
 import android.graphics.BitmapFactory
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
-import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import com.example.batikkita.BuildConfig.API_KEY_MAPBOX
 import com.example.batikkita.R
+import com.example.batikkita.data.source.local.entity.IslandEntity
 import com.example.batikkita.databinding.FragmentMapBinding
-import com.mapbox.android.core.permissions.PermissionsListener
+import com.example.batikkita.utils.ViewModelFactory
+import com.example.vo.Status
+import com.google.gson.Gson
 import com.mapbox.android.core.permissions.PermissionsManager
 import com.mapbox.mapboxsdk.Mapbox
 import com.mapbox.mapboxsdk.geometry.LatLng
-import com.mapbox.mapboxsdk.location.LocationComponent
-import com.mapbox.mapboxsdk.location.LocationComponentActivationOptions
-import com.mapbox.mapboxsdk.location.LocationComponentOptions
-import com.mapbox.mapboxsdk.location.modes.CameraMode
-import com.mapbox.mapboxsdk.location.modes.RenderMode
+import com.mapbox.mapboxsdk.geometry.LatLngBounds
 import com.mapbox.mapboxsdk.maps.MapboxMap
 import com.mapbox.mapboxsdk.maps.Style
 import com.mapbox.mapboxsdk.plugins.annotation.SymbolManager
@@ -35,6 +32,7 @@ class MapFragment : Fragment() {
     private lateinit var symbolManager: SymbolManager
 
     private lateinit var binding: FragmentMapBinding
+    private lateinit var viewModel: MapViewModel
     private lateinit var mapboxMap: MapboxMap
 
     private lateinit var permissionsManager: PermissionsManager
@@ -51,18 +49,56 @@ class MapFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        val factory = ViewModelFactory.getInstance(requireContext())
+        viewModel = ViewModelProvider(this, factory)[MapViewModel::class.java]
         binding.mapView.getMapAsync { mapboxMap ->
             this.mapboxMap = mapboxMap
-            mapboxMap.setStyle(Style.MAPBOX_STREETS) { style ->
-                symbolManager = SymbolManager(binding.mapView, mapboxMap, style)
-                symbolManager.iconAllowOverlap = true
-                style.addImage(
+            getIslandData()
+        }
+    }
+
+    private fun getIslandData() {
+        viewModel.getListIsland().observe(viewLifecycleOwner, { island ->
+            if (island != null) {
+                when (island.status) {
+                    Status.LOADING -> {
+
+                    }
+                    Status.SUCCESS -> {
+                        showMarker(island.data)
+                    }
+                    Status.ERROR -> {
+
+                    }
+                }
+            }
+        })
+    }
+
+    private fun showMarker(data: List<IslandEntity>?) {
+        mapboxMap.setStyle(Style.MAPBOX_STREETS) { style ->
+            style.addImage(
                     ICON_ID,
                     BitmapFactory.decodeResource(resources, R.drawable.mapbox_marker_icon_default)
                 )
-                showDicodingSpace()
-                showMyHome()
+            val latLngBoundsBuilder = LatLngBounds.Builder()
+
+            symbolManager = SymbolManager(binding.mapView, mapboxMap, style)
+            symbolManager.iconAllowOverlap = true
+
+            val options = ArrayList<SymbolOptions>()
+            data?.forEach{ list ->
+                latLngBoundsBuilder.include(LatLng(list.latitude, list.longitude))
+                options.add(
+                    SymbolOptions()
+                        .withLatLng(LatLng(list.latitude, list.longitude))
+                        .withIconImage(ICON_ID)
+                        .withIconSize(1.5f)
+                        .withIconOffset(arrayOf(0f, -1.5f))
+                        .withData(Gson().toJsonTree(list))
+                )
             }
+            symbolManager.create(options)
         }
     }
 

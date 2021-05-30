@@ -3,6 +3,7 @@ package com.example.batikkita.data.source.remote
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.example.batikkita.data.source.local.entity.BatikEntity
+import com.example.batikkita.data.source.local.entity.IslandEntity
 import com.example.batikkita.utils.DummyObject
 
 class RemoteDataSource {
@@ -10,6 +11,12 @@ class RemoteDataSource {
     fun getListBatik(): LiveData<ApiResponse<List<BatikEntity>>> {
         val result = MutableLiveData<ApiResponse<List<BatikEntity>>>()
         result.postValue(ApiResponse.success(DummyObject.generateBatik()))
+        return result
+    }
+
+    fun getListIsland(): LiveData<ApiResponse<List<IslandEntity>>> {
+        val result = MutableLiveData<ApiResponse<List<IslandEntity>>>()
+        result.postValue(ApiResponse.success(DummyObject.generateIsland()))
         return result
     }
 

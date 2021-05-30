@@ -1,6 +1,7 @@
 package com.example.batikkita.utils
 
 import com.example.batikkita.data.source.local.entity.BatikEntity
+import com.example.batikkita.data.source.local.entity.IslandEntity
 
 object DummyObject {
 
@@ -223,6 +224,69 @@ object DummyObject {
             )
         )
 
-            return batik
+        return batik
     }
+
+    fun generateIsland(): List<IslandEntity> {
+        val island = ArrayList<IslandEntity>()
+
+        island.add(
+            IslandEntity(
+                id = 1,
+                origin = "Jawa",
+                description = "Jawa adalah sebuah pulau di Indonesia dan merupakan pulau terluas ke-13 di dunia. Dengan jumlah penduduk sekitar hampir 160 juta, pulau ini pulau berpenduduk terbanyak di dunia dan merupakan salah satu tempat terpadat di dunia. Meskipun hanya menempati urutan terluas ke-5, Pulau Jawa dihuni oleh 60% penduduk Indonesia. Angka ini turun jika dibandingkan dengan sensus penduduk tahun 1905 yang mencapai 80,6% dari seluruh penduduk Indonesia. Penurunan penduduk di Pulau Jawa secara persentase diakibatkan perpindahan penduduk (transmigrasi) dari pulau Jawa ke seluruh Indonesia. Ibu kota Indonesia, Jakarta, terletak di Jawa bagian Barat Laut (tepatnya di ujung paling barat Jalur Pantura)." ,
+                image = "https://upload.wikimedia.org/wikipedia/commons/4/43/Java_Topography.png",
+                latitude = -7.3226234,
+                longitude = 107.6626043
+            )
+        )
+
+        island.add(
+            IslandEntity(
+                id = 2,
+                origin = "Bali",
+                description = "Bali adalah sebuah provinsi di Indonesia yang ibu kota provinsinya bernama Denpasar. Bali juga merupakan salah satu pulau di Kepulauan Nusa Tenggara. Di awal kemerdekaan Indonesia, pulau ini termasuk dalam Provinsi Sunda Kecil yang beribu kota di Singaraja, dan kini terbagi menjadi 3 provinsi, yakni Bali, Nusa Tenggara Barat, dan Nusa Tenggara Timur.[9][10] Pada tahun 2020, penduduk provinsi Bali berjumlah 4.317.404 jiwa, dengan kepadatan 747 jiwa/km2",
+                image = "https://upload.wikimedia.org/wikipedia/commons/1/11/Bali_topographic_map-id.svg",
+                latitude = -8.4556974 ,
+                longitude = 114.5110257
+            )
+        )
+
+        island.add(
+            IslandEntity(
+                id = 3,
+                origin = "Sumatra",
+                description = "Sumatra adalah pulau keenam terbesar di dunia yang terletak di Indonesia, dengan luas 473.481 km². Penduduk pulau ini sekitar 57.940.351 (sensus 2018). Pulau ini dikenal pula dengan nama lain yaitu Pulau Percha, Andalas, atau Suwarnadwipa (bahasa Sanskerta, berarti \"pulau emas\"). Kemudian pada Prasasti Padang Roco tahun 1286 dipahatkan swarnnabhūmi (bahasa Sanskerta, berarti \"tanah emas\") dan bhūmi mālayu (\"Tanah Melayu\") untuk menyebut pulau ini. Selanjutnya dalam naskah Negarakertagama dari abad ke-14 juga kembali menyebut \"Bumi Malayu\" (Melayu) untuk pulau ini." ,
+                image = "https://upload.wikimedia.org/wikipedia/commons/0/06/Sumatra_Topography.png" ,
+                latitude = -0.142901 ,
+                longitude = 96.1446107
+            )
+        )
+
+        island.add(
+            IslandEntity(
+                id = 4 ,
+                origin = "Papua",
+                description = "Papua atau yang dulu disebut dengan Irian atau Irian Jaya, adalah pulau terbesar kedua (setelah Greenland) di dunia yang terletak di sebelah utara Australia. Pulau ini dibagi menjadi dua wilayah yang bagian baratnya merupakan wilayah Indonesia dan bagian timurnya merupakan negara Papua Nugini. Di pulau yang bentuknya menyerupai burung cendrawasih ini terletak gunung tertinggi di Indonesia, yaitu Puncak Jaya (4.884 m)",
+                image = "https://upload.wikimedia.org/wikipedia/commons/b/b6/New_Guinea_Topography.png",
+                latitude = -4.8590848 ,
+                longitude = 133.3086916
+            )
+        )
+
+        island.add(
+            IslandEntity(
+                id = 5,
+                origin = "Madura" ,
+                description = "Madura adalah nama pulau yang terletak di sebelah timur laut Jawa Timur. Pulau Madura besarnya kurang lebih 5.168 km2 (lebih kecil daripada pulau Bali), dengan penduduk hampir 4 juta jiwa. Pulau Madura bentuknya seakan mirip badan sapi, terdiri dari empat Kabupaten, yaitu: Bangkalan, Sampang, Pamekasan dan Sumenep. Madura, Pulau dengan sejarahnya yang panjang, tercermin dari budaya dan keseniannya dengan pengaruh islamnya yang kuat.",
+                image = "https://upload.wikimedia.org/wikipedia/commons/9/98/Madura_Topography.png",
+                latitude = -7.0583209,
+                longitude = 112.8385661
+            )
+        )
+
+        return island
+
+    }
+
 }

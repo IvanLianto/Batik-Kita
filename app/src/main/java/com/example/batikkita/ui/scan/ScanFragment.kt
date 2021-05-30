@@ -64,6 +64,7 @@ class ScanFragment : Fragment() {
         }
 
         binding.layoutForScan.btnTakePicture.setOnClickListener {
+            ScanHelper.pauseAnalyzer = true
             val matrix = Matrix().apply {
                 postRotate(90.toFloat())
             }
@@ -76,7 +77,7 @@ class ScanFragment : Fragment() {
             viewModel.recognitionList.observe(viewLifecycleOwner, {
                 intent.putParcelableArrayListExtra(ScanActivity.RECOGNITION, it as java.util.ArrayList<out Parcelable>)
             })
-            intent.putExtra(ScanActivity.IMAGE_RECOGNITION, uprightImage)
+            BitmapHelper.bitmap = uprightImage
             intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
             startActivity(intent)
         }
@@ -108,7 +109,12 @@ class ScanFragment : Fragment() {
                 .setBackpressureStrategy(ImageAnalysis.STRATEGY_KEEP_ONLY_LATEST)
                 .build()
 
-            imageAnalyzer.setAnalyzer(cameraExecutor,  { image ->
+            imageAnalyzer.setAnalyzer(cameraExecutor, ImageAnalysis.Analyzer { image ->
+
+                if (ScanHelper.pauseAnalyzer) {
+                    image.close()
+                    return@Analyzer
+                }
 
                 val items = mutableListOf<Recognition>()
 

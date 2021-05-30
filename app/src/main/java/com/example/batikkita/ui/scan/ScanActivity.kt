@@ -23,16 +23,17 @@ class ScanActivity : AppCompatActivity() {
         binding = ActivityScanBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        bitmapBuffer = intent.getParcelableExtra(IMAGE_RECOGNITION)!!
         recognition = intent.getParcelableArrayListExtra<Recognition>(RECOGNITION) as ArrayList<Recognition>
 
-        binding.ivResultPicture.setImageBitmap(bitmapBuffer)
+        binding.ivResultPicture.setImageBitmap(BitmapHelper.bitmap)
 
         binding.btnScanAgain.setOnClickListener {
+            ScanHelper.pauseAnalyzer = false
             onBackPressed()
         }
 
         binding.ivActionBack.setOnClickListener {
+            ScanHelper.pauseAnalyzer = false
             onBackPressed()
         }
 
@@ -44,7 +45,6 @@ class ScanActivity : AppCompatActivity() {
     }
 
     companion object {
-        const val IMAGE_RECOGNITION = "image_recognition"
         const val RECOGNITION = "recognition"
     }
 }

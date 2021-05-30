@@ -6,6 +6,7 @@ import androidx.paging.PagedList
 import com.example.batikkita.data.NetworkBoundResource
 import com.example.batikkita.data.source.local.LocalDataSource
 import com.example.batikkita.data.source.local.entity.BatikEntity
+import com.example.batikkita.data.source.local.entity.IslandEntity
 import com.example.batikkita.data.source.remote.ApiResponse
 import com.example.batikkita.data.source.remote.RemoteDataSource
 import com.example.batikkita.utils.AppExecutors
@@ -36,6 +37,24 @@ class BatikRepository private constructor(
 
             override fun saveCallResult(data: List<BatikEntity>) {
                 localDataSource.insertData(data)
+            }
+        }.asLiveData()
+    }
+
+    override fun getListIsland(): LiveData<Resource<List<IslandEntity>>> {
+        return object : NetworkBoundResource<List<IslandEntity>, List<IslandEntity>>(appExecutors) {
+            override fun loadFromDB(): LiveData<List<IslandEntity>> {
+                return localDataSource.getListIsland()
+            }
+
+            override fun shouldFetch(data: List<IslandEntity>?): Boolean =
+                true
+
+            override fun createCall(): LiveData<ApiResponse<List<IslandEntity>>> =
+                remoteDataSource.getListIsland()
+
+            override fun saveCallResult(data: List<IslandEntity>) {
+                localDataSource.insertDataIsland(data)
             }
         }.asLiveData()
     }

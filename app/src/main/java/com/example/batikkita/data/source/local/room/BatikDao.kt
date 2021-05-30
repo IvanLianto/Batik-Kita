@@ -4,6 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.paging.DataSource
 import androidx.room.*
 import com.example.batikkita.data.source.local.entity.BatikEntity
+import com.example.batikkita.data.source.local.entity.IslandEntity
 
 @Dao
 interface BatikDao {
@@ -24,5 +25,11 @@ interface BatikDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE, entity = BatikEntity::class)
     fun insertData(data: List<BatikEntity>)
+
+    @Insert(onConflict = OnConflictStrategy.REPLACE, entity = IslandEntity::class)
+    fun insertDataIsland(data: List<IslandEntity>)
+
+    @Query("SELECT * FROM islandEntity")
+    fun getListIsland(): LiveData<List<IslandEntity>>
 
 }
