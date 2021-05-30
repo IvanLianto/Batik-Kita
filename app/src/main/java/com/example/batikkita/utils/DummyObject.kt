@@ -87,7 +87,7 @@ object DummyObject {
                 id = 8,
                 name = "Batik Garutan",
                 image = "https://th.bing.com/th/id/OIP.KlwLYLv6ccVLK1Feza4-iwHaFj?w=210&h=180&c=7&o=5&pid=1.7",
-                origin = "Garut, Jawa Barat",
+                origin = "Garut",
                 island = "Jawa",
                 desc = "Motif Batik Garutan selalu identik dengan motif-motif batik yang berasal dari alam pegunungan, flora dan fauna yang memiliki kaitan erat dengan keseharian masyarakat Garut terutama sebelum masa kemerdekaan. Motif Batik Garutan terinspirasi dari kondisi alam dan lingkungan masyarakat Garut sendiri, dari mulai motif batik Bulu Hayam hingga motif Lereng Kangkung."
             )
@@ -129,7 +129,7 @@ object DummyObject {
                 id = 12,
                 name = "Batik Megamendung",
                 image = "https://th.bing.com/th/id/OIP.rCcIsuRjhanzIjw9lg3uoQHaHa?w=198&h=198&c=7&o=5&pid=1.7",
-                origin = "Cirebon, Jawa Barat",
+                origin = "Cirebon",
                 island = "Jawa",
                 desc = "Motif batik Megamendung merupakan karya seni batik yang identik dan bahkan menjadi ikon batik daerah Cirebon dan daerah Indonesia lainnya. Motif batik ini mempunyai kekhasan yang tidak ditemui di daerah penghasil batik lain. Bahkan karena hanya ada di Cirebon dan merupakan mahakarya, Departemen Kebudayaan dan Pariwisata akan mendaftarkan motif megamendung ke UNESCO untuk mendapatkan pengakuan sebagai salah satu warisan dunia."
             )
@@ -151,7 +151,7 @@ object DummyObject {
                 id = 14,
                 name = "Batik Pekalongan",
                 image = "https://th.bing.com/th/id/OIP.fiEyAQq72r73-Yhwh4rP4QAAAA?w=142&h=190&c=7&o=5&pid=1.7",
-                origin = "Pekalongan, Jawa Tengah",
+                origin = "Pekalongan",
                 island = "Jawa",
                 desc = "Batik Pekalongan termasuk batik pesisiran. Dari sisi motif, sebenarnya batik Pekalongan mirip dengan batik Solo maupun Yogyakarta. Keunggulan batik Pekalongan terletak pada penggunaan warna. Sehelai kain batik bisa menggunakan delapan warna sehingga terlihat lebih indah dan menarik dibanding batik-batik dari daerah lain"
             )

@@ -9,9 +9,11 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cv_title"
-        android:layout_width="300dp"
-        android:layout_height="84dp"
+        android:layout_width="0dp"
+        android:layout_height="75dp"
         android:layout_marginTop="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
         app:cardCornerRadius="12dp"
         app:cardElevation="4dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -19,15 +21,17 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:fontFamily="@font/laila_bold"
-            android:letterSpacing="0.00735294118"
-            android:textSize="26sp"
-            android:textAllCaps="false"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center"
+            android:fontFamily="@font/laila_bold"
+            android:layout_gravity="center_vertical|center_horizontal"
+            android:letterSpacing="0.00735294118"
             android:text="@string/title_fragment_home"
+            android:textAllCaps="false"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
             android:textColor="@color/dark_yellow"
+            android:textSize="25sp"
             android:textStyle="bold" />
 
     </androidx.cardview.widget.CardView>
@@ -35,16 +39,13 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_home"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="112dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginBottom="32dp"
+        android:layout_height="0dp"
         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        android:layout_margin="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/cv_title"
+        app:layout_constraintTop_toBottomOf="@+id/cv_title"
         app:spanCount="2"
         tools:listitem="@layout/item_list" />
 
