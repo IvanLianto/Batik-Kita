@@ -30,7 +30,8 @@
             android:layout_height="wrap_content"
             android:text="@string/favorite"
             android:layout_gravity="center"
-            android:textSize="20sp"
+            android:textSize="16sp"
+            android:fontFamily="@font/epilogue_extrabold"
             android:textColor="@color/dark_yellow"
             android:textStyle="bold"/>
 

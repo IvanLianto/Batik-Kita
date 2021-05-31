@@ -106,10 +106,10 @@
                 android:id="@+id/tv_batikNonIsland"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
                 android:text="@string/batik_dari_pulau_lain"
-                app:layout_constraintStart_toStartOf="@+id/rv_batikIsland"
-                app:layout_constraintTop_toBottomOf="@+id/rv_batikIsland"
-                android:layout_marginTop="8dp"/>
+                app:layout_constraintStart_toStartOf="@+id/tv_detail_island"
+                app:layout_constraintTop_toBottomOf="@+id/rv_batikIsland" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rv_batikNonIsland"
