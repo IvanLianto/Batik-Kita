@@ -9,6 +9,8 @@ object BitmapHelper {
 
 object ScanHelper {
     var pauseAnalyzer : Boolean = false
+    var readyToTake : Boolean = false
+    var dataIsReady : Boolean = false
 }
 
 fun View.show(flag: Boolean) {

@@ -30,6 +30,10 @@ android {
         mlModelBinding true
     }
 
+    aaptOptions {
+        noCompress "tflite"
+    }
+
     buildTypes {
         release {
             minifyEnabled false
@@ -71,6 +75,7 @@ dependencies {
     implementation "androidx.camera:camera-view:1.0.0-alpha24"
 
     // Tensorflow
+    implementation 'org.tensorflow:tensorflow-lite:2.5.0'
     implementation 'org.tensorflow:tensorflow-lite-support:0.1.0-rc1'
     implementation 'org.tensorflow:tensorflow-lite-metadata:0.1.0-rc2'
 

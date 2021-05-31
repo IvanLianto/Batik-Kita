@@ -20,6 +20,8 @@ class ScanActivity : AppCompatActivity() {
         binding = ActivityScanBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        ScanHelper.dataIsReady = false
+
         recognition = intent.getParcelableArrayListExtra<Recognition>(RECOGNITION) as ArrayList<Recognition>
 
         binding.ivResultPicture.setImageBitmap(BitmapHelper.bitmap)
@@ -38,6 +40,7 @@ class ScanActivity : AppCompatActivity() {
         binding.rvScan.adapter = adapter
         adapter.submitList(recognition)
         adapter.notifyDataSetChanged()
+        BitmapHelper.bitmap = null
 
     }
 

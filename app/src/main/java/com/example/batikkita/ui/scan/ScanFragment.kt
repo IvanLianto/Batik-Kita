@@ -10,7 +10,6 @@ import android.os.Bundle
 import android.os.Parcelable
 import android.util.Log
 import android.util.Size
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -22,10 +21,11 @@ import androidx.camera.core.Preview
 import androidx.camera.lifecycle.ProcessCameraProvider
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.example.batikkita.R
 import com.example.batikkita.databinding.FragmentScanBinding
-import com.example.batikkita.ml.FlowerModel
+import com.example.batikkita.ml.Model
 import com.example.batikkita.utils.BitmapHelper
 import com.example.batikkita.utils.ScanHelper
 import com.example.batikkita.utils.YuvToRgbConverter
@@ -62,23 +62,40 @@ class ScanFragment : Fragment() {
             startCamera()
         }
 
+
         binding.layoutForScan.btnTakePicture.setOnClickListener {
             ScanHelper.pauseAnalyzer = true
             val matrix = Matrix().apply {
                 postRotate(90.toFloat())
             }
             val uprightImage = Bitmap.createBitmap(
-                bitmapBuffer, 0, 0, bitmapBuffer.width, bitmapBuffer.height, matrix, false)
+                bitmapBuffer, 0, 0, bitmapBuffer.width, bitmapBuffer.height, matrix, false
+            )
 
             val intent = Intent(
                 requireContext(), ScanActivity::class.java
             )
             viewModel.recognitionList.observe(viewLifecycleOwner, {
-                intent.putParcelableArrayListExtra(ScanActivity.RECOGNITION, it as java.util.ArrayList<out Parcelable>)
+                if (it != null && it.isNotEmpty()) {
+                    intent.putParcelableArrayListExtra(
+                        ScanActivity.RECOGNITION,
+                        it as java.util.ArrayList<out Parcelable>
+                    )
+                    ScanHelper.dataIsReady = true
+                } else {
+                    Toast.makeText(
+                        requireContext(),
+                        getString(R.string.camera_not_ready),
+                        Toast.LENGTH_SHORT
+                    ).show()
+                }
             })
-            BitmapHelper.bitmap = uprightImage
-            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
-            startActivity(intent)
+
+            if (ScanHelper.dataIsReady) {
+                BitmapHelper.bitmap = uprightImage
+                intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
+                startActivity(intent)
+            }
         }
 
         if (!allPermissionGranted())
@@ -104,7 +121,7 @@ class ScanFragment : Fragment() {
                 }
 
             imageAnalyzer = ImageAnalysis.Builder()
-                .setTargetResolution(Size(224, 224))
+                .setTargetResolution(Size(150, 150))
                 .setBackpressureStrategy(ImageAnalysis.STRATEGY_KEEP_ONLY_LATEST)
                 .build()
 
@@ -117,7 +134,7 @@ class ScanFragment : Fragment() {
 
                 val items = mutableListOf<Recognition>()
 
-                val model = FlowerModel.newInstance(requireContext())
+                val model = Model.newInstance(requireContext())
 
                 val tfImage = TensorImage.fromBitmap(toBitmap(image))
 
@@ -129,8 +146,6 @@ class ScanFragment : Fragment() {
                 for (output in outputs) {
                     items.add(Recognition(output.label, output.score))
                 }
-
-                Log.d(TAG, items.size.toString())
 
                 viewModel.updateData(items)
 
@@ -154,7 +169,7 @@ class ScanFragment : Fragment() {
     }
 
     @SuppressLint("UnsafeOptInUsageError")
-    private fun toBitmap(image: ImageProxy) : Bitmap? {
+    private fun toBitmap(image: ImageProxy): Bitmap? {
         if (!::bitmapBuffer.isInitialized) {
             rotationMatrix = Matrix()
             rotationMatrix.postRotate(image.imageInfo.rotationDegrees.toFloat())
@@ -164,7 +179,15 @@ class ScanFragment : Fragment() {
         }
         val yuvToRgbConverter = YuvToRgbConverter(requireContext())
         yuvToRgbConverter.yuvToRgb(image.image!!, bitmapBuffer)
-        return Bitmap.createBitmap(bitmapBuffer, 0, 0, bitmapBuffer.width, bitmapBuffer.height, rotationMatrix, false)
+        return Bitmap.createBitmap(
+            bitmapBuffer,
+            0,
+            0,
+            bitmapBuffer.width,
+            bitmapBuffer.height,
+            rotationMatrix,
+            false
+        )
     }
 
     override fun onRequestPermissionsResult(
