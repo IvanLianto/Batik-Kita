@@ -1,6 +1,5 @@
 package com.example.batikkita.ui.mapDetail
 
-
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
