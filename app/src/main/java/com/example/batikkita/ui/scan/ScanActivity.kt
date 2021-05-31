@@ -3,12 +3,9 @@ package com.example.batikkita.ui.scan
 import android.graphics.Bitmap
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
-import android.widget.Toast
-import androidx.activity.viewModels
-import androidx.lifecycle.ViewModelProvider
-import com.example.batikkita.R
 import com.example.batikkita.databinding.ActivityScanBinding
+import com.example.batikkita.utils.BitmapHelper
+import com.example.batikkita.utils.ScanHelper
 
 class ScanActivity : AppCompatActivity() {
 

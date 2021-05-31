@@ -2,7 +2,6 @@ package com.example.batikkita.ui.scan
 
 import android.Manifest
 import android.annotation.SuppressLint
-import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.Bitmap
@@ -16,7 +15,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
 import androidx.camera.core.CameraSelector
 import androidx.camera.core.ImageAnalysis
 import androidx.camera.core.ImageProxy
@@ -24,11 +22,12 @@ import androidx.camera.core.Preview
 import androidx.camera.lifecycle.ProcessCameraProvider
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
-import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
 import com.example.batikkita.R
 import com.example.batikkita.databinding.FragmentScanBinding
 import com.example.batikkita.ml.FlowerModel
+import com.example.batikkita.utils.BitmapHelper
+import com.example.batikkita.utils.ScanHelper
 import com.example.batikkita.utils.YuvToRgbConverter
 import org.tensorflow.lite.support.image.TensorImage
 import java.util.concurrent.Executors
