@@ -6,28 +6,44 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
+import com.example.batikkita.R
 import com.example.batikkita.data.source.local.entity.BatikEntity
-import com.example.batikkita.databinding.ItemListBinding
+import com.example.batikkita.databinding.ItemListMapBinding
 import com.example.batikkita.interfaces.BatikOnClickInterface
 
 class MapDetailAdapter : ListAdapter<BatikEntity, MapDetailAdapter.ViewHolder>(DIFF_CALLBACK) {
 
-    var dataInterface: BatikOnClickInterface?=null
+    var dataInterface: BatikOnClickInterface? = null
 
-    inner class ViewHolder(private val binding: ItemListBinding) : RecyclerView.ViewHolder(binding.root){
-        fun bind(){
-
+    inner class ViewHolder(private val binding: ItemListMapBinding) :
+        RecyclerView.ViewHolder(binding.root) {
+        fun bind(data: BatikEntity, dataInterface: BatikOnClickInterface?) {
+            binding.apply {
+                Glide.with(root)
+                    .load(data.image)
+                    .placeholder(R.drawable.ic_loading)
+                    .error(R.drawable.ic_error)
+                    .into(ivPoster)
+                tvBatik.text = data.name
+                tvLocation.text = data.origin
+                layoutRoot.setOnClickListener {
+                    dataInterface?.onClicked(
+                        root, data
+                    )
+                }
+            }
         }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return ViewHolder(
-            ItemListBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+            ItemListMapBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         )
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-
+        holder.bind(getItem(position), dataInterface)
     }
 
     companion object {
