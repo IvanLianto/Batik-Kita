@@ -22,6 +22,8 @@ class ScanActivity : AppCompatActivity() {
 
         ScanHelper.dataIsReady = false
 
+        ScanHelper.updateBoolean(false)
+
         recognition = intent.getParcelableArrayListExtra<Recognition>(RECOGNITION) as ArrayList<Recognition>
 
         binding.ivResultPicture.setImageBitmap(BitmapHelper.bitmap)

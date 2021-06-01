@@ -2,6 +2,8 @@ package com.example.batikkita.utils
 
 import android.graphics.Bitmap
 import android.view.View
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 
 object BitmapHelper {
     var bitmap: Bitmap? = null
@@ -9,7 +11,16 @@ object BitmapHelper {
 
 object ScanHelper {
     var pauseAnalyzer : Boolean = false
-    var readyToTake : Boolean = false
+//    var readyToTake : Boolean = false
+
+    private val readyToTake = MutableLiveData<Boolean>()
+
+    val getReadyToTake: LiveData<Boolean> = readyToTake
+
+    fun updateBoolean(flag: Boolean) {
+        readyToTake.postValue(flag)
+    }
+
     var dataIsReady : Boolean = false
 }
 

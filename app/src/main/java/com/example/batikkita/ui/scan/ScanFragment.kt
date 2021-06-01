@@ -25,11 +25,13 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.example.batikkita.R
 import com.example.batikkita.databinding.FragmentScanBinding
-import com.example.batikkita.ml.Model
+import com.example.batikkita.ml.BatikKitaModel
 import com.example.batikkita.utils.BitmapHelper
 import com.example.batikkita.utils.ScanHelper
 import com.example.batikkita.utils.YuvToRgbConverter
+import org.tensorflow.lite.gpu.CompatibilityList
 import org.tensorflow.lite.support.image.TensorImage
+import org.tensorflow.lite.support.model.Model
 import java.util.concurrent.Executors
 
 class ScanFragment : Fragment() {
@@ -62,9 +64,15 @@ class ScanFragment : Fragment() {
             startCamera()
         }
 
+        ScanHelper.updateBoolean(false)
+
+        ScanHelper.getReadyToTake.observe(viewLifecycleOwner, {
+            Log.d("TAG", it.toString())
+            binding.layoutForScan.btnTakePicture.isEnabled = it
+        })
+
 
         binding.layoutForScan.btnTakePicture.setOnClickListener {
-            ScanHelper.pauseAnalyzer = true
             val matrix = Matrix().apply {
                 postRotate(90.toFloat())
             }
@@ -75,21 +83,8 @@ class ScanFragment : Fragment() {
             val intent = Intent(
                 requireContext(), ScanActivity::class.java
             )
-            viewModel.recognitionList.observe(viewLifecycleOwner, {
-                if (it != null && it.isNotEmpty()) {
-                    intent.putParcelableArrayListExtra(
-                        ScanActivity.RECOGNITION,
-                        it as java.util.ArrayList<out Parcelable>
-                    )
-                    ScanHelper.dataIsReady = true
-                } else {
-                    Toast.makeText(
-                        requireContext(),
-                        getString(R.string.camera_not_ready),
-                        Toast.LENGTH_SHORT
-                    ).show()
-                }
-            })
+
+            sendData(intent)
 
             if (ScanHelper.dataIsReady) {
                 BitmapHelper.bitmap = uprightImage
@@ -101,6 +96,25 @@ class ScanFragment : Fragment() {
         if (!allPermissionGranted())
             ActivityCompat.requestPermissions(requireActivity(), REQUIRED_PERMISSIONS, REQUEST_CODE)
 
+    }
+
+    private fun sendData(intent: Intent) {
+        viewModel.recognitionList.observe(viewLifecycleOwner, {
+            if (it != null) {
+                intent.putParcelableArrayListExtra(
+                    ScanActivity.RECOGNITION,
+                    it as java.util.ArrayList<out Parcelable>
+                )
+                ScanHelper.pauseAnalyzer = true
+                ScanHelper.dataIsReady = true
+            } else {
+                Toast.makeText(
+                    requireContext(),
+                    getString(R.string.camera_not_ready),
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
+        })
     }
 
     private fun closeCamera() {
@@ -121,7 +135,7 @@ class ScanFragment : Fragment() {
                 }
 
             imageAnalyzer = ImageAnalysis.Builder()
-                .setTargetResolution(Size(150, 150))
+                .setTargetResolution(Size(200, 200))
                 .setBackpressureStrategy(ImageAnalysis.STRATEGY_KEEP_ONLY_LATEST)
                 .build()
 
@@ -134,7 +148,18 @@ class ScanFragment : Fragment() {
 
                 val items = mutableListOf<Recognition>()
 
-                val model = Model.newInstance(requireContext())
+                val model: BatikKitaModel by lazy {
+                    val compatList = CompatibilityList()
+
+                    val options = if(compatList.isDelegateSupportedOnThisDevice) {
+                        Log.d(TAG, "This device is GPU Compatible ")
+                        Model.Options.Builder().setDevice(Model.Device.GPU).build()
+                    } else {
+                        Log.d(TAG, "This device is GPU Incompatible ")
+                        Model.Options.Builder().setNumThreads(4).build()
+                    }
+                    BatikKitaModel.newInstance(requireContext(), options)
+                }
 
                 val tfImage = TensorImage.fromBitmap(toBitmap(image))
 
@@ -148,6 +173,8 @@ class ScanFragment : Fragment() {
                 }
 
                 viewModel.updateData(items)
+
+                ScanHelper.updateBoolean(true)
 
                 image.close()
             })
