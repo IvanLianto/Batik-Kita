@@ -235,7 +235,7 @@ object DummyObject {
                 id = 1,
                 origin = "Jawa",
                 description = "Jawa adalah sebuah pulau di Indonesia dan merupakan pulau terluas ke-13 di dunia. Dengan jumlah penduduk sekitar hampir 160 juta, pulau ini pulau berpenduduk terbanyak di dunia dan merupakan salah satu tempat terpadat di dunia. Meskipun hanya menempati urutan terluas ke-5, Pulau Jawa dihuni oleh 60% penduduk Indonesia. Angka ini turun jika dibandingkan dengan sensus penduduk tahun 1905 yang mencapai 80,6% dari seluruh penduduk Indonesia. Penurunan penduduk di Pulau Jawa secara persentase diakibatkan perpindahan penduduk (transmigrasi) dari pulau Jawa ke seluruh Indonesia. Ibu kota Indonesia, Jakarta, terletak di Jawa bagian Barat Laut (tepatnya di ujung paling barat Jalur Pantura)." ,
-                image = "https://uc8e6dcb4d49a23412d60e074ad3.previews.dropboxusercontent.com/p/thumb/ABJqBGwV6IDkfM8Y4TPsefJktrtbEPMi4Wt9rekbzJHf7nqjkeOGDRTQjUQv1J4Z55de3HrkEFbVx_EhbqEDoeigXvRVWgFk_OuHRYXgMe93wzCabZvLXvqrtSNYQqH78YCin0seMjq6vS3kd2jl6NSGciGfXwgFXnhqNl4dgjKcs-EI6D-6IFtzI5-0j4C93hCVOL7bovuxWr1n1XR-jos_JO5z-MpKchFTUnK0NAZ2K8aYoDzHhdcXrDE20apsn_GdSBThm7PYef7u3CqimTDbQShFhqu4-SQIstmyij4wKD03MUHMjoTHbD9TD5rxAbR7P2d-7CMnGwu7l8eqZVAqgLr8HoOm1sh5I9NCNro7sdcMaQGlXxG65lO-WgstyJSllfsjbndU_JaNubS7KB0N/p.png?fv_content=true&size_mode=5",
+                image = "https://lh3.googleusercontent.com/-A1l-UyIkT0U/YLdRi_cFkmI/AAAAAAAAAcw/h99xCdWBYSIIKLWsXCqzAEfDQibEdrExgCLcBGAsYHQ/java_final.png",
                 latitude = -7.5564888,
                 longitude = 110.7338442
             )
@@ -246,7 +246,7 @@ object DummyObject {
                 id = 2,
                 origin = "Bali",
                 description = "Bali adalah sebuah provinsi di Indonesia yang ibu kota provinsinya bernama Denpasar. Bali juga merupakan salah satu pulau di Kepulauan Nusa Tenggara. Di awal kemerdekaan Indonesia, pulau ini termasuk dalam Provinsi Sunda Kecil yang beribu kota di Singaraja, dan kini terbagi menjadi 3 provinsi, yakni Bali, Nusa Tenggara Barat, dan Nusa Tenggara Timur.[9][10] Pada tahun 2020, penduduk provinsi Bali berjumlah 4.317.404 jiwa, dengan kepadatan 747 jiwa/km2",
-                image = "https://uc1bd084ea79725b289f19f824ce.previews.dropboxusercontent.com/p/thumb/ABJKJrttFbkufAMuOQ_32TfLVIC9x2V7xO8ohrImJpMFj07HbqE6okj1XtdKJr-ehMm2JyhL4uoLY-2knkrIFS4DZYhelFg-f4X-28b9OIQnv1esTgp1h3B7jq28HDhMwQPb3igdbF0DZYqowQxOlK2pur_vWbEBssGP5a4GC2M0pgSKYFegPoMTKTIgncTORIb0SxekEsrGAxV5IWb7Txv3PxS-W2_88BhCVTkmjn_GtK3kIAq66Qm2afSZLWAzw64s6fxTA9F0e1hWEa1qQhctsMLR8aCs_6Afgq8jJDFw28lFeU7J9cgEDdUxsUVgIMEE-UfmgIXSnyt32RjzPvS2k8gfNGgyi0EgJi7TDwABiUhW8eSmKJxlrQjlLNShFnR95RadX_OArshtef0y4bqx/p.png?size=1600x1200&size_mode=3",
+                image = "https://lh3.googleusercontent.com/-MVPnOtOJvqg/YLdRiod6h6I/AAAAAAAAAcs/25vVZYDwUbI6-RXT_4fQB86bReXjP1V4wCLcBGAsYHQ/bali_final.png",
                 latitude = -8.3627798 ,
                 longitude = 115.1370432
             )
@@ -257,7 +257,7 @@ object DummyObject {
                 id = 3,
                 origin = "Sumatra",
                 description = "Sumatra adalah pulau keenam terbesar di dunia yang terletak di Indonesia, dengan luas 473.481 km². Penduduk pulau ini sekitar 57.940.351 (sensus 2018). Pulau ini dikenal pula dengan nama lain yaitu Pulau Percha, Andalas, atau Suwarnadwipa (bahasa Sanskerta, berarti \"pulau emas\"). Kemudian pada Prasasti Padang Roco tahun 1286 dipahatkan swarnnabhūmi (bahasa Sanskerta, berarti \"tanah emas\") dan bhūmi mālayu (\"Tanah Melayu\") untuk menyebut pulau ini. Selanjutnya dalam naskah Negarakertagama dari abad ke-14 juga kembali menyebut \"Bumi Malayu\" (Melayu) untuk pulau ini." ,
-                image = "https://ucc6e1084ec389b6201f9e3bc0cc.previews.dropboxusercontent.com/p/thumb/ABLdbdosqmBTkmvGtPrnNQbED0LKa6AfVOT344Jt0LseHKoJ3YqK39tfsSwzQqpCMU2uOjKkQePwvRiX_RMCfhYwyr0-aqTtFgO2J8qajB0Ix434GqRZKvn6JhWA3y0BLT9acMFRdQgMy2etPKexKBK3h-PoYNRoRng3iwlSlDKknAOnsfQ7HmSQG14fIkRsjpUNN9TCVy0RKbpnzydRk8ZUGeNFAbkLLnMTFUtCj9bVFITmwvJvxNHACUAssOhbxWDrXz4O-S9mYbdoU0oh5RIqlFyxof0NhAwASuczvz8HbfM6Ug3Qg5OGyomNgnKeB7F15IJsn3yrJHjv4yQpvL_gtM6m0jeJ2lfUGUY0MsVaEUDteiQvuKOXn2DtxGas3lfu-MCXgnw4uw0MDrqiabR-/p.png?fv_content=true&size_mode=5" ,
+                image = "https://lh3.googleusercontent.com/-siH_YJy2-GQ/YLdRiirFD_I/AAAAAAAAAco/dh84xFrl8SQdCgAD8bj2T7NpVVeQX8VMACLcBGAsYHQ/sumatra_final.png",
                 latitude = -0.53196 ,
                 longitude = 101.5741462
             )
@@ -268,7 +268,7 @@ object DummyObject {
                 id = 4 ,
                 origin = "Papua",
                 description = "Papua atau yang dulu disebut dengan Irian atau Irian Jaya, adalah pulau terbesar kedua (setelah Greenland) di dunia yang terletak di sebelah utara Australia. Pulau ini dibagi menjadi dua wilayah yang bagian baratnya merupakan wilayah Indonesia dan bagian timurnya merupakan negara Papua Nugini. Di pulau yang bentuknya menyerupai burung cendrawasih ini terletak gunung tertinggi di Indonesia, yaitu Puncak Jaya (4.884 m)",
-                image = "https://uc36cb4bbc150e7795a17dff7962.previews.dropboxusercontent.com/p/thumb/ABKrt9h8m2cC1wGxx1QZGeAtI1eXVNwvcCN65YNxBFYWaO5jUGQxceBx6rnr1X2qXuFfJwNJWzxdnyRGynnqyTaVxEDtwv520gDcnRPwlDjMIvCNpma7TfCLDA_G0ncIU1mQpg4uAZkt8oj7ZrRoNU0TWsR0TQIdUOimFFUZ57xjs0lRW9FSXhglaJOKCCgHXebGLGb9PUyQPbEzKloX0aOhU1F6I8UoXkUTg69XVHdKE5ZD_iCHNic54j_w_FSe8lHgiIpgJ_yvqBqwU1nUrHYKxI4bWR_lL5zCUmJfkwwQu2FLZHwliEXI7zzDyhi-l_ExPQxU5gRC8MiSVTkbtJsSjN0OiLuhOYuIYIfljtsmpBP07KaXtmjIc7Lc3Jrm4k6vUD2skYdwioTfuy4vMjng/p.png?fv_content=true&size_mode=5",
+                image = "https://lh3.googleusercontent.com/-nzbd7SVkwlE/YLdRim-NuTI/AAAAAAAAAck/G6248hq-lykUXjRqMIYvJmkZNkwC6CDLwCLcBGAsYHQ/papua_final.png",
                 latitude = -3.9644879 ,
                 longitude = 138.4865451
             )
@@ -279,7 +279,7 @@ object DummyObject {
                 id = 5,
                 origin = "Madura" ,
                 description = "Madura adalah nama pulau yang terletak di sebelah timur laut Jawa Timur. Pulau Madura besarnya kurang lebih 5.168 km2 (lebih kecil daripada pulau Bali), dengan penduduk hampir 4 juta jiwa. Pulau Madura bentuknya seakan mirip badan sapi, terdiri dari empat Kabupaten, yaitu: Bangkalan, Sampang, Pamekasan dan Sumenep. Madura, Pulau dengan sejarahnya yang panjang, tercermin dari budaya dan keseniannya dengan pengaruh islamnya yang kuat.",
-                image = "https://uc92550840b808b83a7e635e47c3.previews.dropboxusercontent.com/p/thumb/ABLSy-HBsfJm8TdbC4qro2g-iq6XeAZoIIZSms777Ur_MnYVW6Lk3a3aBtnCYWgop-F11-0LaIw-sxk_N-WU6P7KGCc1NJNdTpOZ1VXm8XckfVoYv8p4OGQLBNzn3Eqy9q3kNo8rQDLYT4Y5tDe9HLXSWZ8DM_RmeFHqrlYDqH49PfelFNM2LRbwmRHGTfYICXLfq0WVMONIh_t1x8DUmcjGHcOq4dcCZYAiENMb4VsBmu8PINa_bXkdd9T7QkCDzc8R86r7Qg0nUsDWM4RtCwaYrOKLhUDyqcPe49Z2uc_C-ipnZ6uq1MzyxfUZNZnf-WDVUfPLfPD59E2fCP6aRoqPzbzCabhpvnwMGQxv8anDn-XYvQvx_O0uTotiMTOOMTeRmsMtp9bCltiY-RWJyCq0/p.png?size=1600x1200&size_mode=3",
+                image = "https://lh3.googleusercontent.com/-LyhS5xpdrDQ/YLdRihb_C0I/AAAAAAAAAcg/zeY60Dr0SC0mdZIZjhJaMqRRtaRyXuy9ACLcBGAsYHQ/madura_final.png",
                 latitude = -7.0576888,
                 longitude = 113.2607462
             )
