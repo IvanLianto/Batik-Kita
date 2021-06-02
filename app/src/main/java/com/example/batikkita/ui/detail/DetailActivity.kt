@@ -24,8 +24,15 @@ class DetailActivity : AppCompatActivity() {
         viewModel = ViewModelProvider(this@DetailActivity, factory)[DetailViewModel::class.java]
 
         val id = intent.getIntExtra(EXTRA_ID, 0)
+        val name = intent.getStringExtra(EXTRA_NAME)
 
-        observerDetailBatik(id)
+        if (id != 0) {
+            observerDetailBatik(id)
+        }
+
+        if (name != null) {
+            observerDetailBatik(name)
+        }
 
         binding.ivActionBack.setOnClickListener {
             onBackPressed()
@@ -38,6 +45,10 @@ class DetailActivity : AppCompatActivity() {
             setBinding(list)
             setIconFavorite(list.favorite)
         })
+    }
+
+    private fun observerDetailBatik(name: String) {
+
     }
 
     private fun setBinding(data: BatikEntity) {
@@ -76,5 +87,6 @@ class DetailActivity : AppCompatActivity() {
 
     companion object {
         const val EXTRA_ID = "extra_id"
+        const val EXTRA_NAME = "extra_name"
     }
 }

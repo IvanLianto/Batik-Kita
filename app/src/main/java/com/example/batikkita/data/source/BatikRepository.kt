@@ -63,6 +63,10 @@ class BatikRepository private constructor(
         return localDataSource.getBatikDetail(dataId)
     }
 
+    override fun getDetailBatikByName(name: String): LiveData<BatikEntity> {
+        return localDataSource.getBatikDetailByName(name)
+    }
+
     override fun getListFavoriteBatik(): LiveData<PagedList<BatikEntity>> {
         val config = PagedList.Config.Builder()
             .setEnablePlaceholders(false)

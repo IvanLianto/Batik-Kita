@@ -23,11 +23,13 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.ViewModelProvider
 import com.example.batikkita.R
 import com.example.batikkita.databinding.FragmentScanBinding
 import com.example.batikkita.ml.BatikKitaModel
 import com.example.batikkita.utils.BitmapHelper
 import com.example.batikkita.utils.ScanHelper
+import com.example.batikkita.utils.ViewModelFactory
 import com.example.batikkita.utils.YuvToRgbConverter
 import org.tensorflow.lite.gpu.CompatibilityList
 import org.tensorflow.lite.support.image.TensorImage
@@ -107,18 +109,8 @@ class ScanFragment : Fragment() {
                 )
                 ScanHelper.pauseAnalyzer = true
                 ScanHelper.dataIsReady = true
-            } else {
-                Toast.makeText(
-                    requireContext(),
-                    getString(R.string.camera_not_ready),
-                    Toast.LENGTH_SHORT
-                ).show()
             }
         })
-    }
-
-    private fun closeCamera() {
-        cameraProvider.unbindAll()
     }
 
     private fun startCamera() {
@@ -169,7 +161,13 @@ class ScanFragment : Fragment() {
                     }.take(3)
 
                 for (output in outputs) {
-                    items.add(Recognition(output.label, output.score))
+                    items.add(
+                        Recognition(
+                            image = "",
+                            label = output.label,
+                            confidence = output.score
+                        )
+                    )
                 }
 
                 viewModel.updateData(items)

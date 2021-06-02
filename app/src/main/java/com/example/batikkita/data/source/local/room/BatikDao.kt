@@ -14,6 +14,9 @@ interface BatikDao {
     @Query("SELECT * FROM batikEntities WHERE id = :dataId")
     fun getBatikDetail(dataId: Int): LiveData<BatikEntity>
 
+    @Query("SELECT * FROM batikEntities WHERE name = :name")
+    fun getBatikDetaikByName(name: String): LiveData<BatikEntity>
+
     @Query("SELECT * FROM batikEntities WHERE favorite = 1")
     fun getListFavoriteBatik(): DataSource.Factory<Int, BatikEntity>
 

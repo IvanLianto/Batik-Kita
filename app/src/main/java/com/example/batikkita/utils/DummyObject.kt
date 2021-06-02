@@ -289,4 +289,15 @@ object DummyObject {
 
     }
 
+    fun getByName(name: String) : String {
+        var image = ""
+        for (i in generateBatik()) {
+            if (i.name == name) {
+                image = i.image
+            }
+
+        }
+        return image
+    }
+
 }

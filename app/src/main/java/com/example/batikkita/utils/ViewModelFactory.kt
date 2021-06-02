@@ -10,6 +10,8 @@ import com.example.batikkita.ui.favorite.FavoriteViewModel
 import com.example.batikkita.ui.home.HomeViewModel
 import com.example.batikkita.ui.map.MapViewModel
 import com.example.batikkita.ui.mapDetail.MapDetailViewModel
+import com.example.batikkita.ui.scan.RecognitionListViewModel
+import com.example.batikkita.ui.scan.ScanViewModel
 
 class ViewModelFactory private constructor(private val mBatikRepository: BatikRepository): ViewModelProvider.NewInstanceFactory(){
     @Suppress("UNCHECKED_CAST")
@@ -29,6 +31,9 @@ class ViewModelFactory private constructor(private val mBatikRepository: BatikRe
             }
             modelClass.isAssignableFrom(MapDetailViewModel::class.java) -> {
                 MapDetailViewModel(mBatikRepository) as T
+            }
+            modelClass.isAssignableFrom(ScanViewModel::class.java) -> {
+                ScanViewModel(mBatikRepository) as T
             }
             else -> throw Throwable("Unknown ViewModel class: " + modelClass.name)
         }
