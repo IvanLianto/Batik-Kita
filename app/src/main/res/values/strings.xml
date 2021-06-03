@@ -35,7 +35,8 @@
     <string name="success_unfavorite">Successfully unfavorite %s</string>
     <string name="favorite">Favorite</string>
     <string name="island_name">Island Name</string>
-    <string name="batik_from_this_island">Batik dari pulau ini</string>
-    <string name="batik_dari_pulau_lain">Batik dari pulau lain</string>
-    <string name="camera_not_ready">Kamera belum siap untuk digunakan!</string>
+    <string name="batik_from_this_island">Batik from this island</string>
+    <string name="batik_dari_pulau_lain">Batik from other island</string>
+    <string name="camera_not_ready">Camera is not ready!</string>
+
 </resources>

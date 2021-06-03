@@ -24,11 +24,26 @@ data class BatikEntity(
     @ColumnInfo(name = "origin")
     var origin: String,
 
+    @ColumnInfo(name = "province")
+    var province: String,
+
     @ColumnInfo(name = "island")
     var island: String,
 
     @ColumnInfo(name = "desc")
     var desc: String,
+
+    @ColumnInfo(name = "theme")
+    var theme: String,
+
+    @ColumnInfo(name = "color")
+    var color: String,
+
+    @ColumnInfo(name = "complexity")
+    var complexity: String,
+
+    @ColumnInfo(name = "pattern")
+    var pattern : String,
 
     @ColumnInfo(name = "favorite")
     var favorite: Boolean = false

@@ -12,215 +12,234 @@ object DummyObject {
         batik.add(
             BatikEntity(
                 id = 1,
-                name = "Batik Bali",
-                image = "https://th.bing.com/th/id/OIP.QNPbs5LrdEPuK5D9t8Aw9AHaFj?w=218&h=180&c=7&o=5&pid=1.7",
-                origin = "Bali",
-                island = "Bali",
-                desc = "Batik Bali merupakan hasil penyebaran Batik dari Pulau Jawa. Bali mempunyai potensi yang besar sebagai tempat bertumbuh dan berkembangnya batik, karena masyarakat Bali diketahui secara luas mempunyai kepandaian yang tinggi dalam olah seni. Batik di Bali dibuat untuk berbagai keperluan sandang termasuk dalam upacara adat ritual keagamaan, maupun untuk Kehidupan umum sehari-hari, serta juga memenuhi kebutuhan wisatawan sebagai cinderamata."
+                name = "Batik Betawi",
+                image = "https://th.bing.com/th/id/OIP.tHieZBhdakzYtx8PFIuf4AAAAA?w=201&h=141&c=7&o=5&pid=1.7",
+                province = "DKI Jakarta",
+                origin = "Jakarta",
+                island = "Jawa",
+                theme = "human, geometric, monument",
+                color = "red, black, orange",
+                complexity = "medium",
+                pattern = "Batik Betawi motif is heavily influenced by a slew of patterns that is originated from the northern part of the Java island, that is mostly revolving around coastal themes. Batik Betawi motif is influenced by Chinese culture and Arabic calligraphy.\n" +
+                        "\n" +
+                        "Commonly found Batik Betawi motif is a depiction of ondel-ondel, the National Monument/Monas, triangles, cokek dance, tumpal, macungan and pucuk rebung.",
+                desc = "Batik Betawi is a traditional batik pattern that is originated in Jakarta. Batik Betawi started to be produced in the 19th century. The word Betawi refers to an ethnic group indigenous to the region Jakarta."
             )
         )
 
         batik.add(
             BatikEntity(
                 id = 2,
-                name = "Batik Betawi",
-                image = "https://th.bing.com/th/id/OIP.tHieZBhdakzYtx8PFIuf4AAAAA?w=201&h=141&c=7&o=5&pid=1.7",
-                origin = "Jakarta",
-                island = "Jawa",
-                desc = "Batik Betawi adalah kerajinan tradisional masyarakat Jakarta. Pembuatannya diawali pada abad ke-19. Motif awalnya mengikuti corak batik wilayah pesisir utara Pulau Jawa, yaitu bertemakan pesisiran. Corak batik Betawi dipengaruhi oleh kebudayaan Tiongkok. Motif batik Betawi menggunakan kaligrafi khas Timur Tengah."
+                name = "Batik Cendrawasih",
+                image = "https://th.bing.com/th/id/OIP.RDJVl1HPex2N5L5BkSUHtwAAAA?w=185&h=186&c=7&o=5&pid=1.7",
+                origin = "Papua",
+                province = "Papua, Papua Barat",
+                island = "Papua",
+                theme = "fauna",
+                color = "dark blue, brown, yellow",
+                complexity = "high",
+                pattern = "Batik Cendrawasih main motif of the cendrawasih bird. The cendrawasih is Papua’s endemic species with beautiful feathers and tails. Cendrawasih Bird motif tells a message of the human-nature relationship. This motif is often combined with traditional Papuanese patterns and local flora.",
+                desc = "Batik Cendrawasih is a traditional Papua’s batik that is developed at around 1985. Batik Cendrawasih motif is a mixture of Papuanese and Pekalongan culture. Pekalongan is a Javanese ethnicity as a batik producer combined with Papuan ethnicity which is rich in decoration which is developed as a batik motif. The mixture of these cultures makes this batik also known as Port Numbay batik. Batik Cendrawasih has its uniqueness from the aspect of the motif because it was developed from the rich culture and uniqueness of the exotic nature of Papua."
             )
         )
 
         batik.add(
             BatikEntity(
                 id = 3,
-                name = "Batik Celup",
-                image = "https://th.bing.com/th/id/OIP.RV-MWaCMl2z7QFX1v89hdAHaFE?w=247&h=180&c=7&o=5&pid=1.7",
-                origin = "Palembang",
-                island = "Sumatra",
-                desc = "Batik celup adalah batik yang dibuat menggunakan teknik ikat celup. Ikat celup adalah teknik mewarnai kain dengan cara mengikat kain dengan cara tertentu sebelum dilakukan pencelupan. Di beberapa daerah di Indonesia, teknik ini dikenal dengan berbagai nama lain seperti pelangi atau cinde, tritik atau jumputan, serta sasirangan."
+                name = "Batik Ceplok",
+                image = "https://th.bing.com/th/id/OIP.nJDccL6Ie2tilSELNzUBWQAAAA?w=115&h=180&c=7&o=5&pid=1.7",
+                origin = "Yogyakarta",
+                province = "Jawa Tengah",
+                theme = "geometric",
+                color = "brown",
+                complexity = "medium",
+                island = "Jawa",
+                pattern = "Batik Ceplok or Ceplokan is a batik with geometrical patterns such as squares, ovals, or stars that are constructed in a circular formation to form a flower. This motif is inspired by kawung fruit or palm Fruit that’s split in quarters.",
+                desc = "Batik Ceplok was formerly made as clothing for the residents of the Kotagede palace or the Mataram kingdom at that time. The motifs are adopted from the influence of Hindu and Buddhist cultures."
             )
         )
 
         batik.add(
             BatikEntity(
                 id = 4,
-                name = "Batik Cendrawasih",
-                image = "https://th.bing.com/th/id/OIP.RDJVl1HPex2N5L5BkSUHtwAAAA?w=185&h=186&c=7&o=5&pid=1.7",
-                origin = "Papua",
-                island = "Papua",
-                desc = "Batik khas papua dengan motif burung cendrawasih. Burung Cendrawasih yang fauna khas tanah Papua, memiliki bulu dan ekor yang indah. Lewat batik motif cendrawasih ini seolah menyampaikan pesan dari mana batik ini berasal. Yang mana motif yang melekat menggambarkan kedekatan dengan alam yang lebih nyata.  Warna-warna batiknya didominasi dengan warna hijau, merah, kuning yang keemasan."
+                name = "Batik Lasem",
+                image = "https://th.bing.com/th/id/OIP.EioGZ1j5nehrrt66gbAcAAHaFj?w=213&h=180&c=7&o=5&pid=1.7",
+                origin = "Lasem",
+                province = "Jawa Tengah",
+                theme = "flora, fuana",
+                color = "orange, red",
+                complexity = "high",
+                island = "Jawa",
+                pattern = "Generally, this batik has two main motifs, one is the depiction of faunas with a blend of mythological Chinese animals such as hong bird, dragon, wild chicken, etc, etc. And the other one, the Javanese influenced with a motif of sekar jagad, kencoro kendiri, kricak, grinsing, and others.",
+                desc = "Batik Lasem is also known as ‘batik tiga negeri’ meaning three-country batik because traditionally Batik Lasem is gone through a three-step coloring process in three different places. Red in Lasem, blue in Pekalongan, and brown in Surakarta. \n" +
+                        "\n" +
+                        "Batik Lasem is a blend of Chinese and Javanese culture. Batik Lasem has an extensive history correlated to Admiral Cheng Ho. Lasem is the place where Admiral Cheng Ho first landed in Central Java with its Chinese followers.\n" +
+                        "\n" +
+                        "In Babad Lasem (the Tales of Lasem) written by Raden Panji Kamzah in 1858, it is told that Bi Nang Un, the crewmate of the ship Dhang Puhawang Tzeng Ho from China with his wife Na Li Ni decided to live in Bonang, Central Java. It is believed that Na Li Ni is the first person to make Batik Lasem with hong bird motif, seruni, liong, currency, and banji with a distinctively Chinese red coloring."
             )
         )
 
         batik.add(
             BatikEntity(
                 id = 5,
-                name = "Batik Gentongan",
-                image = "https://th.bing.com/th/id/OIP.XSDI9yMTSOnbpjlLMLfBNwHaFj?w=202&h=180&c=7&o=5&pid=1.7",
-                origin = "Madura",
-                island = "Madura",
-                desc = "Disebut batik gentongan karena proses pembuatannya yang menggunakan gentong sebagai alat untuk merendam kain. Teknik gentong hanya dilakukan untuk satu jenis warna saja, yaitu indigo. Teknik Gentong untuk pewarna batik hanya terdapat di dua tempat yang terletak di kecamatan Tanjung Bumi, kabupaten Bangkalan. Tidak diketahui secara pasti kapan dimulainya teknik ini di Madura. Biasanya gentong diwariskan secara turun-temurun. Hasil celupan indigo yang dilakukan pada gentong hasilnya utuh, awet, dan memiliki kepekatan merata."
+                name = "Batik Megamendung",
+                image = "https://th.bing.com/th/id/OIP.rCcIsuRjhanzIjw9lg3uoQHaHa?w=198&h=198&c=7&o=5&pid=1.7",
+                origin = "Cirebon",
+                province = "Jawa Barat",
+                theme = "cloud",
+                color = "blue, red",
+                complexity = "low",
+                island = "Jawa",
+                pattern = "This batik has a uniquely distinct pattern that is not found in other areas of Indonesia. Megamendung is a depiction of clouds before the rain, symbolizing the rain giver which brings fertility and life to earth.\n" +
+                        "\n" +
+                        "The color blue is used to depict the vastness and friendliness of the sky. Blue and red are also used to depict the psychology of the coastal people that is accepting and open. \n" +
+                        "\n" +
+                        "With time batik megamendung pattern is evolved with the demand of the market. Motifs such as floras, faunas, and others are introduced along with alternative colors such as yellow, green, brown, etc.",
+                desc = "Batik Megamendung is an iconic batik from Cirebon. “Mega” means cloud and “mendung’ means cloudy. Batik Megamendung is known internationally and is used as the cover of a book called Batik Design by Pepin van Roojen. \n" +
+                        "\n" +
+                        "Cirebon is once a bustling international port that is used as a stop for international traders. Numerous historical text and literature point to the emergence of the pattern from the arrival of the Chinese traders in the Cirebon region. With the Chinese came Taoism; in Taoism, the clouds are a depiction of the “upper world” that is transcendental in nature. This concept also seeps into Sufism that is used to depict free nature."
             )
         )
+
         batik.add(
             BatikEntity(
                 id = 6,
-                name = "Batik Ceplok",
-                image = "https://th.bing.com/th/id/OIP.nJDccL6Ie2tilSELNzUBWQAAAA?w=115&h=180&c=7&o=5&pid=1.7",
-                origin = "Yogyakarta",
+                name = "Batik Parang",
+                image = "https://th.bing.com/th/id/OIP._kf_2DziiUGc-r5J2o39fgHaD4?w=339&h=181&c=7&o=5&pid=1.7",
+                origin = "Sukoharjo",
+                province = "Jawa Tengah",
+                theme = "geometric",
+                color = "brown, white",
+                complexity = "low",
                 island = "Jawa",
-                desc = "Batik ceplok atau ceplokan merupakan jenis batik yang memiliki pola atau motif dengan bentuk dasar geometri, seperti persegi, oval maupun bintang yang disusun melingkar sehingga menyerupai sekuntum bunga dengan pola simetris. Bentuk tersebut terinsirasi dari buah kawung atau buah aren yang dibelah empat."
+                pattern = "The motif is usually a series of “S” shapes that is interconnected together diagonally which makes a downward slope. These shapes are inspired by the waves of the sea that depict continuity, and an attitude of never giving up; a never-ending spirit.",
+                desc = "Batik Parang is one of the oldest motifs of batik in Indonesia. There’s a little bit of a dispute over the name, some say that “parang” is derived from the word “pereng” meaning “slope” others say that “parang” came from the word “perang” meaning war, a war over self-control over everyday temptations. It is told that only kings can use Batik Parang as a symbolism of devotion toward family, nation, and religion."
             )
         )
+
         batik.add(
             BatikEntity(
                 id = 7,
-                name = "Batik Ciamis",
-                image = "https://th.bing.com/th/id/OIP.bSirKRst-QdyTSlagsyOkAHaE8?w=269&h=180&c=7&o=5&pid=1.7",
-                origin = "Jawa Barat",
+                name = "Batik Sekar",
+                image = "https://th.bing.com/th/id/OIP._jdwFac0FHn7EUxlC3YpnwHaD4?w=310&h=180&c=7&o=5&pid=1.7",
+                origin = "Yogyakarta",
+                province = "Jawa Tengah",
                 island = "Jawa",
-                desc = "Batik Ciamis memiliki karakter dan corak batik yang berbeda dengan batik Garut dan Tasik. Batik ciamisan tampil sederhana tapi penuh wibawa. Kesederhaan ini tak lepas dari sejarah keberadaannya yang banyak dipengaruhi daerah lain, seperti ragam hias pesisiran dari Indramayu dan Cirebon. Selain itu, pengaruh batik nonpesisiran, seperti dari Solo dan Yogyakarta, tak kalah dominan."
+                theme = "flora, geometric",
+                color = "brown",
+                complexity = "high",
+                pattern = "Batik Sekar’s pattern is complex and intricate. Using floral and geometric patterns and is constructed in such a way that the pattern feels loose and relaxed. The batik is peppered with small little dots that are spread on the cloth.",
+                desc = "Batik Sekar or also known as Batik Sekar Jagad is a batik that came from Yogyakarta in the 18th century. Batik Sekar is a depiction of the world map in a piece of cloth.\n" +
+                        "\n" +
+                        "The word “sekar jagad” came from the word “kar” and “jagad” from Javanese. “Kar” meaning map and “jagad” meaning world. Based on this translation, sekar jagad depicts the diversity of the world."
             )
         )
+
         batik.add(
             BatikEntity(
                 id = 8,
-                name = "Batik Garutan",
-                image = "https://th.bing.com/th/id/OIP.KlwLYLv6ccVLK1Feza4-iwHaFj?w=210&h=180&c=7&o=5&pid=1.7",
-                origin = "Garut",
+                name = "Batik Sidoluhur",
+                image = "https://th.bing.com/th/id/OIP.qGMHD6toLUR8tnrG_v8quQHaEN?w=259&h=183&c=7&o=5&pid=1.7",
+                origin = "Surakarta",
+                theme = "fauna, flora",
+                province = "Jawa Tengah",
+                color = "brown",
+                complexity = "high",
                 island = "Jawa",
-                desc = "Motif Batik Garutan selalu identik dengan motif-motif batik yang berasal dari alam pegunungan, flora dan fauna yang memiliki kaitan erat dengan keseharian masyarakat Garut terutama sebelum masa kemerdekaan. Motif Batik Garutan terinspirasi dari kondisi alam dan lingkungan masyarakat Garut sendiri, dari mulai motif batik Bulu Hayam hingga motif Lereng Kangkung."
+                pattern = "Batik Sidoluhur pattern consists of diamonds that are arranged in a diagonal grid-like pattern with gaps between the diamond. In the middle of the diamond, there are detailing that often consists of two separate motifs, often fauna that is encased by flora motif.",
+                desc = "The word \"sida\" in Javanese itself means so/become, and the word “luhur” means noble. As the name implies, this motif means the hope to become a role model for the community (nobility). Batik motifs starting with “sida” (pronounced sido) are a class of common batik motif that is very popular amongst batik craftsmen.\n" +
+                        "\n" +
+                        "Batik Sidoluhur is a traditional batik that exist before the Mataram Sultanate. Batik sidoluhur is made by Ki Ageng Henis, the grandfather of Panembahan Senopati the founder of the Mataram Sultanate. Ki Ageng Henis is believed to be someone who has magical powers. It is believed that the motive behind the creation of the batik is for his descendants to come."
             )
         )
+
         batik.add(
             BatikEntity(
                 id = 9,
-                name = "Batik Kawung",
-                image = "https://th.bing.com/th/id/OIP.nLVR973i4AY8rMoHIb2GhAHaJ4?w=126&h=180&c=7&o=5&pid=1.7",
-                origin = "Jawa",
+                name = "Batik Sidomukti",
+                image = "https://th.bing.com/th/id/OIP.xS3cJXJ-lmMhxBG8vUiavQHaHa?w=166&h=180&c=7&o=5&pid=1.7",
+                origin = "Surakarta",
+                province = "Jawa Tengah",
+                theme = "fauna, flora",
+                color = "brown",
+                complexity = "high",
                 island = "Jawa",
-                desc = "Batik Kawung adalah motif batik yang bentuknya berupa bulatan mirip buah kawung (sejenis kelapa atau kadang juga dianggap sebagai aren atau kolang-kaling) yang ditata rapi secara geometris. Kadang, motif ini juga ditafsirkan sebagai gambar bunga lotus (teratai) dengan empat lembar mahkota bunga yang merekah. Lotus adalah bunga yang melambangkan umur panjang dan kesucian."
+                pattern = "Batik Sidoluhur pattern consists of diamonds that are arranged in a diagonal grid-like pattern with gaps between the diamond. In the middle of the diamond, there are detailing that often consists of two separate motifs, often fauna that is encased by flora motif.",
+                desc = "The word \"sida\" in Javanese itself means so/become, and the word “luhur” means noble. As the name implies, this motif means the hope to become a role model for the community (nobility). Batik motifs starting with “sida” (pronounced sido) are a class of common batik motif that is very popular amongst batik craftsmen.\n" +
+                        "\n" +
+                        "Sidomukti batik is one of the batiks that developed in the Surakarta Palace. This batik is a development of Sidomulyo batik which has existed since the days of the Mataram Sultanate.\n" +
+                        "\n" +
+                        "Sidomukti batik is a batik motif that is usually made from natural soga dye. Usually used as a cloth in wedding ceremonies."
             )
         )
+
         batik.add(
             BatikEntity(
                 id = 10,
-                name = "Batik Keraton",
-                image = "https://th.bing.com/th/id/OIP.kw-895hpAhckMHz2K5PMxQHaLH?w=115&h=180&c=7&o=5&pid=1.7",
+                name = "Batik Tambal",
+                image = "https://th.bing.com/th/id/OIP.Fa8OjgvHAmgM6BXKsb_a-wAAAA?w=132&h=180&c=7&o=5&pid=1.7",
                 origin = "Yogyakarta",
+                province = "Jawa Tengah",
+                theme = "geometric",
+                color = "brown",
+                complexity = "high",
                 island = "Jawa",
-                desc = "Batik keraton (dikenal juga dengan istilah batik larangan atau batik vorstenlanden) adalah batik yang berkembang dalam lingkungan keraton, baik Yogyakarta maupun Surakarta. Batik keraton merupakan awal mula dari semua jenis batik yang berkembang di Indonesia. Motifnya mengandung beragam makna filosofi hidup yang banyak terilhami dari kebudayan Hindu-Jawa. Batik-batik ini dibuat oleh para putri keraton dan juga pembatik-pembatik ahli yang hidup di lingkungan keraton. Pada dasarnya motifnya terlarang untuk digunakan oleh orang “biasa” seperti motif Batik Parang Barong, Batik Parang Rusak termasuk Batik Udan Liris, dan beberapa motif lainnya."
+                pattern = "Batik Tambal pattern is geometrical with highly intricate detailing. The batik is composed of squares that are arranged in a grid-like formation and then inserted with multiple different patterns in each of the squares. Making what some described as beautiful and orchestrated chaos.",
+                desc = "The name “tambal” has the meaning of patching, meaning patching or repairing things that are damaged. In the course of his life, humans must improve themselves towards a better life, both physically and mentally. \n" +
+                        "\n" +
+                        "Historically, Batik Tambal patchwork pattern was believed to help heal sick people. The trick is to cover the sick person with a Batik Tambal."
             )
         )
 
         batik.add(
             BatikEntity(
                 id = 11,
-                name = "Batik Lasem",
-                image = "https://th.bing.com/th/id/OIP.EioGZ1j5nehrrt66gbAcAAHaFj?w=213&h=180&c=7&o=5&pid=1.7",
-                origin = "Jawa",
-                island = "Jawa",
-                desc = "Batik lasem adalah batik nusantara hasil perpaduan dari dua budaya yakni Tionghoa dan Jawa. Secara umum, batik ini memiliki dua motif utama, yakni motif Tionghoa dengan gambar burung hong, naga, ayam hutan, dan sebagainya, sedangkan motif non-Tionghoa bergambar sekar jagad, kendoro kendiri, kricak, grinsing, dan lainnya. Batik lasem juga dikenal sebagi batik tiga negeri karena memiliki tiga kali proses pewarnaan di tiga tempat berbeda. Warna merah di Lasem, biru di Pekalongan, dan Cokelat di Solo."
+                name = "Batik Besurek",
+                image = "https://non-indonesia-distribution.brta.in/2017-10/batik-besurek-bengkulu_1507198158.jpg",
+                origin = "Sumatra",
+                province = "Bengkulu",
+                island = "Sumatra",
+                theme = "calligraphy, flora, fauna",
+                color = "brown, green, red",
+                complexity = "medium",
+                pattern = "Batik Besurek Arabic Calligraphy as its main motif. Batik besurek mostly use Arabic Calligraphy as its main motif, other than that Batik Besurek use other motifs such as rafflesia arnoldii / corpse flower, kuau bird, relung, and rembutan",
+                desc = "Batik Besurek is a batik motif that originated from Bengkulu. The word besurek is in Bahasa Melayu with Bengkulu dialect meaning letters or writing. Based on the record from Dinas Koperasi PPKM Kota Bengkulu, batik besurek began production since 1968.\n" +
+                        "\n" +
+                        "Arabic calligraphy pattern came to Bengkulu from Middle Eastern and Indian traders in the 17th century. With time, Batik besurek pattern become more loose in and is mixed with various pattern in Bengkulu"
             )
         )
 
         batik.add(
             BatikEntity(
                 id = 12,
-                name = "Batik Megamendung",
-                image = "https://th.bing.com/th/id/OIP.rCcIsuRjhanzIjw9lg3uoQHaHa?w=198&h=198&c=7&o=5&pid=1.7",
-                origin = "Cirebon",
-                island = "Jawa",
-                desc = "Motif batik Megamendung merupakan karya seni batik yang identik dan bahkan menjadi ikon batik daerah Cirebon dan daerah Indonesia lainnya. Motif batik ini mempunyai kekhasan yang tidak ditemui di daerah penghasil batik lain. Bahkan karena hanya ada di Cirebon dan merupakan mahakarya, Departemen Kebudayaan dan Pariwisata akan mendaftarkan motif megamendung ke UNESCO untuk mendapatkan pengakuan sebagai salah satu warisan dunia."
+                name = "Batik Dayak",
+                image = "https://fasnina.com/wp-content/uploads/2020/01/batik-dayak-kalimantan.jpg",
+                origin = "Kalimantan",
+                province = "Kalimantan",
+                island = "Kalimantan",
+                theme = "geometric",
+                color = "black, red",
+                complexity = "low ~ medium",
+                pattern = "Batik Datak often uses black cloth as a base for the batik. Batik Dayak uses a distinctive traditional Dayak pattern that is found in the traditional clothing of the Dayak people. The pattern is often described as tribal with geometric shapes and curves.",
+                desc = "Batik Dayak is a batik that originated in the island of Kalimantan / Borneo. Dayak refer to a Dayak Ethnicity that resides on the island of Borneo for thousands of years."
             )
         )
 
         batik.add(
             BatikEntity(
                 id = 13,
-                name = "Batik Parang",
-                image = "https://th.bing.com/th/id/OIP._kf_2DziiUGc-r5J2o39fgHaD4?w=339&h=181&c=7&o=5&pid=1.7",
-                origin = "Jawa",
-                island = "Jawa",
-                desc = "Batik Parang merupakan salah satu motif batik yang paling tua di Indonesia. Parang berasal dari kata Pereng yang berarti lereng. Perengan menggambarkan sebuah garis menurun dari tinggi ke rendah secara diagonal. Susunan motif S jalin-menjalin tidak terputus melambangkan kesinambungan."
-            )
-        )
-
-        batik.add(
-            BatikEntity(
-                id = 14,
-                name = "Batik Pekalongan",
-                image = "https://th.bing.com/th/id/OIP.fiEyAQq72r73-Yhwh4rP4QAAAA?w=142&h=190&c=7&o=5&pid=1.7",
-                origin = "Pekalongan",
-                island = "Jawa",
-                desc = "Batik Pekalongan termasuk batik pesisiran. Dari sisi motif, sebenarnya batik Pekalongan mirip dengan batik Solo maupun Yogyakarta. Keunggulan batik Pekalongan terletak pada penggunaan warna. Sehelai kain batik bisa menggunakan delapan warna sehingga terlihat lebih indah dan menarik dibanding batik-batik dari daerah lain"
-            )
-        )
-
-        batik.add(
-            BatikEntity(
-                id = 15,
-                name = "Batik Priangan",
-                image = "https://th.bing.com/th/id/OIP.ByRn0OmN0M3R1UzJr2hmTAAAAA?w=187&h=125&c=7&o=5&pid=1.7",
-                origin = "Jawa Barat",
-                island = "Jawa",
-                desc = "Batik yang berasal dari Jawa barat ini biasa disebut dengan batik Priangan, istilah ini digunakan untuk memberikan identitas pada berbagai batik yang dihasilkan dan berlangsung di Priangan. Secara keseluruhan, kesan yang didapat saat melihat selembar batik priangan adalah kesan cantik-molek, bahkan sedikit genit, yang mungkin selaras dengan citra orang Sunda."
-            )
-        )
-
-        batik.add(
-            BatikEntity(
-                id = 16,
-                name = "Batik Sekar",
-                image = "https://th.bing.com/th/id/OIP._jdwFac0FHn7EUxlC3YpnwHaD4?w=310&h=180&c=7&o=5&pid=1.7",
-                origin = "Jawa",
-                island = "Jawa",
-                desc = "Batik Sekar Jagad adalah salah satu motif batik khas Indonesia. Motif ini mengandung makna kecantikan dan keindahan sehingga orang lain yang melihat akan terpesona. Ada pula yang beranggapan bahwa motif Sekar Jagad sebenarnya berasal dari kata \"kar jagad\" yang diambil dari bahasa Jawa (Kar=peta; Jagad=dunia), sehingga motif ini juga melambangkan keragaman di seluruh dunia."
-            )
-        )
-
-        batik.add(
-            BatikEntity(
-                id = 17,
-                name = "Batik Sidoluhur",
-                image = "https://th.bing.com/th/id/OIP.qGMHD6toLUR8tnrG_v8quQHaEN?w=259&h=183&c=7&o=5&pid=1.7",
-                origin = "Jawa",
-                island = "Jawa",
-                desc = "Batik Sidoluhur adalah salah satu motif batik pedalaman yang cukup populer. Sesuai dengan namanya, motif ini bermakna harapan untuk mencapai kedudukan yang tinggi dan dapat menjadi panutan masyarakat (keluhuran). Motif-motif batik berawalan sida (dibaca sido) merupakan golongan motif yang banyak dibuat para pembatik. Kata “sida” dalam bahasa Jawa sendiri berarti jadi/menjadi/terlaksana. Dengan demikian, motif-motif berawalan “sida” mengandung harapan agar apa yang diinginkan bisa tercapai."
-            )
-        )
-
-        batik.add(
-            BatikEntity(
-                id = 18,
-                name = "Batik Sidomukti",
-                image = "https://th.bing.com/th/id/OIP.xS3cJXJ-lmMhxBG8vUiavQHaHa?w=166&h=180&c=7&o=5&pid=1.7",
-                origin = "Jawa",
-                island = "Jawa",
-                desc = "batik Sidomukti meruapakan motif batik yang biasanya terbuat dari zat pewarna soga alam. Biasanya digunakan sebagai kain dalam upacara perkawinan. Unsur motif yang tekandung didalamnya adalah gurda. Motif-motif berawalan sida (dibaca sido) merupakan golongan motif yang banyak dibuat para pembatik. Kata “sida” sendiri berarti jadi/menjadi/terlaksana. Dengan demikian, motif-motif berawalan “sida” mengandung harapan agar apa yang diinginkan bias tercapai. Salah satunya adalah sida mukti, yang mengandung harapan untuk mencapai kebahagiaan lahir dan batin."
-            )
-        )
-
-        batik.add(
-            BatikEntity(
-                id = 19,
-                name = "Batik Sogan",
-                image = "https://th.bing.com/th/id/OIP.jkZwvj9-ZouD8m7VBtLLlwHaJ4?w=124&h=180&c=7&o=5&pid=1.7",
-                origin = "Yogyakarta",
-                island = "Jawa",
-                desc = "Batik Sogan merupakan salah satu jenis batik bernuansa klasik variasi warna didominasi warna coklat. Dinamakan batik sogan karena pada awal mulanya, proses pewarnaan batik ini menggunakan pewarna alami yang diambil dari batang kayu pohon soga tingi. Batik Sogan identik dengan daerah keraton Jawa seperti Yogyakarta dan Solo, motifnya pun biasanya mengikuti pakem motif-motif klasik keraton."
-            )
-        )
-
-        batik.add(
-            BatikEntity(
-                id = 20,
-                name = "Batik Tambal",
-                image = "https://th.bing.com/th/id/OIP.Fa8OjgvHAmgM6BXKsb_a-wAAAA?w=132&h=180&c=7&o=5&pid=1.7",
-                origin = "Yogyakarta",
-                island = "Jawa",
-                desc = "Motif batik tambal memiliki arti tambal bermakna menambal atau memperbaiki hal-hal yang rusak. Dalam perjalanan hidupnya, manusia harus memperbaiki diri menuju kehidupan yang lebih baik, lahir maupun batin. Dahulu, kain batik bermotif tambal dipercaya bisa membantu kesembuhan orang yang sakit. Caranya adalah dengan menyelimuti orang sakit tersebut dengan kain motif tambal."
+                name = "Batik Toraja",
+                image = "http://2.bp.blogspot.com/-gqkcBW4on0I/UnRvTBWmAgI/AAAAAAAAPoQ/c7c33fno7hE/s1600/Motif_Tator_25.jpg",
+                origin = "Toraja",
+                province = "Sulawesi Selatan",
+                island = "Sulawesi",
+                theme = "geometric",
+                color = "black, red",
+                complexity = "low ~ medium",
+                pattern = "Toraja culture is rich with ornamental patterns that later is translated into batik patterns. The pattern is often geometrical, etc, consisting of squares, circles, lines, and curves with quite a colorful assortment of colors. The colors often used are black, dark blue, red, yellow, white and orange.",
+                desc = "Batik Toraja is a batik of the people of Toraja that is located on Southeast Sulawesi. \n" +
+                        "\n" +
+                        "The making of Batik Toraja is a bit different from other batiks. Traditionally, Batik use hot wax as a covering during the coloring process, however, Toraja people had a fabric resist dyeing technique that used rice paste (ma’a cloth) instead of hot wax."
             )
         )
 
