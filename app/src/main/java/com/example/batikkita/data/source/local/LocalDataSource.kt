@@ -17,6 +17,8 @@ class LocalDataSource private constructor(private val batikDao: BatikDao) {
 
     fun getBatikDetail(dataId: Int): LiveData<BatikEntity> = batikDao.getBatikDetail(dataId)
 
+    fun getBatikDetailByName(name: String): LiveData<BatikEntity> = batikDao.getBatikDetaikByName(name)
+
     fun searchBatik(name: String): DataSource.Factory<Int, BatikEntity> = batikDao.searchBatik("%$name%")
 
     fun setFavorite(data: BatikEntity) {

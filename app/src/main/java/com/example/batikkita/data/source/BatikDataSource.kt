@@ -13,6 +13,8 @@ interface BatikDataSource {
 
     fun getDetailBatik(dataId: Int): LiveData<BatikEntity>
 
+    fun getDetailBatikByName(name: String): LiveData<BatikEntity>
+
     fun getListFavoriteBatik(): LiveData<PagedList<BatikEntity>>
 
     fun searchBatik(name: String): LiveData<PagedList<BatikEntity>>
