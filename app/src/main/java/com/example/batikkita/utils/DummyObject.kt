@@ -253,8 +253,8 @@ object DummyObject {
             IslandEntity(
                 id = 1,
                 origin = "Jawa",
-                description = "Jawa adalah sebuah pulau di Indonesia dan merupakan pulau terluas ke-13 di dunia. Dengan jumlah penduduk sekitar hampir 160 juta, pulau ini pulau berpenduduk terbanyak di dunia dan merupakan salah satu tempat terpadat di dunia. Meskipun hanya menempati urutan terluas ke-5, Pulau Jawa dihuni oleh 60% penduduk Indonesia. Angka ini turun jika dibandingkan dengan sensus penduduk tahun 1905 yang mencapai 80,6% dari seluruh penduduk Indonesia. Penurunan penduduk di Pulau Jawa secara persentase diakibatkan perpindahan penduduk (transmigrasi) dari pulau Jawa ke seluruh Indonesia. Ibu kota Indonesia, Jakarta, terletak di Jawa bagian Barat Laut (tepatnya di ujung paling barat Jalur Pantura)." ,
-                image = "https://lh3.googleusercontent.com/-A1l-UyIkT0U/YLdRi_cFkmI/AAAAAAAAAcw/h99xCdWBYSIIKLWsXCqzAEfDQibEdrExgCLcBGAsYHQ/java_final.png",
+                description = "Java is an island in Indonesia and is the 13th largest island in the world. With a population of nearly 160 million, it is the most populous island in the world and one of the most densely populated places in the world. Even though it only ranks as the 5th largest, Java Island is inhabited by 60% of Indonesia's population. This figure is down when compared to the population census in 1905 which reached 80.6% of the entire population of Indonesia. The decline in population on the island of Java as a percentage is due to population movement (transmigration) from the island of Java to the rest of Indonesia. The capital city of Indonesia, Jakarta, is located in the northwestern part of Java (precisely at the westernmost end of the Pantura Line)",
+                image = "https://i.ibb.co/DkxK9wW/java-final.png",
                 latitude = -7.5564888,
                 longitude = 110.7338442
             )
@@ -263,20 +263,9 @@ object DummyObject {
         island.add(
             IslandEntity(
                 id = 2,
-                origin = "Bali",
-                description = "Bali adalah sebuah provinsi di Indonesia yang ibu kota provinsinya bernama Denpasar. Bali juga merupakan salah satu pulau di Kepulauan Nusa Tenggara. Di awal kemerdekaan Indonesia, pulau ini termasuk dalam Provinsi Sunda Kecil yang beribu kota di Singaraja, dan kini terbagi menjadi 3 provinsi, yakni Bali, Nusa Tenggara Barat, dan Nusa Tenggara Timur.[9][10] Pada tahun 2020, penduduk provinsi Bali berjumlah 4.317.404 jiwa, dengan kepadatan 747 jiwa/km2",
-                image = "https://lh3.googleusercontent.com/-MVPnOtOJvqg/YLdRiod6h6I/AAAAAAAAAcs/25vVZYDwUbI6-RXT_4fQB86bReXjP1V4wCLcBGAsYHQ/bali_final.png",
-                latitude = -8.3627798 ,
-                longitude = 115.1370432
-            )
-        )
-
-        island.add(
-            IslandEntity(
-                id = 3,
                 origin = "Sumatra",
-                description = "Sumatra adalah pulau keenam terbesar di dunia yang terletak di Indonesia, dengan luas 473.481 km². Penduduk pulau ini sekitar 57.940.351 (sensus 2018). Pulau ini dikenal pula dengan nama lain yaitu Pulau Percha, Andalas, atau Suwarnadwipa (bahasa Sanskerta, berarti \"pulau emas\"). Kemudian pada Prasasti Padang Roco tahun 1286 dipahatkan swarnnabhūmi (bahasa Sanskerta, berarti \"tanah emas\") dan bhūmi mālayu (\"Tanah Melayu\") untuk menyebut pulau ini. Selanjutnya dalam naskah Negarakertagama dari abad ke-14 juga kembali menyebut \"Bumi Malayu\" (Melayu) untuk pulau ini." ,
-                image = "https://lh3.googleusercontent.com/-siH_YJy2-GQ/YLdRiirFD_I/AAAAAAAAAco/dh84xFrl8SQdCgAD8bj2T7NpVVeQX8VMACLcBGAsYHQ/sumatra_final.png",
+                description = "Sumatra is the sixth largest island in the world, located in Indonesia, with an area of 473,481 km². The population of this island is around 57,940,351 (2018 census). This island is also known by other names, namely Percha Island, Andalas, or Suwarnadwipa (Sanskrit , meaning \"island of gold\"). Then in the Padang Roco Inscription in 1286, swarnnabhūmi (Sanskrit, meaning \"land of gold\") and bhūmi mālayu (\"Land of Malay\") were carved to refer to this island. Negarakertagama from the 14th century also again called \"Bumi Malayu\" (Malay) for this island." ,
+                image = "https://i.ibb.co/8xm59cr/sumatra-final.png",
                 latitude = -0.53196 ,
                 longitude = 101.5741462
             )
@@ -284,10 +273,10 @@ object DummyObject {
 
         island.add(
             IslandEntity(
-                id = 4 ,
+                id = 3 ,
                 origin = "Papua",
-                description = "Papua atau yang dulu disebut dengan Irian atau Irian Jaya, adalah pulau terbesar kedua (setelah Greenland) di dunia yang terletak di sebelah utara Australia. Pulau ini dibagi menjadi dua wilayah yang bagian baratnya merupakan wilayah Indonesia dan bagian timurnya merupakan negara Papua Nugini. Di pulau yang bentuknya menyerupai burung cendrawasih ini terletak gunung tertinggi di Indonesia, yaitu Puncak Jaya (4.884 m)",
-                image = "https://lh3.googleusercontent.com/-nzbd7SVkwlE/YLdRim-NuTI/AAAAAAAAAck/G6248hq-lykUXjRqMIYvJmkZNkwC6CDLwCLcBGAsYHQ/papua_final.png",
+                description = "Papua or previously known as Irian or Irian Jaya, is the second largest island (after Greenland) in the world, located north of Australia. The island is divided into two regions, the western part of which is the territory of Indonesia and the eastern part is the state of Papua New Guinea. On an island that resembles a bird of paradise, lies the highest mountain in Indonesia, namely Puncak Jaya (4,884 m)",
+                image = "https://i.ibb.co/p3w3gH8/papua-final.png",
                 latitude = -3.9644879 ,
                 longitude = 138.4865451
             )
@@ -295,12 +284,23 @@ object DummyObject {
 
         island.add(
             IslandEntity(
+                id = 4,
+                origin = "Sulawesi" ,
+                description = "Sulawesi is one of the four Greater Sunda Islands. It is governed by Indonesia. The world's eleventh-largest island, it is situated east of Borneo, west of the Maluku Islands, and south of Mindanao and the Sulu Archipelago. Within Indonesia, only Sumatra, Borneo and Papua are larger in territory, and only Java and Sumatra have larger populations.",
+                image = "https://i.ibb.co/C00c7fR/sulawesi-final.png",
+                latitude = -1.8974867,
+                longitude = 120.5230474
+            )
+        )
+
+        island.add(
+            IslandEntity(
                 id = 5,
-                origin = "Madura" ,
-                description = "Madura adalah nama pulau yang terletak di sebelah timur laut Jawa Timur. Pulau Madura besarnya kurang lebih 5.168 km2 (lebih kecil daripada pulau Bali), dengan penduduk hampir 4 juta jiwa. Pulau Madura bentuknya seakan mirip badan sapi, terdiri dari empat Kabupaten, yaitu: Bangkalan, Sampang, Pamekasan dan Sumenep. Madura, Pulau dengan sejarahnya yang panjang, tercermin dari budaya dan keseniannya dengan pengaruh islamnya yang kuat.",
-                image = "https://lh3.googleusercontent.com/-LyhS5xpdrDQ/YLdRihb_C0I/AAAAAAAAAcg/zeY60Dr0SC0mdZIZjhJaMqRRtaRyXuy9ACLcBGAsYHQ/madura_final.png",
-                latitude = -7.0576888,
-                longitude = 113.2607462
+                origin = "Kalimantan" ,
+                description = "Kalimantan is the Indonesian portion of the island of Borneo. It comprises 73% of the island's area. The non-Indonesian parts of Borneo are Brunei and East Malaysia. In Indonesia, \"Kalimantan\" refers to the whole island of Borneo. In 2019, the Indonesian President Joko Widodo proposed that Indonesia's capital be moved to Kalimantan.",
+                image = "https://i.ibb.co/LhGZzC0/kalimantan-final.png",
+                latitude = 0.9367951,
+                longitude = 114.2536418
             )
         )
 

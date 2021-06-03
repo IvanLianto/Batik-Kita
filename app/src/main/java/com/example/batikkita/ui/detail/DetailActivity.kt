@@ -60,8 +60,13 @@ class DetailActivity : AppCompatActivity() {
                 .into(ivPoster)
             tvBatik.text = data.name
             tvTitle.text = data.name
+            tvProvince.text = data.province
+            tvTheme.text = data.theme
+            tvColor.text = data.color
+            tvComplexity.text = data.complexity
             tvLocation.text = data.origin
             tvDetailBatik.text = data.desc
+            tvPattern.text = data.pattern
             binding.ivFavorite.setOnClickListener { setFavorite(data) }
         }
     }

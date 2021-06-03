@@ -39,4 +39,11 @@
     <string name="batik_dari_pulau_lain">Batik from other island</string>
     <string name="camera_not_ready">Camera is not ready!</string>
 
+    <string name="province">Province : </string>
+    <string name="theme">Theme : </string>
+    <string name="color">Color : </string>
+    <string name="complexity">Complexity : </string>
+    <string name="description">Description</string>
+    <string name="pattern">Pattern</string>
+
 </resources>
