@@ -195,7 +195,7 @@ object DummyObject {
             BatikEntity(
                 id = 11,
                 name = "Batik Besurek",
-                image = "https://non-indonesia-distribution.brta.in/2017-10/batik-besurek-bengkulu_1507198158.jpg",
+                image = "https://i.ibb.co/ZdgvY8z/batik-besurek.jpg",
                 origin = "Sumatra",
                 province = "Bengkulu",
                 island = "Sumatra",
@@ -213,7 +213,7 @@ object DummyObject {
             BatikEntity(
                 id = 12,
                 name = "Batik Dayak",
-                image = "https://fasnina.com/wp-content/uploads/2020/01/batik-dayak-kalimantan.jpg",
+                image = "https://i.ibb.co/bXybRXr/batik-dayak.jpg",
                 origin = "Kalimantan",
                 province = "Kalimantan",
                 island = "Kalimantan",
@@ -229,7 +229,7 @@ object DummyObject {
             BatikEntity(
                 id = 13,
                 name = "Batik Toraja",
-                image = "http://2.bp.blogspot.com/-gqkcBW4on0I/UnRvTBWmAgI/AAAAAAAAPoQ/c7c33fno7hE/s1600/Motif_Tator_25.jpg",
+                image = "https://i.ibb.co/b6DSR5F/batik-toraja.jpg",
                 origin = "Toraja",
                 province = "Sulawesi Selatan",
                 island = "Sulawesi",
