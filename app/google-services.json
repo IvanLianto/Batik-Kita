@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "98027633730",
+    "project_id": "batikkita-ace0b",
+    "storage_bucket": "batikkita-ace0b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:98027633730:android:efd39503787dad69c701db",
+        "android_client_info": {
+          "package_name": "com.example.batikkita"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "98027633730-ckvc2nmd1eln9jombae2bmvrg1p8fqad.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDjlfBygK0BYvAc7lxy3K1rJ7lI2bE5DEM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "98027633730-ckvc2nmd1eln9jombae2bmvrg1p8fqad.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
