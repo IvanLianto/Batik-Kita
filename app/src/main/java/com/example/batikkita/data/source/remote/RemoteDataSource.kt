@@ -5,8 +5,11 @@ import androidx.lifecycle.MutableLiveData
 import com.example.batikkita.data.source.local.entity.BatikEntity
 import com.example.batikkita.data.source.local.entity.IslandEntity
 import com.example.batikkita.utils.DummyObject
+import com.google.firebase.firestore.FirebaseFirestore
 
 class RemoteDataSource {
+
+    private val db = FirebaseFirestore.getInstance()
 
     fun getListBatik(): LiveData<ApiResponse<List<BatikEntity>>> {
         val result = MutableLiveData<ApiResponse<List<BatikEntity>>>()
@@ -14,9 +17,26 @@ class RemoteDataSource {
         return result
     }
 
+//    fun getListIsland(): LiveData<ApiResponse<List<IslandEntity>>> {
+//        val result = MutableLiveData<ApiResponse<List<IslandEntity>>>()
+//        result.postValue(ApiResponse.success(DummyObject.generateIsland()))
+//        return result
+//    }
+
     fun getListIsland(): LiveData<ApiResponse<List<IslandEntity>>> {
         val result = MutableLiveData<ApiResponse<List<IslandEntity>>>()
-        result.postValue(ApiResponse.success(DummyObject.generateIsland()))
+        db.collection("Island")
+            .get()
+            .addOnCompleteListener { task ->
+                if (task.result != null) {
+                    val listIslandEntity = ArrayList<IslandEntity>()
+                    for (document in task.result!!) {
+                        val island = document.toObject(IslandEntity::class.java)
+                        listIslandEntity.add(island)
+                    }
+                    result.postValue(ApiResponse.success(listIslandEntity))
+                }
+            }
         return result
     }
 

@@ -30,4 +30,6 @@ data class IslandEntity(
     @ColumnInfo(name = "longitude")
     var longitude: Double,
 
-) : Parcelable
+) : Parcelable {
+    constructor() : this(0, "","", "", 0.0, 0.0)
+}
