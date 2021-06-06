@@ -11,7 +11,6 @@ object BitmapHelper {
 
 object ScanHelper {
     var pauseAnalyzer : Boolean = false
-//    var readyToTake : Boolean = false
 
     private val readyToTake = MutableLiveData<Boolean>()
 

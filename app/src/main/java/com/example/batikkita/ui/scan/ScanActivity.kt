@@ -22,7 +22,6 @@ class ScanActivity : AppCompatActivity(), RecognitionOnClickInterface {
 
     private lateinit var binding: ActivityScanBinding
     private lateinit var adapter: RecognitionAdapter
-    private lateinit var bitmapBuffer: Bitmap
 
     private lateinit var viewModel: ScanViewModel
 
@@ -42,26 +41,6 @@ class ScanActivity : AppCompatActivity(), RecognitionOnClickInterface {
 
         recognition =
             intent.getParcelableArrayListExtra<Recognition>(RECOGNITION) as ArrayList<Recognition>
-
-//        viewModel.getDetailBatikByName(recognition[0].splitLabel).observe(this, { list ->
-//            Toast.makeText(this, list.image, Toast.LENGTH_SHORT).show()
-//            image = list.image
-//        })
-//        Toast.makeText(this, image, Toast.LENGTH_SHORT).show()
-
-//        for (i in recognition.indices) {
-//            viewModel.getDetailBatikByName(recognition[1].splitLabel).observe(this, { list ->
-//                Log.d("TAG", list.image)
-//            })
-//        }
-
-        recognition[0].image = DummyObject.getByName(recognition[0].splitLabel)
-        recognition[1].image = DummyObject.getByName(recognition[1].splitLabel)
-        recognition[2].image = DummyObject.getByName(recognition[2].splitLabel)
-
-//        recognition[0].image = observerImageBatik(recognition[0].label)
-//        recognition[1].image = observerImageBatik(recognition[1].label)
-//        recognition[2].image = observerImageBatik(recognition[2].label)
 
         binding.ivResultPicture.setImageBitmap(BitmapHelper.bitmap)
 

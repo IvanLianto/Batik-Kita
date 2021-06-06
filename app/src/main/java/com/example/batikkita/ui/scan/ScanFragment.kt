@@ -163,7 +163,6 @@ class ScanFragment : Fragment() {
                 for (output in outputs) {
                     items.add(
                         Recognition(
-                            image = "",
                             label = output.label,
                             confidence = output.score
                         )

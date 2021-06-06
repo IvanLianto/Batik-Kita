@@ -8,7 +8,6 @@ import java.util.*
 data class Recognition(
     var label: String,
     var confidence: Float,
-    var image: String
 ) : Parcelable {
     val probabilityString = String.format("%.1f%%", confidence * 100.0f)
     val splitString = label.split("-")
