@@ -6,14 +6,17 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import com.example.batikkita.R
 import com.example.batikkita.data.source.local.entity.BatikEntity
 import com.example.batikkita.databinding.FragmentHomeBinding
 import com.example.batikkita.interfaces.BatikOnClickInterface
 import com.example.batikkita.ui.detail.DetailActivity
+import com.example.batikkita.utils.DummyObject
 import com.example.batikkita.utils.ViewModelFactory
 import com.example.vo.Status
+import com.google.firebase.firestore.FirebaseFirestore
 
 class HomeFragment : Fragment(), BatikOnClickInterface {
 
@@ -40,6 +43,8 @@ class HomeFragment : Fragment(), BatikOnClickInterface {
             binding.rvHome.adapter = adapter
             observerRecyclerView()
         }
+
+
     }
 
     private fun observerRecyclerView() {
@@ -59,6 +64,20 @@ class HomeFragment : Fragment(), BatikOnClickInterface {
                 }
             }
         })
+    }
+
+    private fun initializeDatatoFirestore(){ //for dev only!
+        val db = FirebaseFirestore.getInstance()
+        val batikRef = db.collection("Batik")
+
+        val list = DummyObject.generateBatik()
+
+        for (i in list){
+            batikRef.add(i)
+                .addOnSuccessListener {
+                    Toast.makeText(requireContext(), "Masukin data ${i.name}",Toast.LENGTH_SHORT).show()
+                }
+        }
     }
 
     override fun onClicked(view: View, data: BatikEntity) {

@@ -13,15 +13,20 @@ class RemoteDataSource {
 
     fun getListBatik(): LiveData<ApiResponse<List<BatikEntity>>> {
         val result = MutableLiveData<ApiResponse<List<BatikEntity>>>()
-        result.postValue(ApiResponse.success(DummyObject.generateBatik()))
+        db.collection("Batik")
+            .get()
+            .addOnCompleteListener{
+                if (it.result != null){
+                    val batikListEntity = ArrayList<BatikEntity>()
+                    for(document in it.result!!){
+                        val batik = document.toObject(BatikEntity::class.java)
+                        batikListEntity.add(batik)
+                    }
+                    result.postValue(ApiResponse.success(batikListEntity))
+                }
+            }
         return result
     }
-
-//    fun getListIsland(): LiveData<ApiResponse<List<IslandEntity>>> {
-//        val result = MutableLiveData<ApiResponse<List<IslandEntity>>>()
-//        result.postValue(ApiResponse.success(DummyObject.generateIsland()))
-//        return result
-//    }
 
     fun getListIsland(): LiveData<ApiResponse<List<IslandEntity>>> {
         val result = MutableLiveData<ApiResponse<List<IslandEntity>>>()

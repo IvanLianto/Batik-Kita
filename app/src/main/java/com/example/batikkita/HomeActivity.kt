@@ -9,6 +9,7 @@ import com.example.batikkita.databinding.ActivityHomeBinding
 import com.example.batikkita.ui.favorite.FavoriteActivity
 import com.example.batikkita.ui.notification.NotificationActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.firebase.firestore.FirebaseFirestore
 
 class HomeActivity : AppCompatActivity() {
 

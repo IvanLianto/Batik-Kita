@@ -48,4 +48,6 @@ data class BatikEntity(
     @ColumnInfo(name = "favorite")
     var favorite: Boolean = false
 
-) : Parcelable
+) : Parcelable{
+    constructor() : this(0, "","","","","","","","","","",false)
+}

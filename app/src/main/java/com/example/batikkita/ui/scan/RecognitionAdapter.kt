@@ -22,25 +22,22 @@ class RecognitionAdapter : ListAdapter<Recognition, RecognitionAdapter.Recogniti
     }
 
     override fun onBindViewHolder(holder: RecognitionViewHolder, position: Int) {
-        holder.bind(getItem(position))
+        holder.bind(getItem(position), position+1)
     }
 
     inner class RecognitionViewHolder(private val binding: ItemListResultScanBinding) : RecyclerView.ViewHolder(binding.root) {
-        fun bind(recognition: Recognition) {
+        fun bind(recognition: Recognition, position: Int) {
 
-            Glide.with(binding.root)
-                .load(recognition.image)
-                .placeholder(R.drawable.ic_loading)
-                .error(R.drawable.ic_error)
-                .into(binding.ivBatik)
+            with(binding){
+                tvLabelBatik.text = recognition.splitLabel
+                tvPredictBatik.text = recognition.probabilityString
+                tvPosition.text = position.toString()
 
-            binding.tvLabelBatik.text = recognition.splitLabel
-            binding.tvPredictBatik.text = recognition.probabilityString
-
-            binding.layoutRoot.setOnClickListener {
-                dataInterface?.onClicked(
-                    binding.root, recognition
-                )
+                layoutRoot.setOnClickListener {
+                    dataInterface?.onClicked(
+                        binding.root, recognition
+                    )
+                }
             }
         }
     }
