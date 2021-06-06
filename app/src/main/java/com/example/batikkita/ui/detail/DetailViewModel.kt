@@ -8,5 +8,7 @@ import com.example.batikkita.data.source.local.entity.BatikEntity
 class DetailViewModel(private val batikRepository: BatikRepository) : ViewModel() {
     fun getDetailBatik(id: Int): LiveData<BatikEntity> = batikRepository.getDetailBatik(id)
 
+    fun getDetailBatik(name: String): LiveData<BatikEntity> = batikRepository.getDetailBatikByName(name)
+
     fun setFavorite(data: BatikEntity) = batikRepository.setFavorite(data)
 }

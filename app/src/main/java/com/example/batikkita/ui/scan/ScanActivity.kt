@@ -69,7 +69,7 @@ class ScanActivity : AppCompatActivity(), RecognitionOnClickInterface {
 
     override fun onClicked(view: View, data: Recognition) {
         val intent = Intent(this, DetailActivity::class.java)
-        intent.putExtra(DetailActivity.EXTRA_NAME, data.label)
+        intent.putExtra(DetailActivity.EXTRA_NAME, data.splitLabel)
         startActivity(intent)
     }
 }

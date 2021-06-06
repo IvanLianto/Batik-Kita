@@ -48,7 +48,10 @@ class DetailActivity : AppCompatActivity() {
     }
 
     private fun observerDetailBatik(name: String) {
-
+        viewModel.getDetailBatik(name).observe(this, { list ->
+            setBinding(list)
+            setIconFavorite(list.favorite)
+        })
     }
 
     private fun setBinding(data: BatikEntity) {

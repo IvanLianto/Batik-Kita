@@ -48,7 +48,7 @@ class BatikRepository private constructor(
             }
 
             override fun shouldFetch(data: List<IslandEntity>?): Boolean =
-                true
+                data == null || data.isEmpty()
 
             override fun createCall(): LiveData<ApiResponse<List<IslandEntity>>> =
                 remoteDataSource.getListIsland()
