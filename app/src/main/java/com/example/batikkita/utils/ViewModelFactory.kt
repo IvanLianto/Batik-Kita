@@ -5,6 +5,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.example.batikkita.data.source.BatikRepository
 import com.example.batikkita.di.Injection
+import com.example.batikkita.ui.cart.CartViewModel
 import com.example.batikkita.ui.detail.DetailViewModel
 import com.example.batikkita.ui.favorite.FavoriteViewModel
 import com.example.batikkita.ui.home.HomeViewModel
@@ -34,6 +35,9 @@ class ViewModelFactory private constructor(private val mBatikRepository: BatikRe
             }
             modelClass.isAssignableFrom(ScanViewModel::class.java) -> {
                 ScanViewModel(mBatikRepository) as T
+            }
+            modelClass.isAssignableFrom(CartViewModel::class.java) -> {
+                CartViewModel(mBatikRepository) as T
             }
             else -> throw Throwable("Unknown ViewModel class: " + modelClass.name)
         }

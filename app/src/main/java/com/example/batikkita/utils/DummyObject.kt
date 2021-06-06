@@ -1,6 +1,7 @@
 package com.example.batikkita.utils
 
 import com.example.batikkita.data.source.local.entity.BatikEntity
+import com.example.batikkita.data.source.local.entity.CartEntity
 import com.example.batikkita.data.source.local.entity.IslandEntity
 
 object DummyObject {
@@ -306,6 +307,48 @@ object DummyObject {
 
         return island
 
+    }
+
+    fun generateCart(): List<CartEntity> {
+        val listCart = ArrayList<CartEntity>()
+
+        listCart.add(
+            CartEntity(
+                id = 1,
+                name = "Batik #FailFast",
+                store = "Toko Batik #FailFast",
+                price = "Rp 500.000",
+                location = "Yogyakarta",
+                desc = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sodales aliquam tempor. Donec cursus justo lacus, et convallis velit posuere id. Vivamus nec massa sit amet massa cursus faucibus sit amet rutrum tortor. Integer nec bibendum lacus. Curabitur fringilla ex sapien, eget ullamcorper nulla varius quis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nam commodo neque vitae auctor porttitor. Phasellus suscipit urna tortor, id tristique justo tincidunt eu. Sed in magna efficitur, semper mauris in, ornare massa. Sed ultrices sed dolor dignissim semper. Nam molestie elit neque, sit amet condimentum eros convallis a. Ut mattis felis et tincidunt aliquet. Vivamus rhoncus nibh eget ornare bibendum. Mauris ultricies sit amet mauris at porttitor.",
+                rating = 3.5
+            )
+        )
+
+        listCart.add(
+            CartEntity(
+                id = 2,
+                name = "Batik Ngalam",
+                store = "Toko Batik Malang",
+                price = "Rp 200.000",
+                location = "Malang",
+                desc = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sodales aliquam tempor. Donec cursus justo lacus, et convallis velit posuere id. Vivamus nec massa sit amet massa cursus faucibus sit amet rutrum tortor. Integer nec bibendum lacus. Curabitur fringilla ex sapien, eget ullamcorper nulla varius quis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nam commodo neque vitae auctor porttitor. Phasellus suscipit urna tortor, id tristique justo tincidunt eu. Sed in magna efficitur, semper mauris in, ornare massa. Sed ultrices sed dolor dignissim semper. Nam molestie elit neque, sit amet condimentum eros convallis a. Ut mattis felis et tincidunt aliquet. Vivamus rhoncus nibh eget ornare bibendum. Mauris ultricies sit amet mauris at porttitor.",
+                rating = 4.5
+            )
+        )
+
+        listCart.add(
+            CartEntity(
+                id = 3,
+                name = "Batik Rise Up",
+                store = "Toko Batik Rise Up!",
+                price = "Rp 100.000",
+                location = "Yogyakarta",
+                desc = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sodales aliquam tempor. Donec cursus justo lacus, et convallis velit posuere id. Vivamus nec massa sit amet massa cursus faucibus sit amet rutrum tortor. Integer nec bibendum lacus. Curabitur fringilla ex sapien, eget ullamcorper nulla varius quis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nam commodo neque vitae auctor porttitor. Phasellus suscipit urna tortor, id tristique justo tincidunt eu. Sed in magna efficitur, semper mauris in, ornare massa. Sed ultrices sed dolor dignissim semper. Nam molestie elit neque, sit amet condimentum eros convallis a. Ut mattis felis et tincidunt aliquet. Vivamus rhoncus nibh eget ornare bibendum. Mauris ultricies sit amet mauris at porttitor.",
+                rating = 5.0
+            )
+        )
+
+        return listCart
     }
 
 }

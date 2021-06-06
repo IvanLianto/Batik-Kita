@@ -3,6 +3,7 @@ package com.example.batikkita.data.source.remote
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.example.batikkita.data.source.local.entity.BatikEntity
+import com.example.batikkita.data.source.local.entity.CartEntity
 import com.example.batikkita.data.source.local.entity.IslandEntity
 import com.example.batikkita.utils.DummyObject
 import com.google.firebase.firestore.FirebaseFirestore
@@ -44,6 +45,25 @@ class RemoteDataSource {
             }
         return result
     }
+
+    fun getListCart(): LiveData<ApiResponse<List<CartEntity>>>{
+        val result = MutableLiveData<ApiResponse<List<CartEntity>>>()
+        db.collection("Cart")
+            .get()
+            .addOnCompleteListener{
+                if (it.result != null){
+                    val listCartEntity = ArrayList<CartEntity>()
+                    for (document in it.result!!){
+                        val cart = document.toObject(CartEntity::class.java)
+                        listCartEntity.add(cart)
+                    }
+                    result.postValue(ApiResponse.success(listCartEntity))
+                }
+            }
+        return result
+    }
+
+
 
     companion object {
         @Volatile

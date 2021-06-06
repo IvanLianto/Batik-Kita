@@ -4,6 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.paging.DataSource
 import androidx.room.*
 import com.example.batikkita.data.source.local.entity.BatikEntity
+import com.example.batikkita.data.source.local.entity.CartEntity
 import com.example.batikkita.data.source.local.entity.IslandEntity
 
 @Dao
@@ -29,6 +30,9 @@ interface BatikDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE, entity = BatikEntity::class)
     fun insertData(data: List<BatikEntity>)
 
+    @Insert(onConflict = OnConflictStrategy.REPLACE, entity = CartEntity::class)
+    fun insertDataCart(data: List<CartEntity>)
+
     @Insert(onConflict = OnConflictStrategy.REPLACE, entity = IslandEntity::class)
     fun insertDataIsland(data: List<IslandEntity>)
 
@@ -43,5 +47,8 @@ interface BatikDao {
 
     @Query("SELECT * FROM batikEntities WHERE island NOT LIKE :origin")
     fun getListExceptIslandBatik(origin: String) : LiveData<List<BatikEntity>>
+
+    @Query("SELECT * FROM cartEntities")
+    fun getListCart(): LiveData<List<CartEntity>>
 
 }

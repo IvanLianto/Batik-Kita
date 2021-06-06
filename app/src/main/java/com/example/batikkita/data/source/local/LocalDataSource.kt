@@ -3,6 +3,7 @@ package com.example.batikkita.data.source.local
 import androidx.lifecycle.LiveData
 import androidx.paging.DataSource
 import com.example.batikkita.data.source.local.entity.BatikEntity
+import com.example.batikkita.data.source.local.entity.CartEntity
 import com.example.batikkita.data.source.local.entity.IslandEntity
 import com.example.batikkita.data.source.local.room.BatikDao
 
@@ -14,6 +15,9 @@ class LocalDataSource private constructor(private val batikDao: BatikDao) {
 
     fun getListIsland(): LiveData<List<IslandEntity>> =
         batikDao.getListIsland()
+
+    fun getListCart(): LiveData<List<CartEntity>> =
+        batikDao.getListCart()
 
     fun getBatikDetail(dataId: Int): LiveData<BatikEntity> = batikDao.getBatikDetail(dataId)
 
@@ -28,6 +32,10 @@ class LocalDataSource private constructor(private val batikDao: BatikDao) {
 
     fun insertData(data: List<BatikEntity>) {
         batikDao.insertData(data)
+    }
+
+    fun insertDataCart(data: List<CartEntity>){
+        batikDao.insertDataCart(data)
     }
 
     fun insertDataIsland(data: List<IslandEntity>) {

@@ -3,6 +3,7 @@ package com.example.batikkita.data.source
 import androidx.lifecycle.LiveData
 import androidx.paging.PagedList
 import com.example.batikkita.data.source.local.entity.BatikEntity
+import com.example.batikkita.data.source.local.entity.CartEntity
 import com.example.batikkita.data.source.local.entity.IslandEntity
 import com.example.vo.Resource
 
@@ -14,6 +15,8 @@ interface BatikDataSource {
     fun getDetailBatik(dataId: Int): LiveData<BatikEntity>
 
     fun getDetailBatikByName(name: String): LiveData<BatikEntity>
+
+    fun getListCart(): LiveData<Resource<List<CartEntity>>>
 
     fun getListFavoriteBatik(): LiveData<PagedList<BatikEntity>>
 

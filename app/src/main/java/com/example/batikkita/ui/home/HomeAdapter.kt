@@ -15,7 +15,6 @@ class HomeAdapter : PagedListAdapter<BatikEntity, HomeAdapter.HomeViewHolder>(DI
 
     var dataInterface: BatikOnClickInterface? = null
 
-
     override fun onBindViewHolder(holder: HomeViewHolder, position: Int) {
         val data = getItem(position)
         if (data != null) {

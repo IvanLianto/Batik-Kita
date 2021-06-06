@@ -2,6 +2,7 @@ package com.example.batikkita.interfaces
 
 import android.view.View
 import com.example.batikkita.data.source.local.entity.BatikEntity
+import com.example.batikkita.data.source.local.entity.CartEntity
 import com.example.batikkita.ui.scan.Recognition
 
 interface BatikOnClickInterface {
@@ -10,4 +11,8 @@ interface BatikOnClickInterface {
 
 interface RecognitionOnClickInterface {
     fun onClicked(view: View, data: Recognition)
+}
+
+interface CartOnClickInterface{
+    fun onClicked(view: View, data: CartEntity)
 }
