@@ -54,9 +54,9 @@ class CartFragment : Fragment(), CartOnClickInterface {
     }
 
     override fun onClicked(view: View, data: CartEntity) {
-        /*val intent = Intent(context, DetailCartActivity::class.java)
-        intent.putExtra(DetailActivity.EXTRA_ID, data.id)
-        startActivity(intent)*/
+        val intent = Intent(context, CartDetailActivity::class.java)
+        intent.putExtra(CartDetailActivity.EXTRA_ID, data.id)
+        startActivity(intent)
     }
     
 }

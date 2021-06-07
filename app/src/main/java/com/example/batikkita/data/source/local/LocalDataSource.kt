@@ -19,11 +19,15 @@ class LocalDataSource private constructor(private val batikDao: BatikDao) {
     fun getListCart(): LiveData<List<CartEntity>> =
         batikDao.getListCart()
 
+    fun getDetailCart(dataId: Int): LiveData<CartEntity> = batikDao.getDetailCart(dataId)
+
     fun getBatikDetail(dataId: Int): LiveData<BatikEntity> = batikDao.getBatikDetail(dataId)
 
-    fun getBatikDetailByName(name: String): LiveData<BatikEntity> = batikDao.getBatikDetaikByName(name)
+    fun getBatikDetailByName(name: String): LiveData<BatikEntity> =
+        batikDao.getBatikDetaikByName(name)
 
-    fun searchBatik(name: String): DataSource.Factory<Int, BatikEntity> = batikDao.searchBatik("%$name%")
+    fun searchBatik(name: String): DataSource.Factory<Int, BatikEntity> =
+        batikDao.searchBatik("%$name%")
 
     fun setFavorite(data: BatikEntity) {
         data.favorite = !data.favorite
@@ -34,7 +38,7 @@ class LocalDataSource private constructor(private val batikDao: BatikDao) {
         batikDao.insertData(data)
     }
 
-    fun insertDataCart(data: List<CartEntity>){
+    fun insertDataCart(data: List<CartEntity>) {
         batikDao.insertDataCart(data)
     }
 
@@ -44,9 +48,11 @@ class LocalDataSource private constructor(private val batikDao: BatikDao) {
 
     fun getDetailIsland(origin: String): LiveData<IslandEntity> = batikDao.getDetailIsland(origin)
 
-    fun getListIslandBatik(origin: String): LiveData<List<BatikEntity>> = batikDao.getListIslandBatik(origin)
+    fun getListIslandBatik(origin: String): LiveData<List<BatikEntity>> =
+        batikDao.getListIslandBatik(origin)
 
-    fun getListIslandExceptIslandBatik(origin: String): LiveData<List<BatikEntity>> = batikDao.getListExceptIslandBatik(origin)
+    fun getListIslandExceptIslandBatik(origin: String): LiveData<List<BatikEntity>> =
+        batikDao.getListExceptIslandBatik(origin)
 
     companion object {
         private var INSTANCE: LocalDataSource? = null

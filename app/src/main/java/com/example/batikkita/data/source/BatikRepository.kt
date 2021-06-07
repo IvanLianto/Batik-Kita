@@ -116,6 +116,10 @@ class BatikRepository private constructor(
         }.asLiveData()
     }
 
+    override fun getDetailCartById(dataId: Int): LiveData<CartEntity> {
+        return localDataSource.getDetailCart(dataId)
+    }
+
     override fun getListIslandExceptIslandBatik(origin: String): LiveData<List<BatikEntity>> {
         return localDataSource.getListIslandExceptIslandBatik(origin)
     }
