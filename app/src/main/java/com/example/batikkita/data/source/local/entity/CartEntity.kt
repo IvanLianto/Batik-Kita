@@ -30,8 +30,11 @@ data class CartEntity(
     @ColumnInfo(name = "description")
     var desc: String,
 
+    @ColumnInfo(name = "image")
+    var image: String,
+
     @ColumnInfo(name = "rating")
     var rating: Double
 ) : Parcelable{
-    constructor() : this(0,"","","","","",0.0)
+    constructor() : this(0,"","","","","", "",0.0)
 }

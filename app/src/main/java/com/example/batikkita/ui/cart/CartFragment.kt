@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
+import com.bumptech.glide.Glide
 import com.example.batikkita.R
 import com.example.batikkita.data.source.local.entity.CartEntity
 import com.example.batikkita.databinding.FragmentCartBinding
@@ -46,22 +47,9 @@ class CartFragment : Fragment(), CartOnClickInterface {
     }
 
     private fun observerRecyclerView(){
-        viewModel.getListCart().observe(viewLifecycleOwner, { list ->
-            if (list != null){
-                when(list.status){
-                    Status.LOADING -> {
-
-                    }
-                    Status.SUCCESS -> {
-                        /*adapter.submitList(list.data)*/
-                        adapter.notifyDataSetChanged()
-                    }
-                    Status.ERROR -> {
-
-                    }
-                }
-            }
-
+        viewModel.getListCart().observe(viewLifecycleOwner, {
+            adapter.submitList(it.data)
+            adapter.notifyDataSetChanged()
         })
     }
 
@@ -70,6 +58,5 @@ class CartFragment : Fragment(), CartOnClickInterface {
         intent.putExtra(DetailActivity.EXTRA_ID, data.id)
         startActivity(intent)*/
     }
-
-
+    
 }

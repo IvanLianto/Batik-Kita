@@ -1,33 +1,62 @@
 package com.example.batikkita.ui.cart
 
+import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.paging.PagedListAdapter
 import androidx.recyclerview.widget.DiffUtil
-import com.example.batikkita.data.source.local.entity.BatikEntity
+import androidx.recyclerview.widget.ListAdapter
+import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
+import com.example.batikkita.R
+import com.example.batikkita.data.source.local.entity.CartEntity
+import com.example.batikkita.databinding.ItemListCartBinding
+import com.example.batikkita.databinding.ItemListMapBinding
 import com.example.batikkita.interfaces.CartOnClickInterface
-import com.example.batikkita.ui.home.HomeAdapter
 
-class CartAdapter: PagedListAdapter<BatikEntity, HomeAdapter.HomeViewHolder>(DIFF_CALLBACK) {
+class CartAdapter : ListAdapter<CartEntity, CartAdapter.ViewHolder>(DIFF_CALLBACK) {
 
     var dataInterface: CartOnClickInterface? = null
 
     companion object {
-        private val DIFF_CALLBACK = object : DiffUtil.ItemCallback<BatikEntity>() {
-            override fun areItemsTheSame(oldItem: BatikEntity, newItem: BatikEntity): Boolean {
+        private val DIFF_CALLBACK = object : DiffUtil.ItemCallback<CartEntity>() {
+            override fun areItemsTheSame(oldItem: CartEntity, newItem: CartEntity): Boolean {
                 return oldItem.id == newItem.id
             }
 
-            override fun areContentsTheSame(oldItem: BatikEntity, newItem: BatikEntity): Boolean {
+            override fun areContentsTheSame(oldItem: CartEntity, newItem: CartEntity): Boolean {
                 return oldItem == newItem
             }
         }
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HomeAdapter.HomeViewHolder {
-        TODO("Not yet implemented")
+    inner class ViewHolder(private val binding: ItemListCartBinding) :
+        RecyclerView.ViewHolder(binding.root) {
+        fun bind (data: CartEntity, dataInterface: CartOnClickInterface?){
+            binding.apply {
+                tvBatik.text = data.name
+                tvPrice.text = data.price
+
+                Glide.with(root)
+                    .load(data.image)
+                    .placeholder(R.drawable.ic_loading)
+                    .error(R.drawable.ic_error)
+                    .into(ivPoster)
+
+                layoutRoot.setOnClickListener {
+                    dataInterface?.onClicked(
+                        root, data
+                    )
+                }
+            }
+        }
     }
 
-    override fun onBindViewHolder(holder: HomeAdapter.HomeViewHolder, position: Int) {
-        TODO("Not yet implemented")
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CartAdapter.ViewHolder {
+        return ViewHolder(
+            ItemListCartBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        )
+    }
+
+    override fun onBindViewHolder(holder: CartAdapter.ViewHolder, position: Int) {
+        holder.bind(getItem(position), dataInterface)
     }
 }

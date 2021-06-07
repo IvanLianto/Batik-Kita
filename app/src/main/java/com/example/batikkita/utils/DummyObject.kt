@@ -319,6 +319,7 @@ object DummyObject {
                 store = "Toko Batik #FailFast",
                 price = "Rp 500.000",
                 location = "Yogyakarta",
+                image = "https://i.ibb.co/gdc2vyy/Baju-batik-1.jpg",
                 desc = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sodales aliquam tempor. Donec cursus justo lacus, et convallis velit posuere id. Vivamus nec massa sit amet massa cursus faucibus sit amet rutrum tortor. Integer nec bibendum lacus. Curabitur fringilla ex sapien, eget ullamcorper nulla varius quis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nam commodo neque vitae auctor porttitor. Phasellus suscipit urna tortor, id tristique justo tincidunt eu. Sed in magna efficitur, semper mauris in, ornare massa. Sed ultrices sed dolor dignissim semper. Nam molestie elit neque, sit amet condimentum eros convallis a. Ut mattis felis et tincidunt aliquet. Vivamus rhoncus nibh eget ornare bibendum. Mauris ultricies sit amet mauris at porttitor.",
                 rating = 3.5
             )
@@ -331,6 +332,7 @@ object DummyObject {
                 store = "Toko Batik Malang",
                 price = "Rp 200.000",
                 location = "Malang",
+                image = "https://i.ibb.co/RvQqW4m/Baju-batik-2.jpg",
                 desc = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sodales aliquam tempor. Donec cursus justo lacus, et convallis velit posuere id. Vivamus nec massa sit amet massa cursus faucibus sit amet rutrum tortor. Integer nec bibendum lacus. Curabitur fringilla ex sapien, eget ullamcorper nulla varius quis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nam commodo neque vitae auctor porttitor. Phasellus suscipit urna tortor, id tristique justo tincidunt eu. Sed in magna efficitur, semper mauris in, ornare massa. Sed ultrices sed dolor dignissim semper. Nam molestie elit neque, sit amet condimentum eros convallis a. Ut mattis felis et tincidunt aliquet. Vivamus rhoncus nibh eget ornare bibendum. Mauris ultricies sit amet mauris at porttitor.",
                 rating = 4.5
             )
@@ -343,6 +345,7 @@ object DummyObject {
                 store = "Toko Batik Rise Up!",
                 price = "Rp 100.000",
                 location = "Yogyakarta",
+                image = "https://i.ibb.co/QfQ0MVB/Baju-batik-3.jpg",
                 desc = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sodales aliquam tempor. Donec cursus justo lacus, et convallis velit posuere id. Vivamus nec massa sit amet massa cursus faucibus sit amet rutrum tortor. Integer nec bibendum lacus. Curabitur fringilla ex sapien, eget ullamcorper nulla varius quis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nam commodo neque vitae auctor porttitor. Phasellus suscipit urna tortor, id tristique justo tincidunt eu. Sed in magna efficitur, semper mauris in, ornare massa. Sed ultrices sed dolor dignissim semper. Nam molestie elit neque, sit amet condimentum eros convallis a. Ut mattis felis et tincidunt aliquet. Vivamus rhoncus nibh eget ornare bibendum. Mauris ultricies sit amet mauris at porttitor.",
                 rating = 5.0
             )

@@ -46,7 +46,7 @@ class RemoteDataSource {
         return result
     }
 
-    fun getListCart(): LiveData<ApiResponse<List<CartEntity>>>{
+    /*fun getListCart(): LiveData<ApiResponse<List<CartEntity>>>{
         val result = MutableLiveData<ApiResponse<List<CartEntity>>>()
         db.collection("Cart")
             .get()
@@ -61,9 +61,13 @@ class RemoteDataSource {
                 }
             }
         return result
+    }*/
+
+    fun getListCart() : LiveData<ApiResponse<List<CartEntity>>>{
+        val result = MutableLiveData<ApiResponse<List<CartEntity>>>()
+        result.postValue(ApiResponse.success(DummyObject.generateCart()))
+        return result
     }
-
-
 
     companion object {
         @Volatile
