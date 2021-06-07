@@ -51,4 +51,7 @@ interface BatikDao {
     @Query("SELECT * FROM cartEntities")
     fun getListCart(): LiveData<List<CartEntity>>
 
+    @Query("SELECT * FROM cartEntities WHERE id = :dataId")
+    fun getDetailCart(dataId: Int): LiveData<CartEntity>
+
 }

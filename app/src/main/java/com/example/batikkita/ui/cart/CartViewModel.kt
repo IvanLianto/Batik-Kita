@@ -8,4 +8,6 @@ import com.example.vo.Resource
 
 class CartViewModel(private val batikRepository: BatikRepository) : ViewModel() {
     fun getListCart(): LiveData<Resource<List<CartEntity>>> = batikRepository.getListCart()
+
+    fun getDetailCart(dataId: Int): LiveData<CartEntity> = batikRepository.getDetailCartById(dataId)
 }

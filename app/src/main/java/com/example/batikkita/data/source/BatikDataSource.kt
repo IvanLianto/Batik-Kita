@@ -18,6 +18,8 @@ interface BatikDataSource {
 
     fun getListCart(): LiveData<Resource<List<CartEntity>>>
 
+    fun getDetailCartById(dataId: Int): LiveData<CartEntity>
+
     fun getListFavoriteBatik(): LiveData<PagedList<BatikEntity>>
 
     fun searchBatik(name: String): LiveData<PagedList<BatikEntity>>
