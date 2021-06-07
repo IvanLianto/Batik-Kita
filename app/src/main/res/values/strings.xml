@@ -45,5 +45,6 @@
     <string name="complexity">Complexity : </string>
     <string name="description">Description</string>
     <string name="pattern">Pattern</string>
+    <string name="title_cart_detail">Batik E-Commerce</string>
 
 </resources>
