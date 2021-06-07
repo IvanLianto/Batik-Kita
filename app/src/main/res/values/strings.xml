@@ -51,4 +51,10 @@
     <string name="review_product">Review Product</string>
     <string name="buy">BUY</string>
 
+    <string-array name="list_filter">
+        <item>Theme</item>
+        <item>Color</item>
+        <item>Complexity</item>
+    </string-array>
+
 </resources>

@@ -7,9 +7,8 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.batikkita.databinding.ActivityHomeBinding
 import com.example.batikkita.ui.favorite.FavoriteActivity
-import com.example.batikkita.ui.notification.NotificationActivity
+import com.example.batikkita.ui.search.SearchActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.google.firebase.firestore.FirebaseFirestore
 
 class HomeActivity : AppCompatActivity() {
 
@@ -27,7 +26,7 @@ class HomeActivity : AppCompatActivity() {
         navView.setupWithNavController(navController)
 
         binding.ivNotification.setOnClickListener {
-            startActivity(Intent(this, NotificationActivity::class.java))
+            startActivity(Intent(this, SearchActivity::class.java))
         }
 
         binding.ivFavoriteList.setOnClickListener {

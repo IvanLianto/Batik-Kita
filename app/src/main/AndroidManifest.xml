@@ -15,7 +15,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.BatikKita">
-        <activity android:name=".ui.cart.CartDetailActivity"></activity>
+        <activity android:name=".ui.search.SearchActivity"></activity>
+        <activity android:name=".ui.cart.CartDetailActivity" />
         <activity android:name=".ui.mapDetail.MapDetailActivity" />
         <activity android:name=".ui.favorite.FavoriteActivity" />
         <activity android:name=".ui.notification.NotificationActivity" />
