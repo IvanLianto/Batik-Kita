@@ -1,6 +1,8 @@
 package com.example.batikkita.ui.search
 
+import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.ArrayAdapter
 import android.widget.CheckBox
@@ -8,20 +10,37 @@ import android.widget.RadioButton
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModelProvider
+import androidx.sqlite.db.SimpleSQLiteQuery
+import androidx.sqlite.db.SupportSQLiteQuery
 import com.example.batikkita.R
+import com.example.batikkita.data.source.local.entity.BatikEntity
 import com.example.batikkita.databinding.ActivitySearchBinding
+import com.example.batikkita.interfaces.BatikOnClickInterface
+import com.example.batikkita.ui.detail.DetailActivity
+import com.example.batikkita.utils.ViewModelFactory
+import com.example.batikkita.utils.show
 
-class SearchActivity : AppCompatActivity() {
+class SearchActivity : AppCompatActivity(), BatikOnClickInterface {
 
     private lateinit var binding: ActivitySearchBinding
+    private lateinit var adapter: SearchAdapter
+    private lateinit var viewModel: SearchViewModel
+
     private lateinit var result: ArrayList<String>
     private lateinit var indexSpinner: MutableLiveData<String>
     private lateinit var resultString: String
+
+    private var type = ""
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivitySearchBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        val factory = ViewModelFactory.getInstance(this)
+        viewModel = ViewModelProvider(this, factory)[SearchViewModel::class.java]
 
         val spinnerAdapter = ArrayAdapter.createFromResource(
             this,
@@ -35,6 +54,10 @@ class SearchActivity : AppCompatActivity() {
         result = ArrayList()
         indexSpinner = MutableLiveData()
 
+        adapter = SearchAdapter()
+        adapter.dataInterface = this
+        binding.rvSearch.adapter = adapter
+
         setListener()
         getData()
 
@@ -46,26 +69,36 @@ class SearchActivity : AppCompatActivity() {
                 "Theme" -> {
                     result.clear()
                     indexSpinner.value = "Theme"
-                    binding.groupTheme.visibility = View.VISIBLE
-                    binding.groupColor.visibility = View.GONE
-                    binding.rbgComplexity.visibility = View.GONE
-
+                    binding.apply {
+                        groupTheme.show(true)
+                        groupColor.show(false)
+                        rbgComplexity.show(false)
+                        rvSearch.show(false)
+                        btnSearchParam.show(true)
+                    }
                 }
                 "Color" -> {
                     result.clear()
                     indexSpinner.value = "Color"
-                    binding.groupColor.visibility = View.VISIBLE
-                    binding.groupTheme.visibility = View.GONE
-                    binding.rbgComplexity.visibility = View.GONE
+                    binding.apply {
+                        groupTheme.show(false)
+                        groupColor.show(true)
+                        rbgComplexity.show(false)
+                        rvSearch.show(false)
+                        btnSearchParam.show(true)
+                    }
 
                 }
                 "Complexity" -> {
                     result.clear()
                     indexSpinner.value = "Complexity"
-                    binding.rbgComplexity.visibility = View.VISIBLE
-                    binding.groupTheme.visibility = View.GONE
-                    binding.groupColor.visibility = View.GONE
-
+                    binding.apply {
+                        groupTheme.show(false)
+                        groupColor.show(false)
+                        rbgComplexity.show(true)
+                        rvSearch.show(false)
+                        btnSearchParam.show(true)
+                    }
                 }
             }
         }
@@ -77,6 +110,7 @@ class SearchActivity : AppCompatActivity() {
             when (indexSpinner.value) {
                 "Theme" -> {
                     val list = ArrayList<CheckBox>()
+                    type = "theme"
                     with(binding) {
                         list.add(cbCalligraphy)
                         list.add(cbCloud)
@@ -92,12 +126,11 @@ class SearchActivity : AppCompatActivity() {
                             result.add(data.text.toString())
                         }
                     }
-
-                    parseStringToResult(result)
                 }
 
                 "Color" -> {
                     val list = ArrayList<CheckBox>()
+                    type = "color"
                     with(binding) {
                         list.add(cbBlack)
                         list.add(cbBlue)
@@ -115,12 +148,11 @@ class SearchActivity : AppCompatActivity() {
                             result.add(data.text.toString())
                         }
                     }
-
-                    parseStringToResult(result)
                 }
 
                 "Complexity" -> {
                     val list = ArrayList<RadioButton>()
+                    type = "complexity"
                     with(binding) {
                         list.add(rbLow)
                         list.add(rbMedium)
@@ -132,9 +164,12 @@ class SearchActivity : AppCompatActivity() {
                             result.add(data.text.toString())
                         }
                     }
-
-                    parseStringToResult(result)
                 }
+            }
+            if (result.isEmpty()) {
+                Toast.makeText(this@SearchActivity, "Please choose one", Toast.LENGTH_SHORT).show()
+            }else {
+                parseStringToResult(result)
             }
         }
     }
@@ -142,10 +177,10 @@ class SearchActivity : AppCompatActivity() {
     private fun parseStringToResult(list: ArrayList<String>) {
         val sb = StringBuilder()
         for (i in 0 until list.size) {
-            if(i == list.size-1){
-                sb.append("%").append(list[i]).append("%")
+            sb.append(" $type LIKE '%${list[i]}%' ")
+            if (i != list.size - 1 && list.size != 1) {
+                sb.append(" OR ")
             }
-            sb.append("%").append(list[i]).append("%").append("AND theme LIKE")
         }
         val result = sb.toString()
         resultString = result
@@ -154,6 +189,24 @@ class SearchActivity : AppCompatActivity() {
     }
 
     private fun observeViewModel(){
-        Toast.makeText(this, resultString,Toast.LENGTH_SHORT).show()
+        binding.apply {
+            groupTheme.show(false)
+            groupColor.show(false)
+            rbgComplexity.show(false)
+            rvSearch.show(true)
+            btnSearchParam.show(false)
+        }
+        val query = SimpleSQLiteQuery("SELECT * FROM batikEntities WHERE $resultString")
+        viewModel.searchBatikByFilter(query).observe(this, { list ->
+            Log.d("SearchActivity", resultString)
+            adapter.submitList(list)
+            adapter.notifyDataSetChanged()
+        })
+    }
+
+    override fun onClicked(view: View, data: BatikEntity) {
+        val intent = Intent(this, DetailActivity::class.java)
+        intent.putExtra(DetailActivity.EXTRA_ID, data.id)
+        startActivity(intent)
     }
 }

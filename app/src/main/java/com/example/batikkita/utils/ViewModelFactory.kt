@@ -13,6 +13,7 @@ import com.example.batikkita.ui.map.MapViewModel
 import com.example.batikkita.ui.mapDetail.MapDetailViewModel
 import com.example.batikkita.ui.scan.RecognitionListViewModel
 import com.example.batikkita.ui.scan.ScanViewModel
+import com.example.batikkita.ui.search.SearchViewModel
 
 class ViewModelFactory private constructor(private val mBatikRepository: BatikRepository): ViewModelProvider.NewInstanceFactory(){
     @Suppress("UNCHECKED_CAST")
@@ -38,6 +39,9 @@ class ViewModelFactory private constructor(private val mBatikRepository: BatikRe
             }
             modelClass.isAssignableFrom(CartViewModel::class.java) -> {
                 CartViewModel(mBatikRepository) as T
+            }
+            modelClass.isAssignableFrom(SearchViewModel::class.java) -> {
+                SearchViewModel(mBatikRepository) as T
             }
             else -> throw Throwable("Unknown ViewModel class: " + modelClass.name)
         }

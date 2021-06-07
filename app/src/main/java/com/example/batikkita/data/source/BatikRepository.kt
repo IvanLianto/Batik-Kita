@@ -3,6 +3,7 @@ package com.example.batikkita.data.source
 import androidx.lifecycle.LiveData
 import androidx.paging.LivePagedListBuilder
 import androidx.paging.PagedList
+import androidx.sqlite.db.SupportSQLiteQuery
 import com.example.batikkita.data.NetworkBoundResource
 import com.example.batikkita.data.source.local.LocalDataSource
 import com.example.batikkita.data.source.local.entity.BatikEntity
@@ -84,6 +85,10 @@ class BatikRepository private constructor(
             .setPageSize(4)
             .build()
         return LivePagedListBuilder(localDataSource.searchBatik(name), config).build()
+    }
+
+    override fun searchBatikByFilter(query: SupportSQLiteQuery): LiveData<List<BatikEntity>> {
+        return localDataSource.searchBatikByFilter(query)
     }
 
     override fun setFavorite(data: BatikEntity) {

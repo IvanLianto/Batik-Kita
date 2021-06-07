@@ -3,9 +3,12 @@ package com.example.batikkita.data.source.local.room
 import androidx.lifecycle.LiveData
 import androidx.paging.DataSource
 import androidx.room.*
+import androidx.sqlite.db.SupportSQLiteQuery
 import com.example.batikkita.data.source.local.entity.BatikEntity
 import com.example.batikkita.data.source.local.entity.CartEntity
 import com.example.batikkita.data.source.local.entity.IslandEntity
+import com.example.batikkita.ui.search.SearchActivity
+import com.example.batikkita.utils.SearchHelper
 
 @Dao
 interface BatikDao {
@@ -26,6 +29,9 @@ interface BatikDao {
 
     @Query("SELECT * FROM batikEntities WHERE name LIKE :name ")
     fun searchBatik(name: String): DataSource.Factory<Int, BatikEntity>
+
+    @RawQuery(observedEntities = [BatikEntity::class])
+    fun searchBatikByFilter(query: SupportSQLiteQuery): LiveData<List<BatikEntity>>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE, entity = BatikEntity::class)
     fun insertData(data: List<BatikEntity>)

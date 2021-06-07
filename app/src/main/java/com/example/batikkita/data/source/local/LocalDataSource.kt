@@ -2,6 +2,7 @@ package com.example.batikkita.data.source.local
 
 import androidx.lifecycle.LiveData
 import androidx.paging.DataSource
+import androidx.sqlite.db.SupportSQLiteQuery
 import com.example.batikkita.data.source.local.entity.BatikEntity
 import com.example.batikkita.data.source.local.entity.CartEntity
 import com.example.batikkita.data.source.local.entity.IslandEntity
@@ -28,6 +29,9 @@ class LocalDataSource private constructor(private val batikDao: BatikDao) {
 
     fun searchBatik(name: String): DataSource.Factory<Int, BatikEntity> =
         batikDao.searchBatik("%$name%")
+
+    fun searchBatikByFilter(query: SupportSQLiteQuery): LiveData<List<BatikEntity>> =
+        batikDao.searchBatikByFilter(query)
 
     fun setFavorite(data: BatikEntity) {
         data.favorite = !data.favorite

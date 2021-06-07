@@ -23,6 +23,10 @@ object ScanHelper {
     var dataIsReady : Boolean = false
 }
 
+object SearchHelper {
+    var TYPE = "type"
+}
+
 fun View.show(flag: Boolean) {
     visibility = if (flag) View.VISIBLE else View.GONE
 }

@@ -2,6 +2,7 @@ package com.example.batikkita.data.source
 
 import androidx.lifecycle.LiveData
 import androidx.paging.PagedList
+import androidx.sqlite.db.SupportSQLiteQuery
 import com.example.batikkita.data.source.local.entity.BatikEntity
 import com.example.batikkita.data.source.local.entity.CartEntity
 import com.example.batikkita.data.source.local.entity.IslandEntity
@@ -23,6 +24,8 @@ interface BatikDataSource {
     fun getListFavoriteBatik(): LiveData<PagedList<BatikEntity>>
 
     fun searchBatik(name: String): LiveData<PagedList<BatikEntity>>
+
+    fun searchBatikByFilter(query: SupportSQLiteQuery): LiveData<List<BatikEntity>>
 
     fun setFavorite(data: BatikEntity)
 

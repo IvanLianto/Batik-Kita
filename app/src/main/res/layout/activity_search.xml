@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@drawable/batik_accentfix"
     android:layout_height="match_parent"
+    android:background="@drawable/batik_accentfix"
     tools:context=".ui.search.SearchActivity">
 
     <androidx.appcompat.widget.AppCompatSpinner
@@ -22,8 +21,8 @@
         android:id="@+id/tv1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Find based on : "
         android:layout_margin="16dp"
+        android:text="Find based on : "
         android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -32,9 +31,9 @@
         android:id="@+id/btn_set"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Set"
-        android:layout_marginEnd="16dp"
         android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:text="Set"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv1" />
 
@@ -54,8 +53,8 @@
         android:id="@+id/cb_geometric"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
         android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
         android:text="geometric"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cb_human" />
@@ -91,8 +90,8 @@
         android:id="@+id/cb_cloud"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="cloud"
         android:layout_margin="8dp"
+        android:text="cloud"
         app:layout_constraintStart_toEndOf="@+id/cb_fauna"
         app:layout_constraintTop_toBottomOf="@+id/cb_monument" />
 
@@ -100,8 +99,8 @@
         android:id="@+id/cb_calligraphy"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="calligraphy"
         android:layout_marginTop="8dp"
+        android:text="calligraphy"
         app:layout_constraintStart_toStartOf="@+id/cb_geometric"
         app:layout_constraintTop_toBottomOf="@+id/cb_geometric" />
 
@@ -109,9 +108,9 @@
         android:id="@+id/group_theme"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:visibility="gone"
         app:constraint_referenced_ids="cb_calligraphy, cb_cloud, cb_fauna, cb_flora, cb_geometric, cb_geometric, cb_human, cb_monument"
         tools:layout_editor_absoluteX="186dp"
-        android:visibility="gone"
         tools:layout_editor_absoluteY="335dp" />
 
     <!--color-->
@@ -130,8 +129,8 @@
         android:id="@+id/cb_black"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
         android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
         android:text="black"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cb_red" />
@@ -149,8 +148,8 @@
         android:id="@+id/cb_dark_blue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="dark blue"
         android:layout_margin="8dp"
+        android:text="dark blue"
         app:layout_constraintStart_toEndOf="@+id/cb_orange"
         app:layout_constraintTop_toBottomOf="@+id/btn_set" />
 
@@ -203,18 +202,18 @@
         android:id="@+id/group_color"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:visibility="gone"
         app:constraint_referenced_ids="cb_black,cb_blue,cb_brown,cb_dark_blue,cb_green,cb_orange,cb_red,cb_red,cb_white,cb_yellow"
         tools:layout_editor_absoluteX="186dp"
-        android:visibility="gone"
         tools:layout_editor_absoluteY="335dp" />
 
     <!--complexity-->
 
     <RadioGroup
         android:id="@+id/rbg_complexity"
-        android:visibility="gone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:visibility="gone"
         app:layout_constraintStart_toStartOf="@+id/spinner"
         app:layout_constraintTop_toBottomOf="@+id/btn_set">
 
@@ -223,11 +222,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="low" />
+
         <RadioButton
             android:id="@+id/rb_medium"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="medium" />
+
         <RadioButton
             android:id="@+id/rb_high"
             android:layout_width="wrap_content"
@@ -236,12 +237,27 @@
 
     </RadioGroup>
 
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_search"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="16dp"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/spinner"
+        android:visibility="visible"
+        app:spanCount="2"
+        tools:listitem="@layout/item_list" />
+
     <Button
         android:id="@+id/btn_searchParam"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="SEARCH"
         android:layout_margin="16dp"
+        android:text="SEARCH"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
