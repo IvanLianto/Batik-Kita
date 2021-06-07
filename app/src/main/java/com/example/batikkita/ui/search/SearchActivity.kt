@@ -58,6 +58,10 @@ class SearchActivity : AppCompatActivity(), BatikOnClickInterface {
         adapter.dataInterface = this
         binding.rvSearch.adapter = adapter
 
+        binding.ivBack.setOnClickListener {
+            onBackPressed()
+        }
+
         setListener()
         getData()
 

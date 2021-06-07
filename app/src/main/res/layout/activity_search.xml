@@ -7,6 +7,41 @@
     android:background="@drawable/batik_accentfix"
     tools:context=".ui.search.SearchActivity">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_search"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:elevation="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:titleTextColor="@color/black">
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|start"
+            android:src="@drawable/ic_back" />
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="30dp"
+            android:src="@drawable/logo_app"
+            android:layout_gravity="center"/>
+
+
+        <ImageView
+            android:id="@+id/iv_favoriteList"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|end"
+            android:layout_marginEnd="16dp"
+            android:src="@drawable/ic_favorite_border_24" />
+
+
+    </androidx.appcompat.widget.Toolbar>
+
     <androidx.appcompat.widget.AppCompatSpinner
         android:id="@+id/spinner"
         android:layout_width="0dp"
@@ -22,10 +57,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
-        android:text="Find based on : "
+        android:text="@string/find_based_on"
         android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/toolbar_search" />
 
     <Button
         android:id="@+id/btn_set"
@@ -33,7 +68,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
-        android:text="Set"
+        android:text="@string/set"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv1" />
 
@@ -45,7 +80,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
-        android:text="human"
+        android:text="@string/human"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_set" />
 
@@ -55,7 +90,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
-        android:text="geometric"
+        android:text="@string/geometric"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cb_human" />
 
@@ -64,7 +99,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
-        android:text="monument"
+        android:text="@string/monument"
         app:layout_constraintStart_toEndOf="@+id/cb_fauna"
         app:layout_constraintTop_toBottomOf="@+id/btn_set" />
 
@@ -73,7 +108,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
-        android:text="fauna"
+        android:text="@string/fauna"
         app:layout_constraintStart_toEndOf="@+id/cb_geometric"
         app:layout_constraintTop_toBottomOf="@+id/btn_set" />
 
@@ -82,7 +117,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
-        android:text="flora"
+        android:text="@string/flora"
         app:layout_constraintStart_toEndOf="@+id/cb_geometric"
         app:layout_constraintTop_toBottomOf="@+id/cb_fauna" />
 
@@ -91,7 +126,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
-        android:text="cloud"
+        android:text="@string/cloud"
         app:layout_constraintStart_toEndOf="@+id/cb_fauna"
         app:layout_constraintTop_toBottomOf="@+id/cb_monument" />
 
@@ -100,7 +135,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="calligraphy"
+        android:text="@string/calligraphy"
         app:layout_constraintStart_toStartOf="@+id/cb_geometric"
         app:layout_constraintTop_toBottomOf="@+id/cb_geometric" />
 
@@ -121,7 +156,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
-        android:text="red"
+        android:text="@string/red"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_set" />
 
@@ -131,7 +166,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
-        android:text="black"
+        android:text="@string/black"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cb_red" />
 
@@ -140,7 +175,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="orange"
+        android:text="@string/orange"
         app:layout_constraintStart_toStartOf="@+id/cb_black"
         app:layout_constraintTop_toBottomOf="@+id/cb_black" />
 
@@ -149,7 +184,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
-        android:text="dark blue"
+        android:text="@string/dark_blue"
         app:layout_constraintStart_toEndOf="@+id/cb_orange"
         app:layout_constraintTop_toBottomOf="@+id/btn_set" />
 
@@ -158,7 +193,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
-        android:text="brown"
+        android:text="@string/brown"
         app:layout_constraintStart_toEndOf="@+id/cb_orange"
         app:layout_constraintTop_toBottomOf="@+id/cb_dark_blue" />
 
@@ -167,7 +202,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
-        android:text="yellow"
+        android:text="@string/yellow"
         app:layout_constraintStart_toEndOf="@+id/cb_orange"
         app:layout_constraintTop_toBottomOf="@+id/cb_brown" />
 
@@ -176,7 +211,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
-        android:text="blue"
+        android:text="@string/blue"
         app:layout_constraintStart_toEndOf="@+id/cb_dark_blue"
         app:layout_constraintTop_toBottomOf="@+id/btn_set" />
 
@@ -185,7 +220,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
-        android:text="white"
+        android:text="@string/white"
         app:layout_constraintStart_toEndOf="@+id/cb_dark_blue"
         app:layout_constraintTop_toBottomOf="@+id/cb_blue" />
 
@@ -194,7 +229,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
-        android:text="green"
+        android:text="@string/green"
         app:layout_constraintStart_toEndOf="@+id/cb_dark_blue"
         app:layout_constraintTop_toBottomOf="@+id/cb_white" />
 
@@ -221,19 +256,19 @@
             android:id="@+id/rb_low"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="low" />
+            android:text="@string/low" />
 
         <RadioButton
             android:id="@+id/rb_medium"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="medium" />
+            android:text="@string/medium" />
 
         <RadioButton
             android:id="@+id/rb_high"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="high" />
+            android:text="@string/high" />
 
     </RadioGroup>
 
@@ -257,7 +292,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
-        android:text="SEARCH"
+        android:text="@string/search"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

@@ -50,6 +50,28 @@
     <string name="text_description">Batik 1 is from Jogjakarta.........................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................You can get this Batik here</string>
     <string name="review_product">Review Product</string>
     <string name="buy">BUY</string>
+    <string name="find_based_on">Find based on :</string>
+    <string name="set">Set</string>
+    <string name="human">human</string>
+    <string name="geometric">geometric</string>
+    <string name="monument">monument</string>
+    <string name="fauna">fauna</string>
+    <string name="flora">flora</string>
+    <string name="cloud">cloud</string>
+    <string name="calligraphy">calligraphy</string>
+    <string name="red">red</string>
+    <string name="black">black</string>
+    <string name="orange">orange</string>
+    <string name="dark_blue">dark blue</string>
+    <string name="brown">brown</string>
+    <string name="yellow">yellow</string>
+    <string name="blue">blue</string>
+    <string name="white">white</string>
+    <string name="green">green</string>
+    <string name="low">low</string>
+    <string name="medium">medium</string>
+    <string name="high">high</string>
+    <string name="search">SEARCH</string>
 
     <string-array name="list_filter">
         <item>Theme</item>
