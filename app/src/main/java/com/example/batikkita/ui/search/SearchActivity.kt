@@ -17,6 +17,7 @@ import com.example.batikkita.data.source.local.entity.BatikEntity
 import com.example.batikkita.databinding.ActivitySearchBinding
 import com.example.batikkita.interfaces.BatikOnClickInterface
 import com.example.batikkita.ui.detail.DetailActivity
+import com.example.batikkita.ui.favorite.FavoriteActivity
 import com.example.batikkita.utils.ViewModelFactory
 import com.example.batikkita.utils.show
 
@@ -59,6 +60,10 @@ class SearchActivity : AppCompatActivity(), BatikOnClickInterface {
 
         binding.ivBack.setOnClickListener {
             onBackPressed()
+        }
+
+        binding.ivFavoriteList.setOnClickListener {
+            startActivity(Intent(this, FavoriteActivity::class.java))
         }
 
         setListener()

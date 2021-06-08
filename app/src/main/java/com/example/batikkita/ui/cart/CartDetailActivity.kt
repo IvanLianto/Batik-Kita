@@ -31,6 +31,8 @@ class CartDetailActivity : AppCompatActivity() {
             })
         }
 
+        binding.ivActionBack.setOnClickListener { onBackPressed() }
+
     }
 
     private fun setBinding(data: CartEntity) {
@@ -40,9 +42,12 @@ class CartDetailActivity : AppCompatActivity() {
                 .placeholder(R.drawable.ic_loading)
                 .error(R.drawable.ic_error)
                 .into(ivPoster)
+            tvBatik.text = data.name
+            tvPrice.text = data.price
             tvPackingLocation.text =
                 String.format(getString(R.string.packing_from_location), data.location)
             tvDescription.text = data.desc
+            ratingBar.rating = data.rating.toFloat()
             btnBuy.setOnClickListener {
                 Toast.makeText(this@CartDetailActivity, "COMING SOON!", Toast.LENGTH_SHORT).show()
             }
