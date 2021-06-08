@@ -14,6 +14,7 @@ import com.example.batikkita.data.source.local.entity.IslandEntity
 import com.example.batikkita.databinding.FragmentMapBinding
 import com.example.batikkita.ui.mapDetail.MapDetailActivity
 import com.example.batikkita.utils.ViewModelFactory
+import com.example.batikkita.utils.alertDialog
 import com.example.batikkita.utils.show
 import com.example.vo.Status
 import com.google.gson.Gson
@@ -72,7 +73,8 @@ class MapFragment : Fragment() {
                         showMarker(island.data)
                     }
                     Status.ERROR -> {
-
+                        isLoading(false)
+                        alertDialog(requireContext(), "ERROR", "Check your internet connection!")
                     }
                 }
             }
