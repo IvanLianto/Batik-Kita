@@ -11,5 +11,6 @@ data class Recognition(
 ) : Parcelable {
     val probabilityString = String.format("%.1f%%", confidence * 100.0f)
     val splitString = label.split("-")
-    val splitLabel = splitString[0].capitalize(Locale.ROOT) + " " + splitString[1].capitalize(Locale.ROOT)
+    val splitLabel =
+        splitString[0].capitalize(Locale.ROOT) + " " + splitString[1].capitalize(Locale.ROOT)
 }

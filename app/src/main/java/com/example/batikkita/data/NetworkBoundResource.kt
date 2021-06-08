@@ -7,7 +7,7 @@ import com.example.batikkita.data.source.remote.StatusResponse
 import com.example.batikkita.utils.AppExecutors
 import com.example.vo.Resource
 
-abstract class NetworkBoundResource <ResultType, RequestType> (private val mExecutors: AppExecutors){
+abstract class NetworkBoundResource<ResultType, RequestType>(private val mExecutors: AppExecutors) {
 
     private val result = MediatorLiveData<Resource<ResultType>>()
 
@@ -17,9 +17,9 @@ abstract class NetworkBoundResource <ResultType, RequestType> (private val mExec
         @Suppress("LeakingThis")
         val dbSource = loadFromDB()
 
-        result.addSource(dbSource) {data->
+        result.addSource(dbSource) { data ->
             result.removeSource(dbSource)
-            if (shouldFetch(data)){
+            if (shouldFetch(data)) {
                 fetchFromNetwork(dbSource)
             } else {
                 result.addSource(dbSource) {
@@ -29,7 +29,7 @@ abstract class NetworkBoundResource <ResultType, RequestType> (private val mExec
         }
     }
 
-    protected fun onFetchFailed(){}
+    protected fun onFetchFailed() {}
 
     protected abstract fun loadFromDB(): LiveData<ResultType>
     protected abstract fun shouldFetch(data: ResultType?): Boolean
@@ -40,16 +40,16 @@ abstract class NetworkBoundResource <ResultType, RequestType> (private val mExec
 
         val apiResponse = createCall()
 
-        result.addSource(dbSource){
+        result.addSource(dbSource) {
             result.value = Resource.loading(it)
         }
 
-        result.addSource(apiResponse){ response ->
+        result.addSource(apiResponse) { response ->
             result.removeSource(apiResponse)
             result.removeSource(dbSource)
-            when(response.status){
+            when (response.status) {
 
-                StatusResponse.SUCCESS ->{
+                StatusResponse.SUCCESS -> {
                     mExecutors.diskIO().execute {
                         saveCallResult(response.body)
                         mExecutors.mainThread().execute {
@@ -60,7 +60,7 @@ abstract class NetworkBoundResource <ResultType, RequestType> (private val mExec
                     }
                 }
 
-                StatusResponse.EMPTY ->{
+                StatusResponse.EMPTY -> {
                     mExecutors.mainThread().execute {
                         result.addSource(loadFromDB()) {
                             result.value = Resource.success(it)
@@ -68,9 +68,9 @@ abstract class NetworkBoundResource <ResultType, RequestType> (private val mExec
                     }
                 }
 
-                StatusResponse.ERROR ->{
+                StatusResponse.ERROR -> {
                     onFetchFailed()
-                    result.addSource(dbSource){
+                    result.addSource(dbSource) {
                         result.value = Resource.error(response.message, it)
                     }
 

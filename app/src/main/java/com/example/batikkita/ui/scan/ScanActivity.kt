@@ -1,19 +1,14 @@
 package com.example.batikkita.ui.scan
 
 import android.content.Intent
-import android.graphics.Bitmap
 import android.os.Bundle
-import android.util.Log
 import android.view.View
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
-import com.example.batikkita.data.source.local.entity.BatikEntity
 import com.example.batikkita.databinding.ActivityScanBinding
 import com.example.batikkita.interfaces.RecognitionOnClickInterface
 import com.example.batikkita.ui.detail.DetailActivity
 import com.example.batikkita.utils.BitmapHelper
-import com.example.batikkita.utils.DummyObject
 import com.example.batikkita.utils.ScanHelper
 import com.example.batikkita.utils.ViewModelFactory
 import java.util.*

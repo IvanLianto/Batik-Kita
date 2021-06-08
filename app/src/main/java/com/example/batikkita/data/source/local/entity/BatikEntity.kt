@@ -43,11 +43,11 @@ data class BatikEntity(
     var complexity: String,
 
     @ColumnInfo(name = "pattern")
-    var pattern : String,
+    var pattern: String,
 
     @ColumnInfo(name = "favorite")
     var favorite: Boolean = false
 
-) : Parcelable{
-    constructor() : this(0, "","","","","","","","","","",false)
+) : Parcelable {
+    constructor() : this(0, "", "", "", "", "", "", "", "", "", "", false)
 }

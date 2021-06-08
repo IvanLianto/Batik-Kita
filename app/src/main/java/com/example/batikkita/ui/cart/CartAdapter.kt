@@ -9,7 +9,6 @@ import com.bumptech.glide.Glide
 import com.example.batikkita.R
 import com.example.batikkita.data.source.local.entity.CartEntity
 import com.example.batikkita.databinding.ItemListCartBinding
-import com.example.batikkita.databinding.ItemListMapBinding
 import com.example.batikkita.interfaces.CartOnClickInterface
 
 class CartAdapter : ListAdapter<CartEntity, CartAdapter.ViewHolder>(DIFF_CALLBACK) {
@@ -30,7 +29,7 @@ class CartAdapter : ListAdapter<CartEntity, CartAdapter.ViewHolder>(DIFF_CALLBAC
 
     inner class ViewHolder(private val binding: ItemListCartBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        fun bind (data: CartEntity, dataInterface: CartOnClickInterface?){
+        fun bind(data: CartEntity, dataInterface: CartOnClickInterface?) {
             binding.apply {
                 tvBatik.text = data.name
                 tvPrice.text = data.price

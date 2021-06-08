@@ -80,16 +80,16 @@ class MapFragment : Fragment() {
     private fun showMarker(data: List<IslandEntity>?) {
         mapboxMap.setStyle(Style.MAPBOX_STREETS) { style ->
             style.addImage(
-                    ICON_ID,
-                    BitmapFactory.decodeResource(resources, R.drawable.mapbox_marker_icon_default)
-                )
+                ICON_ID,
+                BitmapFactory.decodeResource(resources, R.drawable.mapbox_marker_icon_default)
+            )
             val latLngBoundsBuilder = LatLngBounds.Builder()
 
             symbolManager = SymbolManager(binding.mapView, mapboxMap, style)
             symbolManager.iconAllowOverlap = true
 
             val options = ArrayList<SymbolOptions>()
-            data?.forEach{ list ->
+            data?.forEach { list ->
                 latLngBoundsBuilder.include(LatLng(list.latitude, list.longitude))
                 options.add(
                     SymbolOptions()

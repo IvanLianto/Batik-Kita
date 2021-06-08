@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/white"
     android:scaleType="centerCrop"
     tools:context=".ui.cart.CartFragment">
@@ -13,8 +12,8 @@
         android:id="@+id/iv_background"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:src="@drawable/batik_accent_2"
-        android:scaleType="centerCrop"/>
+        android:scaleType="centerCrop"
+        android:src="@drawable/batik_accent_2" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_cart"
@@ -22,7 +21,7 @@
         android:layout_height="match_parent"
         android:layout_margin="16dp"
         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-        tools:listitem=""
-        app:spanCount="2" />
+        app:spanCount="2"
+        tools:listitem="" />
 
 </FrameLayout>

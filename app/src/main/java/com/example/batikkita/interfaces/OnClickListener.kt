@@ -13,6 +13,6 @@ interface RecognitionOnClickInterface {
     fun onClicked(view: View, data: Recognition)
 }
 
-interface CartOnClickInterface{
+interface CartOnClickInterface {
     fun onClicked(view: View, data: CartEntity)
 }

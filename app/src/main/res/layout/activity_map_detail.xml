@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.mapDetail.MapDetailActivity">
+
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -14,30 +14,29 @@
         <com.google.android.material.appbar.CollapsingToolbarLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:fitsSystemWindows="true"
             android:background="@color/white"
+            android:fitsSystemWindows="true"
             app:contentScrim="@android:color/transparent">
 
-                <ImageView
-                    android:id="@+id/iv_action_back"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
-                    android:contentDescription="@string/action_back"
-                    android:src="@drawable/ic_back"
-                    android:layout_gravity="start|center_vertical"
-                    app:tint="@color/dark_yellow" />
+            <ImageView
+                android:id="@+id/iv_action_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start|center_vertical"
+                android:layout_margin="10dp"
+                android:contentDescription="@string/action_back"
+                android:src="@drawable/ic_back"
+                app:tint="@color/dark_yellow" />
 
-                <TextView
-                    android:id="@+id/tv_title"
-                    android:textSize="16sp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/epilogue_semibold"
-                    android:text="@string/example_batik"
-                    android:textColor="@color/dark_yellow"
-                    android:layout_gravity="center_horizontal|center_vertical"
-                     />
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:fontFamily="@font/epilogue_semibold"
+                android:text="@string/example_batik"
+                android:textColor="@color/dark_yellow"
+                android:textSize="16sp" />
 
         </com.google.android.material.appbar.CollapsingToolbarLayout>
 
@@ -45,8 +44,8 @@
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -81,9 +80,9 @@
                 android:id="@+id/tv_batikIsland"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/batik_from_this_island"
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="8dp"
+                android:text="@string/batik_from_this_island"
                 app:layout_constraintStart_toStartOf="@+id/tv_detail_island"
                 app:layout_constraintTop_toBottomOf="@+id/tv_detail_island" />
 
@@ -130,11 +129,7 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-
-
     </androidx.core.widget.NestedScrollView>
-
-
 
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

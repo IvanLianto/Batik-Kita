@@ -21,7 +21,8 @@ class BatikRepository private constructor(
 ) : BatikDataSource {
 
     override fun getListBatik(): LiveData<Resource<PagedList<BatikEntity>>> {
-        return object : NetworkBoundResource<PagedList<BatikEntity>, List<BatikEntity>>(appExecutors) {
+        return object :
+            NetworkBoundResource<PagedList<BatikEntity>, List<BatikEntity>>(appExecutors) {
             override fun loadFromDB(): LiveData<PagedList<BatikEntity>> {
                 val config = PagedList.Config.Builder()
                     .setEnablePlaceholders(false)
@@ -31,7 +32,7 @@ class BatikRepository private constructor(
                 return LivePagedListBuilder(localDataSource.getListBatik(), config).build()
             }
 
-            override fun shouldFetch(data: PagedList<BatikEntity>?) : Boolean =
+            override fun shouldFetch(data: PagedList<BatikEntity>?): Boolean =
                 data == null || data.isEmpty()
 
             override fun createCall(): LiveData<ApiResponse<List<BatikEntity>>> =
@@ -92,7 +93,7 @@ class BatikRepository private constructor(
     }
 
     override fun setFavorite(data: BatikEntity) {
-        appExecutors.diskIO().execute{localDataSource.setFavorite(data)}
+        appExecutors.diskIO().execute { localDataSource.setFavorite(data) }
     }
 
     override fun getDetailIsland(origin: String): LiveData<IslandEntity> {

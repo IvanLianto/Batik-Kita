@@ -1,8 +1,8 @@
 package com.example.batikkita.ui.cart
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
 import com.example.batikkita.R
@@ -40,9 +40,10 @@ class CartDetailActivity : AppCompatActivity() {
                 .placeholder(R.drawable.ic_loading)
                 .error(R.drawable.ic_error)
                 .into(ivPoster)
-            tvPackingLocation.text = String.format(getString(R.string.packing_from_location), data.location)
+            tvPackingLocation.text =
+                String.format(getString(R.string.packing_from_location), data.location)
             tvDescription.text = data.desc
-            btnBuy.setOnClickListener{
+            btnBuy.setOnClickListener {
                 Toast.makeText(this@CartDetailActivity, "COMING SOON!", Toast.LENGTH_SHORT).show()
             }
         }

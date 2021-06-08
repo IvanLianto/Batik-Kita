@@ -12,7 +12,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModelProvider
 import androidx.sqlite.db.SimpleSQLiteQuery
-import androidx.sqlite.db.SupportSQLiteQuery
 import com.example.batikkita.R
 import com.example.batikkita.data.source.local.entity.BatikEntity
 import com.example.batikkita.databinding.ActivitySearchBinding
@@ -172,7 +171,7 @@ class SearchActivity : AppCompatActivity(), BatikOnClickInterface {
             }
             if (result.isEmpty()) {
                 Toast.makeText(this@SearchActivity, "Please choose one", Toast.LENGTH_SHORT).show()
-            }else {
+            } else {
                 parseStringToResult(result)
             }
         }
@@ -192,7 +191,7 @@ class SearchActivity : AppCompatActivity(), BatikOnClickInterface {
         observeViewModel()
     }
 
-    private fun observeViewModel(){
+    private fun observeViewModel() {
         binding.apply {
             groupTheme.show(false)
             groupColor.show(false)

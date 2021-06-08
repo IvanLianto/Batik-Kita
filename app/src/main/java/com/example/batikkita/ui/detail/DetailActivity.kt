@@ -1,8 +1,8 @@
 package com.example.batikkita.ui.detail
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
 import com.example.batikkita.R
@@ -74,10 +74,18 @@ class DetailActivity : AppCompatActivity() {
 
     private fun setFavorite(data: BatikEntity) {
         if (!data.favorite) {
-            Toast.makeText(this, String.format(getString(R.string.success_favorite), data.name), Toast.LENGTH_SHORT).show()
+            Toast.makeText(
+                this,
+                String.format(getString(R.string.success_favorite), data.name),
+                Toast.LENGTH_SHORT
+            ).show()
             viewModel.setFavorite(data)
         } else {
-            Toast.makeText(this, String.format(getString(R.string.success_unfavorite), data.name), Toast.LENGTH_SHORT).show()
+            Toast.makeText(
+                this,
+                String.format(getString(R.string.success_unfavorite), data.name),
+                Toast.LENGTH_SHORT
+            ).show()
             viewModel.setFavorite(data)
         }
         setIconFavorite(data.favorite)

@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout_constraint_scan"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/layout_constraint_scan">
+        android:layout_height="wrap_content">
 
         <androidx.camera.view.PreviewView
             android:id="@+id/pv_camera"

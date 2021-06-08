@@ -28,8 +28,8 @@
                     android:layout_margin="10dp"
                     android:contentDescription="@string/action_back"
                     android:src="@drawable/ic_back"
-                    app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     app:tint="@color/dark_yellow" />
 
@@ -54,8 +54,8 @@
                 android:layout_height="332dp"
                 android:layout_marginTop="32dp"
                 android:background="@color/white_gray"
-                app:layout_constraintEnd_toEndOf="parent"
                 android:scaleType="centerCrop"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -65,10 +65,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="4dp"
-                app:layout_constraintStart_toStartOf="parent"
+                android:text="@string/scan_again"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/iv_result_picture"
-                android:text="@string/scan_again"/>
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/iv_result_picture" />
 
             <TextView
                 android:id="@+id/tv_text_predict_result"
@@ -80,7 +80,7 @@
                 android:text="@string/predict_result"
                 android:textSize="16sp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/btn_scan_again"/>
+                app:layout_constraintTop_toBottomOf="@id/btn_scan_again" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rv_scan"
@@ -89,14 +89,14 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="32dp"
-                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
                 android:orientation="horizontal"
+                android:visibility="visible"
 
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tv_text_predict_result"
-                tools:listitem="@layout/item_list_result_scan"
-                android:visibility="visible"/>
+                tools:listitem="@layout/item_list_result_scan" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

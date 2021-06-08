@@ -28,7 +28,8 @@ class HomeAdapter : PagedListAdapter<BatikEntity, HomeAdapter.HomeViewHolder>(DI
         )
     }
 
-    inner class HomeViewHolder(private val binding: ItemListBinding) : RecyclerView.ViewHolder(binding.root) {
+    inner class HomeViewHolder(private val binding: ItemListBinding) :
+        RecyclerView.ViewHolder(binding.root) {
         fun bind(data: BatikEntity) {
             binding.apply {
                 Glide.with(root)

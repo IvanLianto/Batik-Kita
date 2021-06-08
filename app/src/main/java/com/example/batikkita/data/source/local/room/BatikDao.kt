@@ -7,8 +7,6 @@ import androidx.sqlite.db.SupportSQLiteQuery
 import com.example.batikkita.data.source.local.entity.BatikEntity
 import com.example.batikkita.data.source.local.entity.CartEntity
 import com.example.batikkita.data.source.local.entity.IslandEntity
-import com.example.batikkita.ui.search.SearchActivity
-import com.example.batikkita.utils.SearchHelper
 
 @Dao
 interface BatikDao {
@@ -52,7 +50,7 @@ interface BatikDao {
     fun getListIslandBatik(origin: String): LiveData<List<BatikEntity>>
 
     @Query("SELECT * FROM batikEntities WHERE island NOT LIKE :origin")
-    fun getListExceptIslandBatik(origin: String) : LiveData<List<BatikEntity>>
+    fun getListExceptIslandBatik(origin: String): LiveData<List<BatikEntity>>
 
     @Query("SELECT * FROM cartEntities")
     fun getListCart(): LiveData<List<CartEntity>>

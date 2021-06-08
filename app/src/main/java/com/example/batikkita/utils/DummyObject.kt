@@ -265,20 +265,20 @@ object DummyObject {
             IslandEntity(
                 id = 2,
                 origin = "Sumatra",
-                description = "Sumatra is the sixth largest island in the world, located in Indonesia, with an area of 473,481 km². The population of this island is around 57,940,351 (2018 census). This island is also known by other names, namely Percha Island, Andalas, or Suwarnadwipa (Sanskrit , meaning \"island of gold\"). Then in the Padang Roco Inscription in 1286, swarnnabhūmi (Sanskrit, meaning \"land of gold\") and bhūmi mālayu (\"Land of Malay\") were carved to refer to this island. Negarakertagama from the 14th century also again called \"Bumi Malayu\" (Malay) for this island." ,
+                description = "Sumatra is the sixth largest island in the world, located in Indonesia, with an area of 473,481 km². The population of this island is around 57,940,351 (2018 census). This island is also known by other names, namely Percha Island, Andalas, or Suwarnadwipa (Sanskrit , meaning \"island of gold\"). Then in the Padang Roco Inscription in 1286, swarnnabhūmi (Sanskrit, meaning \"land of gold\") and bhūmi mālayu (\"Land of Malay\") were carved to refer to this island. Negarakertagama from the 14th century also again called \"Bumi Malayu\" (Malay) for this island.",
                 image = "https://i.ibb.co/8xm59cr/sumatra-final.png",
-                latitude = -0.53196 ,
+                latitude = -0.53196,
                 longitude = 101.5741462
             )
         )
 
         island.add(
             IslandEntity(
-                id = 3 ,
+                id = 3,
                 origin = "Papua",
                 description = "Papua or previously known as Irian or Irian Jaya, is the second largest island (after Greenland) in the world, located north of Australia. The island is divided into two regions, the western part of which is the territory of Indonesia and the eastern part is the state of Papua New Guinea. On an island that resembles a bird of paradise, lies the highest mountain in Indonesia, namely Puncak Jaya (4,884 m)",
                 image = "https://i.ibb.co/p3w3gH8/papua-final.png",
-                latitude = -3.9644879 ,
+                latitude = -3.9644879,
                 longitude = 138.4865451
             )
         )
@@ -286,7 +286,7 @@ object DummyObject {
         island.add(
             IslandEntity(
                 id = 4,
-                origin = "Sulawesi" ,
+                origin = "Sulawesi",
                 description = "Sulawesi is one of the four Greater Sunda Islands. It is governed by Indonesia. The world's eleventh-largest island, it is situated east of Borneo, west of the Maluku Islands, and south of Mindanao and the Sulu Archipelago. Within Indonesia, only Sumatra, Borneo and Papua are larger in territory, and only Java and Sumatra have larger populations.",
                 image = "https://i.ibb.co/C00c7fR/sulawesi-final.png",
                 latitude = -1.8974867,
@@ -297,7 +297,7 @@ object DummyObject {
         island.add(
             IslandEntity(
                 id = 5,
-                origin = "Kalimantan" ,
+                origin = "Kalimantan",
                 description = "Kalimantan is the Indonesian portion of the island of Borneo. It comprises 73% of the island's area. The non-Indonesian parts of Borneo are Brunei and East Malaysia. In Indonesia, \"Kalimantan\" refers to the whole island of Borneo. In 2019, the Indonesian President Joko Widodo proposed that Indonesia's capital be moved to Kalimantan.",
                 image = "https://i.ibb.co/LhGZzC0/kalimantan-final.png",
                 latitude = 0.9367951,

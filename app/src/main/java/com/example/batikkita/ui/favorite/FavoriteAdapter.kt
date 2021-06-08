@@ -11,12 +11,14 @@ import com.example.batikkita.data.source.local.entity.BatikEntity
 import com.example.batikkita.databinding.ItemListBinding
 import com.example.batikkita.interfaces.BatikOnClickInterface
 
-class FavoriteAdapter : PagedListAdapter<BatikEntity, FavoriteAdapter.FavoriteViewHolder> (DIFF_CALLBACK) {
+class FavoriteAdapter :
+    PagedListAdapter<BatikEntity, FavoriteAdapter.FavoriteViewHolder>(DIFF_CALLBACK) {
 
-    var dataInterface : BatikOnClickInterface? = null
+    var dataInterface: BatikOnClickInterface? = null
 
-    inner class FavoriteViewHolder(private val binding: ItemListBinding) : RecyclerView.ViewHolder(binding.root){
-        fun bind(data: BatikEntity){
+    inner class FavoriteViewHolder(private val binding: ItemListBinding) :
+        RecyclerView.ViewHolder(binding.root) {
+        fun bind(data: BatikEntity) {
             binding.apply {
                 Glide.with(root)
                     .load(data.image)

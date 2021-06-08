@@ -10,7 +10,7 @@ object BitmapHelper {
 }
 
 object ScanHelper {
-    var pauseAnalyzer : Boolean = false
+    var pauseAnalyzer: Boolean = false
 
     private val readyToTake = MutableLiveData<Boolean>()
 
@@ -20,7 +20,7 @@ object ScanHelper {
         readyToTake.postValue(flag)
     }
 
-    var dataIsReady : Boolean = false
+    var dataIsReady: Boolean = false
 }
 
 object SearchHelper {

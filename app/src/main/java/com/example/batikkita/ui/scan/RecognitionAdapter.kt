@@ -5,13 +5,11 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
-import com.example.batikkita.R
 import com.example.batikkita.databinding.ItemListResultScanBinding
 import com.example.batikkita.interfaces.RecognitionOnClickInterface
-import java.util.*
 
-class RecognitionAdapter : ListAdapter<Recognition, RecognitionAdapter.RecognitionViewHolder>(DiffCallback()) {
+class RecognitionAdapter :
+    ListAdapter<Recognition, RecognitionAdapter.RecognitionViewHolder>(DiffCallback()) {
 
     var dataInterface: RecognitionOnClickInterface? = null
 
@@ -22,13 +20,14 @@ class RecognitionAdapter : ListAdapter<Recognition, RecognitionAdapter.Recogniti
     }
 
     override fun onBindViewHolder(holder: RecognitionViewHolder, position: Int) {
-        holder.bind(getItem(position), position+1)
+        holder.bind(getItem(position), position + 1)
     }
 
-    inner class RecognitionViewHolder(private val binding: ItemListResultScanBinding) : RecyclerView.ViewHolder(binding.root) {
+    inner class RecognitionViewHolder(private val binding: ItemListResultScanBinding) :
+        RecyclerView.ViewHolder(binding.root) {
         fun bind(recognition: Recognition, position: Int) {
 
-            with(binding){
+            with(binding) {
                 tvLabelBatik.text = recognition.splitLabel
                 tvPredictBatik.text = recognition.probabilityString
                 tvPosition.text = position.toString()

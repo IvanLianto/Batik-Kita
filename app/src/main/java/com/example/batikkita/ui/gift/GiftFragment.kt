@@ -1,12 +1,11 @@
 package com.example.batikkita.ui.gift
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import com.example.batikkita.R
+import androidx.fragment.app.Fragment
 import com.example.batikkita.databinding.FragmentGiftBinding
 
 class GiftFragment : Fragment() {
@@ -33,7 +32,7 @@ class GiftFragment : Fragment() {
         }
     }
 
-    private fun comingSoonToast(){
+    private fun comingSoonToast() {
         Toast.makeText(requireContext(), "Coming Soon !", Toast.LENGTH_SHORT).show()
     }
 }

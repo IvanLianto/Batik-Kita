@@ -23,13 +23,11 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.ViewModelProvider
 import com.example.batikkita.R
 import com.example.batikkita.databinding.FragmentScanBinding
 import com.example.batikkita.ml.BatikKitaModel
 import com.example.batikkita.utils.BitmapHelper
 import com.example.batikkita.utils.ScanHelper
-import com.example.batikkita.utils.ViewModelFactory
 import com.example.batikkita.utils.YuvToRgbConverter
 import org.tensorflow.lite.gpu.CompatibilityList
 import org.tensorflow.lite.support.image.TensorImage
@@ -143,7 +141,7 @@ class ScanFragment : Fragment() {
                 val model: BatikKitaModel by lazy {
                     val compatList = CompatibilityList()
 
-                    val options = if(compatList.isDelegateSupportedOnThisDevice) {
+                    val options = if (compatList.isDelegateSupportedOnThisDevice) {
                         Log.d(TAG, "This device is GPU Compatible ")
                         Model.Options.Builder().setDevice(Model.Device.GPU).build()
                     } else {

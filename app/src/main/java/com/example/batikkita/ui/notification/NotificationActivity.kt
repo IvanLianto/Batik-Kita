@@ -1,8 +1,7 @@
 package com.example.batikkita.ui.notification
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.batikkita.R
+import androidx.appcompat.app.AppCompatActivity
 import com.example.batikkita.databinding.ActivityNotificationBinding
 
 class NotificationActivity : AppCompatActivity() {

@@ -35,6 +35,6 @@ data class CartEntity(
 
     @ColumnInfo(name = "rating")
     var rating: Double
-) : Parcelable{
-    constructor() : this(0,"","","","","", "",0.0)
+) : Parcelable {
+    constructor() : this(0, "", "", "", "", "", "", 0.0)
 }

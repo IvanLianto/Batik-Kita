@@ -11,11 +11,11 @@ import com.example.batikkita.ui.favorite.FavoriteViewModel
 import com.example.batikkita.ui.home.HomeViewModel
 import com.example.batikkita.ui.map.MapViewModel
 import com.example.batikkita.ui.mapDetail.MapDetailViewModel
-import com.example.batikkita.ui.scan.RecognitionListViewModel
 import com.example.batikkita.ui.scan.ScanViewModel
 import com.example.batikkita.ui.search.SearchViewModel
 
-class ViewModelFactory private constructor(private val mBatikRepository: BatikRepository): ViewModelProvider.NewInstanceFactory(){
+class ViewModelFactory private constructor(private val mBatikRepository: BatikRepository) :
+    ViewModelProvider.NewInstanceFactory() {
     @Suppress("UNCHECKED_CAST")
     override fun <T : ViewModel?> create(modelClass: Class<T>): T =
         when {

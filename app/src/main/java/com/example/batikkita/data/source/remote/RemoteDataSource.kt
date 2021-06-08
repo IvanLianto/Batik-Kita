@@ -5,7 +5,6 @@ import androidx.lifecycle.MutableLiveData
 import com.example.batikkita.data.source.local.entity.BatikEntity
 import com.example.batikkita.data.source.local.entity.CartEntity
 import com.example.batikkita.data.source.local.entity.IslandEntity
-import com.example.batikkita.utils.DummyObject
 import com.google.firebase.firestore.FirebaseFirestore
 
 class RemoteDataSource {
@@ -16,10 +15,10 @@ class RemoteDataSource {
         val result = MutableLiveData<ApiResponse<List<BatikEntity>>>()
         db.collection("Batik")
             .get()
-            .addOnCompleteListener{
-                if (it.result != null){
+            .addOnCompleteListener {
+                if (it.result != null) {
                     val batikListEntity = ArrayList<BatikEntity>()
-                    for(document in it.result!!){
+                    for (document in it.result!!) {
                         val batik = document.toObject(BatikEntity::class.java)
                         batikListEntity.add(batik)
                     }
@@ -46,14 +45,14 @@ class RemoteDataSource {
         return result
     }
 
-    fun getListCart(): LiveData<ApiResponse<List<CartEntity>>>{
+    fun getListCart(): LiveData<ApiResponse<List<CartEntity>>> {
         val result = MutableLiveData<ApiResponse<List<CartEntity>>>()
         db.collection("Cart")
             .get()
-            .addOnCompleteListener{
-                if (it.result != null){
+            .addOnCompleteListener {
+                if (it.result != null) {
                     val listCartEntity = ArrayList<CartEntity>()
-                    for (document in it.result!!){
+                    for (document in it.result!!) {
                         val cart = document.toObject(CartEntity::class.java)
                         listCartEntity.add(cart)
                     }
