@@ -14,6 +14,7 @@ import com.example.batikkita.data.source.local.entity.IslandEntity
 import com.example.batikkita.databinding.FragmentMapBinding
 import com.example.batikkita.ui.mapDetail.MapDetailActivity
 import com.example.batikkita.utils.ViewModelFactory
+import com.example.batikkita.utils.show
 import com.example.vo.Status
 import com.google.gson.Gson
 import com.mapbox.android.core.permissions.PermissionsManager
@@ -64,9 +65,10 @@ class MapFragment : Fragment() {
             if (island != null) {
                 when (island.status) {
                     Status.LOADING -> {
-
+                        isLoading(true)
                     }
                     Status.SUCCESS -> {
+                        isLoading(false)
                         showMarker(island.data)
                     }
                     Status.ERROR -> {
@@ -75,6 +77,13 @@ class MapFragment : Fragment() {
                 }
             }
         })
+    }
+
+    private fun isLoading(flag: Boolean) {
+        binding.apply {
+            progressBar.show(flag)
+            mapView.show(!flag)
+        }
     }
 
     private fun showMarker(data: List<IslandEntity>?) {
@@ -108,28 +117,6 @@ class MapFragment : Fragment() {
                 startActivity(intent)
             }
         }
-    }
-
-    private fun showDicodingSpace() {
-        val dicodingSpace = LatLng(-6.8957643, 107.6338462)
-        symbolManager.create(
-            SymbolOptions()
-                .withLatLng(LatLng(dicodingSpace.latitude, dicodingSpace.longitude))
-                .withIconImage(ICON_ID)
-                .withIconSize(1.5f)
-                .withIconOffset(arrayOf(0f, -1.5f))
-        )
-    }
-
-    private fun showMyHome() {
-        val dicodingSpace = LatLng(-7.8060357, 112.0158351)
-        symbolManager.create(
-            SymbolOptions()
-                .withLatLng(LatLng(dicodingSpace.latitude, dicodingSpace.longitude))
-                .withIconImage(ICON_ID)
-                .withIconSize(1.5f)
-                .withIconOffset(arrayOf(0f, -1.5f))
-        )
     }
 
     override fun onStart() {

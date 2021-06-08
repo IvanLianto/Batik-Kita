@@ -11,6 +11,9 @@ import com.example.batikkita.data.source.local.entity.CartEntity
 import com.example.batikkita.databinding.FragmentCartBinding
 import com.example.batikkita.interfaces.CartOnClickInterface
 import com.example.batikkita.utils.ViewModelFactory
+import com.example.batikkita.utils.alertDialog
+import com.example.batikkita.utils.show
+import com.example.vo.Status
 
 class CartFragment : Fragment(), CartOnClickInterface {
 
@@ -40,10 +43,31 @@ class CartFragment : Fragment(), CartOnClickInterface {
     }
 
     private fun observerRecyclerView() {
-        viewModel.getListCart().observe(viewLifecycleOwner, {
-            adapter.submitList(it.data)
-            adapter.notifyDataSetChanged()
+        viewModel.getListCart().observe(viewLifecycleOwner, { list ->
+            if (list != null) {
+                when (list.status) {
+                    Status.LOADING -> {
+                        isLoading(true)
+                    }
+                    Status.SUCCESS -> {
+                        isLoading(false)
+                        adapter.submitList(list.data)
+                        adapter.notifyDataSetChanged()
+                    }
+                    Status.ERROR -> {
+                        isLoading(true)
+                        alertDialog(requireContext(), "ERROR", "Check your internet connection!")
+                    }
+                }
+            }
         })
+    }
+
+    private fun isLoading(flag: Boolean) {
+        binding.apply {
+            rvCart.show(!flag)
+            progressBar.show(flag)
+        }
     }
 
     override fun onClicked(view: View, data: CartEntity) {

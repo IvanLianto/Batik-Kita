@@ -2,6 +2,8 @@ package com.example.batikkita.ui.scan
 
 import android.Manifest
 import android.annotation.SuppressLint
+import android.app.AlertDialog
+import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.Bitmap
@@ -33,6 +35,7 @@ import org.tensorflow.lite.gpu.CompatibilityList
 import org.tensorflow.lite.support.image.TensorImage
 import org.tensorflow.lite.support.model.Model
 import java.util.concurrent.Executors
+import kotlin.system.exitProcess
 
 class ScanFragment : Fragment() {
 
@@ -61,10 +64,12 @@ class ScanFragment : Fragment() {
             binding.layoutForScan.tvScanYourBatik.visibility = View.GONE
             binding.layoutForScan.pvCamera.visibility = View.VISIBLE
             binding.layoutForScan.btnTakePicture.visibility = View.VISIBLE
+            Toast.makeText(requireContext(), "Wait a minute until predict is ready!", Toast.LENGTH_SHORT).show()
             startCamera()
         }
 
         ScanHelper.updateBoolean(false)
+        ScanHelper.dataIsReady = false
 
         ScanHelper.getReadyToTake.observe(viewLifecycleOwner, {
             Log.d("TAG", it.toString())

@@ -111,7 +111,7 @@ class BatikRepository private constructor(
             }
 
             override fun shouldFetch(data: List<CartEntity>?): Boolean =
-                data == null || data.isEmpty()
+                true
 
             override fun createCall(): LiveData<ApiResponse<List<CartEntity>>> =
                 remoteDataSource.getListCart()

@@ -1,11 +1,17 @@
 package com.example.batikkita.ui.home
 
+import android.content.Context
 import android.content.Intent
+import android.net.ConnectivityManager
+import android.net.NetworkCapabilities
+import android.os.Build
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.example.batikkita.data.source.local.entity.BatikEntity
@@ -14,6 +20,8 @@ import com.example.batikkita.interfaces.BatikOnClickInterface
 import com.example.batikkita.ui.detail.DetailActivity
 import com.example.batikkita.utils.DummyObject
 import com.example.batikkita.utils.ViewModelFactory
+import com.example.batikkita.utils.alertDialog
+import com.example.batikkita.utils.show
 import com.example.vo.Status
 import com.google.firebase.firestore.FirebaseFirestore
 
@@ -27,7 +35,7 @@ class HomeFragment : Fragment(), BatikOnClickInterface {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentHomeBinding.inflate(inflater)
         return binding.root
     }
@@ -42,8 +50,6 @@ class HomeFragment : Fragment(), BatikOnClickInterface {
             binding.rvHome.adapter = adapter
             observerRecyclerView()
         }
-
-
     }
 
     private fun observerRecyclerView() {
@@ -51,18 +57,49 @@ class HomeFragment : Fragment(), BatikOnClickInterface {
             if (list != null) {
                 when (list.status) {
                     Status.LOADING -> {
-
+                        isLoading(true)
                     }
                     Status.SUCCESS -> {
+                        isLoading(false)
                         adapter.submitList(list.data)
                         adapter.notifyDataSetChanged()
                     }
                     Status.ERROR -> {
-
+                        isLoading(false)
+                        alertDialog(requireContext(), "ERROR", "Check your internet connection!")
                     }
                 }
             }
         })
+    }
+
+
+//    @RequiresApi(Build.VERSION_CODES.M)
+//    fun isOnline(context: Context): Boolean {
+//        val connectivityManager =
+//            context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+//        val capabilities =
+//            connectivityManager.getNetworkCapabilities(connectivityManager.activeNetwork)
+//        if (capabilities != null) {
+//            if (capabilities.hasTransport(NetworkCapabilities.TRANSPORT_CELLULAR)) {
+//                Log.i("Internet", "NetworkCapabilities.TRANSPORT_CELLULAR")
+//                return true
+//            } else if (capabilities.hasTransport(NetworkCapabilities.TRANSPORT_WIFI)) {
+//                Log.i("Internet", "NetworkCapabilities.TRANSPORT_WIFI")
+//                return true
+//            } else if (capabilities.hasTransport(NetworkCapabilities.TRANSPORT_ETHERNET)) {
+//                Log.i("Internet", "NetworkCapabilities.TRANSPORT_ETHERNET")
+//                return true
+//            }
+//        }
+//        return false
+//    }
+
+    private fun isLoading(flag: Boolean) {
+        binding.apply {
+            rvHome.show(!flag)
+            progressBar.show(flag)
+        }
     }
 
     private fun initializeDatatoFirestore() { //for dev only!

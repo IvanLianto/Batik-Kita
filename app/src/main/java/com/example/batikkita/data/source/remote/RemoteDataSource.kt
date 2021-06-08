@@ -1,5 +1,6 @@
 package com.example.batikkita.data.source.remote
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.example.batikkita.data.source.local.entity.BatikEntity
@@ -22,7 +23,13 @@ class RemoteDataSource {
                         val batik = document.toObject(BatikEntity::class.java)
                         batikListEntity.add(batik)
                     }
-                    result.postValue(ApiResponse.success(batikListEntity))
+                    if (batikListEntity.isEmpty()) {
+                        Log.d("RemoteDataSource", "No Internet")
+                        result.postValue(ApiResponse.error(mutableListOf(), "No Internet Connection"))
+                    } else {
+                        Log.d("RemoteDataSource", "Internet")
+                        result.postValue(ApiResponse.success(batikListEntity))
+                    }
                 }
             }
         return result
@@ -39,7 +46,13 @@ class RemoteDataSource {
                         val island = document.toObject(IslandEntity::class.java)
                         listIslandEntity.add(island)
                     }
-                    result.postValue(ApiResponse.success(listIslandEntity))
+                    if (listIslandEntity.isEmpty()) {
+                        Log.d("RemoteDataSource", "No Internet")
+                        result.postValue(ApiResponse.error(mutableListOf(), "No Internet Connection"))
+                    } else {
+                        Log.d("RemoteDataSource", "Internet")
+                        result.postValue(ApiResponse.success(listIslandEntity))
+                    }
                 }
             }
         return result
@@ -56,7 +69,13 @@ class RemoteDataSource {
                         val cart = document.toObject(CartEntity::class.java)
                         listCartEntity.add(cart)
                     }
-                    result.postValue(ApiResponse.success(listCartEntity))
+                    if (listCartEntity.isEmpty()) {
+                        Log.d("RemoteDataSource", "No Internet")
+                        result.postValue(ApiResponse.error(mutableListOf(), "No Internet Connection"))
+                    } else {
+                        Log.d("RemoteDataSource", "Internet")
+                        result.postValue(ApiResponse.success(listCartEntity))
+                    }
                 }
             }
         return result

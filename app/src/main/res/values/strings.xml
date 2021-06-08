@@ -66,6 +66,7 @@
     <string name="medium">medium</string>
     <string name="high">high</string>
     <string name="search">SEARCH</string>
+    <string name="ok">OK</string>
 
     <string-array name="list_filter">
         <item>Theme</item>
